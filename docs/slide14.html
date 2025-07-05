@@ -11,6 +11,7 @@
             background-color: #f5f5f5;
             margin: 0;
             padding: 0;
+            font-size: 18px; /* Increased base font size */
         }
         .slide {
             width: 900px;
@@ -25,7 +26,7 @@
             color: #003366;
             text-align: center;
             margin-bottom: 30px;
-            font-size: 32px;
+            font-size: 36px; /* Increased title font size */
         }
         .content {
             display: flex;
@@ -38,27 +39,47 @@
             width: 50%;
         }
         .bullet-point {
-            margin-bottom: 15px;
-            font-size: 18px;
+            margin-bottom: 18px; /* Adjusted spacing */
+            font-size: 20px; /* Increased bullet point font size */
         }
         .footer {
             position: absolute;
             bottom: 20px;
             right: 20px;
-            font-size: 14px;
+            font-size: 16px; /* Increased footer font size */
             color: #666666;
         }
         .quote {
             background-color: #f0f7ff;
             border-left: 4px solid #003366;
-            padding: 15px;
-            margin: 20px 0;
+            padding: 18px; /* Adjusted padding */
+            margin: 25px 0; /* Adjusted margin */
             font-style: italic;
-            font-size: 16px;
+            font-size: 18px; /* Increased quote font size */
         }
         .chart-container {
             height: 400px;
             width: 100%;
+        }
+        .navigation {
+            position: absolute;
+            bottom: 20px;
+            left: 40px;
+            right: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 18px; /* Increased navigation font size */
+        }
+        .navigation a {
+            color: #007bff;
+            text-decoration: none;
+            padding: 8px 15px; /* Adjusted padding */
+            border: 1px solid #007bff;
+            border-radius: 5px;
+        }
+        .navigation a:hover {
+            background-color: #e6f0ff;
         }
     </style>
 </head>
@@ -68,7 +89,7 @@
         
         <div class="content">
             <div class="text-content">
-                <div class="bullet-point">• <strong>Integral Vision:</strong> "Man himself, whole and entire, body and soul, heart and conscience, mind and will"</div>
+                <div class="bullet-point">• <strong>Integral Vision:</strong> "Man himself, whole and entire, body and soul, heart and conscience, mind and will" (Gaudium et Spes, 3)</div>
                 
                 <div class="bullet-point">• <strong>Unity in Diversity:</strong> Multiple dimensions integrated into one person</div>
                 
@@ -78,7 +99,7 @@
                 
                 <div class="bullet-point">• <strong>Pastoral Implications:</strong> Ministry must address all dimensions of human experience</div>
                 
-                <div class="quote">"Though made of body and soul, man is one. Through his bodily composition he gathers to himself the elements of the material world... he is obliged to regard his body as good and honorable since God has created it and will raise it up on the last day."</div>
+                <div class="quote">"Though made of body and soul, man is one. Through his bodily composition he gathers to himself the elements of the material world... he is obliged to regard his body as good and honorable since God has created it and will raise it up on the last day." (Gaudium et Spes, 14)</div>
             </div>
             
             <div class="chart-content">
@@ -89,45 +110,50 @@
         </div>
         
         <div class="footer">Slide 14 of 55</div>
+
+        <div class="navigation">
+            <a href="./slide13.html">&lt; Previous Slide</a>
+            <a href="./slide15.html">Next Slide &gt;</a>
+        </div>
     </div>
     
     <script>
         // Chart contrasting Catholic anthropology with other views
-        const ctx = document.getElementById('anthropologyChart').getContext('2d');
+        const ctx = document.getElementById("anthropologyChart").getContext("2d");
         const anthropologyChart = new Chart(ctx, {
-            type: 'radar',
+            type: "radar",
             data: {
-                labels: ['Physical', 'Intellectual', 'Emotional', 'Social', 'Spiritual', 'Moral'],
+                labels: ["Physical", "Intellectual", "Emotional", "Social", "Spiritual", "Moral"],
                 datasets: [
                     {
-                        label: 'Catholic Holistic View',
+                        label: "Catholic Holistic View",
                         data: [90, 90, 90, 90, 90, 90],
-                        backgroundColor: 'rgba(0, 51, 102, 0.2)',
-                        borderColor: 'rgba(0, 51, 102, 0.8)',
-                        pointBackgroundColor: 'rgba(0, 51, 102, 1)',
-                        pointBorderColor: '#fff',
-                        pointHoverBackgroundColor: '#fff',
-                        pointHoverBorderColor: 'rgba(0, 51, 102, 1)'
+                        backgroundColor: "rgba(0, 51, 102, 0.2)",
+                        borderColor: "rgba(0, 51, 102, 0.8)",
+                        pointBackgroundColor: "rgba(0, 51, 102, 1)",
+                        pointBorderColor: "#fff",
+                        pointHoverBackgroundColor: "#fff",
+                        pointHoverBorderColor: "rgba(0, 51, 102, 1)"
                     },
                     {
-                        label: 'Materialist View',
+                        label: "Materialist View",
                         data: [95, 70, 60, 75, 0, 40],
-                        backgroundColor: 'rgba(230, 81, 0, 0.2)',
-                        borderColor: 'rgba(230, 81, 0, 0.8)',
-                        pointBackgroundColor: 'rgba(230, 81, 0, 1)',
-                        pointBorderColor: '#fff',
-                        pointHoverBackgroundColor: '#fff',
-                        pointHoverBorderColor: 'rgba(230, 81, 0, 1)'
+                        backgroundColor: "rgba(230, 81, 0, 0.2)",
+                        borderColor: "rgba(230, 81, 0, 0.8)",
+                        pointBackgroundColor: "rgba(230, 81, 0, 1)",
+                        pointBorderColor: "#fff",
+                        pointHoverBackgroundColor: "#fff",
+                        pointHoverBorderColor: "rgba(230, 81, 0, 1)"
                     },
                     {
-                        label: 'Spiritualist View',
+                        label: "Spiritualist View",
                         data: [30, 80, 50, 40, 95, 75],
-                        backgroundColor: 'rgba(0, 153, 204, 0.2)',
-                        borderColor: 'rgba(0, 153, 204, 0.8)',
-                        pointBackgroundColor: 'rgba(0, 153, 204, 1)',
-                        pointBorderColor: '#fff',
-                        pointHoverBackgroundColor: '#fff',
-                        pointHoverBorderColor: 'rgba(0, 153, 204, 1)'
+                        backgroundColor: "rgba(0, 153, 204, 0.2)",
+                        borderColor: "rgba(0, 153, 204, 0.8)",
+                        pointBackgroundColor: "rgba(0, 153, 204, 1)",
+                        pointBorderColor: "#fff",
+                        pointHoverBackgroundColor: "#fff",
+                        pointHoverBorderColor: "rgba(0, 153, 204, 1)"
                     }
                 ]
             },
@@ -144,7 +170,7 @@
                 plugins: {
                     title: {
                         display: true,
-                        text: 'Contrasting Anthropological Views',
+                        text: "Contrasting Anthropological Views",
                         font: {
                             size: 16
                         }
@@ -152,9 +178,9 @@
                     tooltip: {
                         callbacks: {
                             label: function(context) {
-                                const label = context.dataset.label || '';
+                                const label = context.dataset.label || "";
                                 const value = context.raw || 0;
-                                return label + ': ' + value + '% emphasis';
+                                return label + ": " + value + "% emphasis";
                             }
                         }
                     }

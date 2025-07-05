@@ -60,6 +60,26 @@
             height: 400px;
             width: 100%;
         }
+        .navigation {
+            position: absolute;
+            bottom: 20px;
+            left: 40px;
+            right: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 16px;
+        }
+        .navigation a {
+            color: #007bff;
+            text-decoration: none;
+            padding: 5px 10px;
+            border: 1px solid #007bff;
+            border-radius: 5px;
+        }
+        .navigation a:hover {
+            background-color: #e6f0ff;
+        }
     </style>
 </head>
 <body>
@@ -68,15 +88,15 @@
         
         <div class="content">
             <div class="text-content">
-                <div class="bullet-point">• <strong>Universal Audience:</strong> Addresses "not only to the sons of the Church and to all who invoke the name of Christ, but to the whole of humanity"</div>
+                <div class="bullet-point">• <strong>Universal Audience:</strong> Addresses \"not only to the sons of the Church and to all who invoke the name of Christ, but to the whole of humanity\"</div>
                 
-                <div class="bullet-point">• <strong>Explanatory Purpose:</strong> "To explain to everyone how it conceives of the presence and activity of the Church in the world of today"</div>
+                <div class="bullet-point">• <strong>Explanatory Purpose:</strong> \"To explain to everyone how it conceives of the presence and activity of the Church in the world of today\"</div>
                 
-                <div class="bullet-point">• <strong>World as Theater:</strong> The world seen as "the theater of man's history, and the heir of his energies, his tragedies and his triumphs"</div>
+                <div class="bullet-point">• <strong>World as Theater:</strong> The world seen as \"the theater of man\"s history, and the heir of his energies, his tragedies and his triumphs\"</div>
                 
-                <div class="bullet-point">• <strong>Theological Vision:</strong> The world as "created and sustained by its Maker's love, fallen indeed into the bondage of sin, yet emancipated now by Christ"</div>
+                <div class="bullet-point">• <strong>Theological Vision:</strong> The world as \"created and sustained by its Maker\"s love, fallen indeed into the bondage of sin, yet emancipated now by Christ\"</div>
                 
-                <div class="quote">"The council focuses its attention on the world of men, the whole human family along with the sum of those realities in the midst of which it lives..."</div>
+                <div class="quote">\"The council focuses its attention on the world of men, the whole human family along with the sum of those realities in the midst of which it lives...\"</div>
             </div>
             
             <div class="chart-content">
@@ -87,35 +107,40 @@
         </div>
         
         <div class="footer">Slide 6 of 55</div>
+
+        <div class="navigation">
+            <a href="./slide05.html">&lt; Previous Slide</a>
+            <a href="./slide07.html">Next Slide &gt;</a>
+        </div>
     </div>
     
     <script>
         // Chart comparing pre-Vatican II and post-Vatican II approaches
-        const ctx = document.getElementById('approachChart').getContext('2d');
+        const ctx = document.getElementById("approachChart").getContext("2d");
         const approachChart = new Chart(ctx, {
-            type: 'radar',
+            type: "radar",
             data: {
-                labels: ['Dialogue with World', 'Engagement with Culture', 'Addressing Non-Catholics', 'Positive View of Progress', 'Pastoral Approach'],
+                labels: ["Dialogue with World", "Engagement with Culture", "Addressing Non-Catholics", "Positive View of Progress", "Pastoral Approach"],
                 datasets: [
                     {
-                        label: 'Pre-Vatican II',
+                        label: "Pre-Vatican II",
                         data: [30, 40, 20, 35, 45],
-                        backgroundColor: 'rgba(179, 205, 227, 0.2)',
-                        borderColor: 'rgba(19, 64, 116, 0.8)',
-                        pointBackgroundColor: 'rgba(19, 64, 116, 1)',
-                        pointBorderColor: '#fff',
-                        pointHoverBackgroundColor: '#fff',
-                        pointHoverBorderColor: 'rgba(19, 64, 116, 1)'
+                        backgroundColor: "rgba(179, 205, 227, 0.2)",
+                        borderColor: "rgba(19, 64, 116, 0.8)",
+                        pointBackgroundColor: "rgba(19, 64, 116, 1)",
+                        pointBorderColor: "#fff",
+                        pointHoverBackgroundColor: "#fff",
+                        pointHoverBorderColor: "rgba(19, 64, 116, 1)"
                     },
                     {
-                        label: 'Gaudium et Spes',
+                        label: "Gaudium et Spes",
                         data: [85, 90, 80, 75, 95],
-                        backgroundColor: 'rgba(255, 180, 130, 0.2)',
-                        borderColor: 'rgba(230, 81, 0, 0.8)',
-                        pointBackgroundColor: 'rgba(230, 81, 0, 1)',
-                        pointBorderColor: '#fff',
-                        pointHoverBackgroundColor: '#fff',
-                        pointHoverBorderColor: 'rgba(230, 81, 0, 1)'
+                        backgroundColor: "rgba(255, 180, 130, 0.2)",
+                        borderColor: "rgba(230, 81, 0, 0.8)",
+                        pointBackgroundColor: "rgba(230, 81, 0, 1)",
+                        pointBorderColor: "#fff",
+                        pointHoverBackgroundColor: "#fff",
+                        pointHoverBorderColor: "rgba(230, 81, 0, 1)"
                     }
                 ]
             },
@@ -132,7 +157,7 @@
                 plugins: {
                     title: {
                         display: true,
-                        text: 'Comparing Church Approaches Before and After Vatican II',
+                        text: "Comparing Church Approaches Before and After Vatican II",
                         font: {
                             size: 16
                         }

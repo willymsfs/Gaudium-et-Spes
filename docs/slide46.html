@@ -10,6 +10,7 @@
             background-color: #f5f5f5;
             margin: 0;
             padding: 0;
+            font-size: 18px; /* Increased base font size */
         }
         .slide {
             width: 900px;
@@ -24,7 +25,7 @@
             color: #003366;
             text-align: center;
             margin-bottom: 30px;
-            font-size: 32px;
+            font-size: 36px; /* Increased title font size */
         }
         .content {
             display: flex;
@@ -37,23 +38,23 @@
             width: 50%;
         }
         .bullet-point {
-            margin-bottom: 15px;
-            font-size: 18px;
+            margin-bottom: 18px; /* Adjusted spacing */
+            font-size: 20px; /* Increased bullet point font size */
         }
         .footer {
             position: absolute;
             bottom: 20px;
             right: 20px;
-            font-size: 14px;
+            font-size: 16px; /* Increased footer font size */
             color: #666666;
         }
         .quote {
             background-color: #f0f7ff;
             border-left: 4px solid #003366;
-            padding: 15px;
-            margin: 20px 0;
+            padding: 18px; /* Adjusted padding */
+            margin: 25px 0; /* Adjusted margin */
             font-style: italic;
-            font-size: 16px;
+            font-size: 18px; /* Increased quote font size */
         }
         .diagram {
             border: 2px solid #003366;
@@ -66,7 +67,7 @@
             font-weight: bold;
             color: #003366;
             margin-bottom: 20px;
-            font-size: 18px;
+            font-size: 22px; /* Increased diagram title font size */
         }
         .comparison-container {
             display: flex;
@@ -83,7 +84,7 @@
             text-align: center;
             font-weight: bold;
             color: #003366;
-            font-size: 18px;
+            font-size: 20px; /* Increased header cell font size */
             padding: 10px;
         }
         .comparison-row {
@@ -99,6 +100,7 @@
             background-color: #e6f0ff;
             border: 1px solid #003366;
             border-radius: 5px;
+            font-size: 18px; /* Increased comparison label font size */
         }
         .comparison-cell {
             width: 35%;
@@ -106,12 +108,33 @@
             padding: 10px;
             border: 1px solid #003366;
             border-radius: 5px;
+            font-size: 18px; /* Increased comparison cell font size */
         }
         .adam-cell {
             background-color: #ffebee;
         }
         .christ-cell {
             background-color: #e8f5e9;
+        }
+        .navigation {
+            position: absolute;
+            bottom: 20px;
+            left: 40px;
+            right: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 18px; /* Increased navigation font size */
+        }
+        .navigation a {
+            color: #007bff;
+            text-decoration: none;
+            padding: 8px 15px; /* Adjusted padding */
+            border: 1px solid #007bff;
+            border-radius: 5px;
+        }
+        .navigation a:hover {
+            background-color: #e6f0ff;
         }
     </style>
 </head>
@@ -131,7 +154,7 @@
                 
                 <div class="bullet-point">• <strong>Transformation:</strong> Through Christ, humanity is transformed and elevated</div>
                 
-                <div class="quote">"The truth is that only in the mystery of the incarnate Word does the mystery of man take on light. For Adam, the first man, was a figure of Him Who was to come, namely Christ the Lord. Christ, the final Adam, by the revelation of the mystery of the Father and His love, fully reveals man to man himself and makes his supreme calling clear."</div>
+                <div class="quote">"The truth is that only in the mystery of the incarnate Word does the mystery of man take on light. For Adam, the first man, was a figure of Him Who was to come, namely Christ the Lord. Christ, the final Adam, by the revelation of the mystery of the Father and His love, fully reveals man to man himself and makes his supreme calling clear." (Gaudium et Spes, 22)</div>
             </div>
             
             <div class="diagram-content">
@@ -179,6 +202,11 @@
         </div>
         
         <div class="footer">Slide 46 of 55</div>
+
+        <div class="navigation">
+            <a href="./slide45.html">&lt; Previous Slide</a>
+            <a href="./slide47.html">Next Slide &gt;</a>
+        </div>
     </div>
 </body>
 </html>

@@ -11,6 +11,7 @@
             background-color: #f5f5f5;
             margin: 0;
             padding: 0;
+            font-size: 18px; /* Increased base font size */
         }
         .slide {
             width: 900px;
@@ -25,7 +26,7 @@
             color: #003366;
             text-align: center;
             margin-bottom: 30px;
-            font-size: 32px;
+            font-size: 36px; /* Increased title font size */
         }
         .content {
             display: flex;
@@ -38,27 +39,47 @@
             width: 50%;
         }
         .bullet-point {
-            margin-bottom: 15px;
-            font-size: 18px;
+            margin-bottom: 18px; /* Adjusted spacing */
+            font-size: 20px; /* Increased bullet point font size */
         }
         .footer {
             position: absolute;
             bottom: 20px;
             right: 20px;
-            font-size: 14px;
+            font-size: 16px; /* Increased footer font size */
             color: #666666;
         }
         .quote {
             background-color: #f0f7ff;
             border-left: 4px solid #003366;
-            padding: 15px;
-            margin: 20px 0;
+            padding: 18px; /* Adjusted padding */
+            margin: 25px 0; /* Adjusted margin */
             font-style: italic;
-            font-size: 16px;
+            font-size: 18px; /* Increased quote font size */
         }
         .chart-container {
             height: 400px;
             width: 100%;
+        }
+        .navigation {
+            position: absolute;
+            bottom: 20px;
+            left: 40px;
+            right: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 18px; /* Increased navigation font size */
+        }
+        .navigation a {
+            color: #007bff;
+            text-decoration: none;
+            padding: 8px 15px; /* Adjusted padding */
+            border: 1px solid #007bff;
+            border-radius: 5px;
+        }
+        .navigation a:hover {
+            background-color: #e6f0ff;
         }
     </style>
 </head>
@@ -89,77 +110,82 @@
         </div>
         
         <div class="footer">Slide 50 of 55</div>
+
+        <div class="navigation">
+            <a href="./slide49.html">&lt; Previous Slide</a>
+            <a href="./slide51.html">Next Slide &gt;</a>
+        </div>
     </div>
     
     <script>
         // Chart showing influence of Gaudium et Spes on subsequent Church documents
-        const ctx = document.getElementById('documentInfluenceChart').getContext('2d');
+        const ctx = document.getElementById("documentInfluenceChart").getContext("2d");
         
         // Create a horizontal bar chart
         const documentInfluenceChart = new Chart(ctx, {
-            type: 'bar',
+            type: "bar",
             data: {
                 labels: [
-                    'Populorum Progressio (1967)',
-                    'Evangelii Nuntiandi (1975)',
-                    'Laborem Exercens (1981)',
-                    'Centesimus Annus (1991)',
-                    'Evangelium Vitae (1995)',
-                    'Deus Caritas Est (2005)',
-                    'Caritas in Veritate (2009)',
-                    'Laudato Si\' (2015)',
-                    'Fratelli Tutti (2020)'
+                    "Populorum Progressio (1967)",
+                    "Evangelii Nuntiandi (1975)",
+                    "Laborem Exercens (1981)",
+                    "Centesimus Annus (1991)",
+                    "Evangelium Vitae (1995)",
+                    "Deus Caritas Est (2005)",
+                    "Caritas in Veritate (2009)",
+                    "Laudato Si\" (2015)",
+                    "Fratelli Tutti (2020)"
                 ],
                 datasets: [{
-                    label: 'Influence of Gaudium et Spes',
+                    label: "Influence of Gaudium et Spes",
                     data: [95, 85, 80, 75, 70, 65, 80, 85, 90],
                     backgroundColor: [
-                        'rgba(0, 51, 102, 0.8)',
-                        'rgba(0, 71, 122, 0.8)',
-                        'rgba(0, 91, 142, 0.8)',
-                        'rgba(0, 111, 162, 0.8)',
-                        'rgba(0, 131, 182, 0.8)',
-                        'rgba(0, 151, 202, 0.8)',
-                        'rgba(0, 171, 222, 0.8)',
-                        'rgba(0, 191, 242, 0.8)',
-                        'rgba(0, 211, 255, 0.8)'
+                        "rgba(0, 51, 102, 0.8)",
+                        "rgba(0, 71, 122, 0.8)",
+                        "rgba(0, 91, 142, 0.8)",
+                        "rgba(0, 111, 162, 0.8)",
+                        "rgba(0, 131, 182, 0.8)",
+                        "rgba(0, 151, 202, 0.8)",
+                        "rgba(0, 171, 222, 0.8)",
+                        "rgba(0, 191, 242, 0.8)",
+                        "rgba(0, 211, 255, 0.8)"
                     ],
                     borderColor: [
-                        'rgba(0, 51, 102, 1)',
-                        'rgba(0, 71, 122, 1)',
-                        'rgba(0, 91, 142, 1)',
-                        'rgba(0, 111, 162, 1)',
-                        'rgba(0, 131, 182, 1)',
-                        'rgba(0, 151, 202, 1)',
-                        'rgba(0, 171, 222, 1)',
-                        'rgba(0, 191, 242, 1)',
-                        'rgba(0, 211, 255, 1)'
+                        "rgba(0, 51, 102, 1)",
+                        "rgba(0, 71, 122, 1)",
+                        "rgba(0, 91, 142, 1)",
+                        "rgba(0, 111, 162, 1)",
+                        "rgba(0, 131, 182, 1)",
+                        "rgba(0, 151, 202, 1)",
+                        "rgba(0, 171, 222, 1)",
+                        "rgba(0, 191, 242, 1)",
+                        "rgba(0, 211, 255, 1)"
                     ],
                     borderWidth: 1
                 }]
             },
             options: {
-                indexAxis: 'y',
+                indexAxis: "y",
                 scales: {
                     x: {
                         beginAtZero: true,
                         max: 100,
                         title: {
                             display: true,
-                            text: 'Degree of Influence'
+                            text: "Degree of Influence"
                         }
                     },
                     y: {
                         title: {
                             display: true,
-                            text: 'Subsequent Church Documents'
+                            text: "Subsequent Church Documents"
                         }
                     }
                 },
                 plugins: {
                     title: {
                         display: true,
-                        text: 'Influence of Gaudium et Spes on Subsequent Church Documents',
+                        text: "Influence of Gaudium et Spes on Subsequent Church Documents",
                         font: {
                             size: 16
                         }
@@ -168,18 +194,18 @@
                         callbacks: {
                             label: function(context) {
                                 const tooltips = {
-                                    'Populorum Progressio (1967)': 'Development of peoples',
-                                    'Evangelii Nuntiandi (1975)': 'Evangelization in the modern world',
-                                    'Laborem Exercens (1981)': 'Human work',
-                                    'Centesimus Annus (1991)': 'Social teaching after communism',
-                                    'Evangelium Vitae (1995)': 'Human life and dignity',
-                                    'Deus Caritas Est (2005)': 'Christian love',
-                                    'Caritas in Veritate (2009)': 'Integral human development',
-                                    'Laudato Si\' (2015)': 'Care for our common home',
-                                    'Fratelli Tutti (2020)': 'Fraternity and social friendship'
+                                    "Populorum Progressio (1967)": "Development of peoples",
+                                    "Evangelii Nuntiandi (1975)": "Evangelization in the modern world",
+                                    "Laborem Exercens (1981)": "Human work",
+                                    "Centesimus Annus (1991)": "Social teaching after communism",
+                                    "Evangelium Vitae (1995)": "Human life and dignity",
+                                    "Deus Caritas Est (2005)": "Christian love",
+                                    "Caritas in Veritate (2009)": "Integral human development",
+                                    "Laudato Si\" (2015)": "Care for our common home",
+                                    "Fratelli Tutti (2020)": "Fraternity and social friendship"
                                 };
                                 
-                                return tooltips[context.label] + ': ' + context.raw + '%';
+                                return tooltips[context.label] + ": " + context.raw + "%";
                             }
                         }
                     }

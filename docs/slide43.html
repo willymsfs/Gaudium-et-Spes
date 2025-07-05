@@ -11,6 +11,7 @@
             background-color: #f5f5f5;
             margin: 0;
             padding: 0;
+            font-size: 18px; /* Increased base font size */
         }
         .slide {
             width: 900px;
@@ -25,7 +26,7 @@
             color: #003366;
             text-align: center;
             margin-bottom: 30px;
-            font-size: 32px;
+            font-size: 36px; /* Increased title font size */
         }
         .content {
             display: flex;
@@ -38,27 +39,47 @@
             width: 50%;
         }
         .bullet-point {
-            margin-bottom: 15px;
-            font-size: 18px;
+            margin-bottom: 18px; /* Adjusted spacing */
+            font-size: 20px; /* Increased bullet point font size */
         }
         .footer {
             position: absolute;
             bottom: 20px;
             right: 20px;
-            font-size: 14px;
+            font-size: 16px; /* Increased footer font size */
             color: #666666;
         }
         .quote {
             background-color: #f0f7ff;
             border-left: 4px solid #003366;
-            padding: 15px;
-            margin: 20px 0;
+            padding: 18px; /* Adjusted padding */
+            margin: 25px 0; /* Adjusted margin */
             font-style: italic;
-            font-size: 16px;
+            font-size: 18px; /* Increased quote font size */
         }
         .chart-container {
             height: 400px;
             width: 100%;
+        }
+        .navigation {
+            position: absolute;
+            bottom: 20px;
+            left: 40px;
+            right: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 18px; /* Increased navigation font size */
+        }
+        .navigation a {
+            color: #007bff;
+            text-decoration: none;
+            padding: 8px 15px; /* Adjusted padding */
+            border: 1px solid #007bff;
+            border-radius: 5px;
+        }
+        .navigation a:hover {
+            background-color: #e6f0ff;
         }
     </style>
 </head>
@@ -78,7 +99,7 @@
                 
                 <div class="bullet-point">• <strong>Education:</strong> Importance of education about responsible parenthood</div>
                 
-                <div class="quote">"Many are deeply worried by the problem of population growth, whether on a world scale or in the poorer nations. They fear that overpopulation will cause a decrease in world resources and a lowering of the standard of living. Hence, in many countries the public authorities have initiated programs to promote a proper regulation of births. The Council realizes that this involves serious difficulties and problems."</div>
+                <div class="quote">"Many are deeply worried by the problem of population growth, whether on a world scale or in the poorer nations. They fear that overpopulation will cause a decrease in world resources and a lowering of the standard of living. Hence, in many countries the public authorities have initiated programs to promote a proper regulation of births. The Council realizes that this involves serious difficulties and problems." (Gaudium et Spes, 87)</div>
             </div>
             
             <div class="chart-content">
@@ -89,56 +110,61 @@
         </div>
         
         <div class="footer">Slide 43 of 55</div>
+
+        <div class="navigation">
+            <a href="./slide42.html">&lt; Previous Slide</a>
+            <a href="./slide44.html">Next Slide &gt;</a>
+        </div>
     </div>
     
     <script>
         // Chart comparing approaches to population issues
-        const ctx = document.getElementById('populationApproachesChart').getContext('2d');
+        const ctx = document.getElementById("populationApproachesChart").getContext("2d");
         
         // Create a horizontal bar chart
         const populationApproachesChart = new Chart(ctx, {
-            type: 'bar',
+            type: "bar",
             data: {
                 labels: [
-                    'Coercive Population Control',
-                    'Contraceptive-Only Approach',
-                    'Development-Only Approach',
-                    'Catholic Integral Approach'
+                    "Coercive Population Control",
+                    "Contraceptive-Only Approach",
+                    "Development-Only Approach",
+                    "Catholic Integral Approach"
                 ],
                 datasets: [
                     {
-                        label: 'Human Dignity',
+                        label: "Human Dignity",
                         data: [10, 50, 70, 95],
-                        backgroundColor: 'rgba(0, 51, 102, 0.8)',
+                        backgroundColor: "rgba(0, 51, 102, 0.8)",
                     },
                     {
-                        label: 'Effectiveness',
+                        label: "Effectiveness",
                         data: [60, 65, 75, 85],
-                        backgroundColor: 'rgba(0, 131, 182, 0.8)',
+                        backgroundColor: "rgba(0, 131, 182, 0.8)",
                     },
                     {
-                        label: 'Moral Acceptability',
+                        label: "Moral Acceptability",
                         data: [5, 30, 80, 95],
-                        backgroundColor: 'rgba(0, 180, 216, 0.8)',
+                        backgroundColor: "rgba(0, 180, 216, 0.8)",
                     }
                 ]
             },
             options: {
-                indexAxis: 'y',
+                indexAxis: "y",
                 scales: {
                     x: {
                         beginAtZero: true,
                         max: 100,
                         title: {
                             display: true,
-                            text: 'Rating (0-100)'
+                            text: "Rating (0-100)"
                         },
                         stacked: false
                     },
                     y: {
                         title: {
                             display: true,
-                            text: 'Approaches'
+                            text: "Approaches"
                         },
                         stacked: false
                     }
@@ -146,7 +172,7 @@
                 plugins: {
                     title: {
                         display: true,
-                        text: 'Comparing Approaches to Population Issues',
+                        text: "Comparing Approaches to Population Issues",
                         font: {
                             size: 16
                         }
@@ -154,14 +180,14 @@
                     tooltip: {
                         callbacks: {
                             label: function(context) {
-                                const label = context.dataset.label || '';
+                                const label = context.dataset.label || "";
                                 const value = context.raw || 0;
-                                return label + ': ' + value + '/100';
+                                return label + ": " + value + "/100";
                             }
                         }
                     },
                     legend: {
-                        position: 'bottom'
+                        position: "bottom"
                     }
                 },
                 maintainAspectRatio: false

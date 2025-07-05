@@ -11,6 +11,7 @@
             background-color: #f5f5f5;
             margin: 0;
             padding: 0;
+            font-size: 18px; /* Increased base font size */
         }
         .slide {
             width: 900px;
@@ -25,7 +26,7 @@
             color: #003366;
             text-align: center;
             margin-bottom: 30px;
-            font-size: 32px;
+            font-size: 36px; /* Increased title font size */
         }
         .content {
             display: flex;
@@ -38,27 +39,47 @@
             width: 50%;
         }
         .bullet-point {
-            margin-bottom: 15px;
-            font-size: 18px;
+            margin-bottom: 18px; /* Adjusted spacing */
+            font-size: 20px; /* Increased bullet point font size */
         }
         .footer {
             position: absolute;
             bottom: 20px;
             right: 20px;
-            font-size: 14px;
+            font-size: 16px; /* Increased footer font size */
             color: #666666;
         }
         .quote {
             background-color: #f0f7ff;
             border-left: 4px solid #003366;
-            padding: 15px;
-            margin: 20px 0;
+            padding: 18px; /* Adjusted padding */
+            margin: 25px 0; /* Adjusted margin */
             font-style: italic;
-            font-size: 16px;
+            font-size: 18px; /* Increased quote font size */
         }
         .chart-container {
             height: 400px;
             width: 100%;
+        }
+        .navigation {
+            position: absolute;
+            bottom: 20px;
+            left: 40px;
+            right: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 18px; /* Increased navigation font size */
+        }
+        .navigation a {
+            color: #007bff;
+            text-decoration: none;
+            padding: 8px 15px; /* Adjusted padding */
+            border: 1px solid #007bff;
+            border-radius: 5px;
+        }
+        .navigation a:hover {
+            background-color: #e6f0ff;
         }
     </style>
 </head>
@@ -78,7 +99,7 @@
                 
                 <div class="bullet-point">• <strong>Polarization:</strong> Model for dialogue in a divided world</div>
                 
-                <div class="quote">"The Church has always had the duty of scrutinizing the signs of the times and of interpreting them in the light of the Gospel. Thus, in language intelligible to each generation, she can respond to the perennial questions which men ask about this present life and the life to come, and about the relationship of the one to the other."</div>
+                <div class="quote">"The Church has always had the duty of scrutinizing the signs of the times and of interpreting them in the light of the Gospel. Thus, in language intelligible to each generation, she can respond to the perennial questions which men ask about this present life and the life to come, and about the relationship of the one to the other." (Gaudium et Spes, 4)</div>
             </div>
             
             <div class="chart-content">
@@ -89,34 +110,39 @@
         </div>
         
         <div class="footer">Slide 52 of 55</div>
+
+        <div class="navigation">
+            <a href="./slide51.html">&lt; Previous Slide</a>
+            <a href="./slide53.html">Next Slide &gt;</a>
+        </div>
     </div>
     
     <script>
         // Chart showing contemporary relevance of Gaudium et Spes
-        const ctx = document.getElementById('relevanceChart').getContext('2d');
+        const ctx = document.getElementById("relevanceChart").getContext("2d");
         
         // Create a radar chart
         const relevanceChart = new Chart(ctx, {
-            type: 'radar',
+            type: "radar",
             data: {
                 labels: [
-                    'Digital Ethics',
-                    'Environmental Crisis',
-                    'Global Inequality',
-                    'Religious Pluralism',
-                    'Bioethical Questions',
-                    'Political Polarization',
-                    'Cultural Fragmentation'
+                    "Digital Ethics",
+                    "Environmental Crisis",
+                    "Global Inequality",
+                    "Religious Pluralism",
+                    "Bioethical Questions",
+                    "Political Polarization",
+                    "Cultural Fragmentation"
                 ],
                 datasets: [{
-                    label: 'Relevance of Gaudium et Spes Principles',
+                    label: "Relevance of Gaudium et Spes Principles",
                     data: [85, 90, 95, 80, 85, 90, 85],
-                    backgroundColor: 'rgba(0, 51, 102, 0.2)',
-                    borderColor: 'rgba(0, 51, 102, 0.8)',
-                    pointBackgroundColor: 'rgba(0, 51, 102, 1)',
-                    pointBorderColor: '#fff',
-                    pointHoverBackgroundColor: '#fff',
-                    pointHoverBorderColor: 'rgba(0, 51, 102, 1)'
+                    backgroundColor: "rgba(0, 51, 102, 0.2)",
+                    borderColor: "rgba(0, 51, 102, 0.8)",
+                    pointBackgroundColor: "rgba(0, 51, 102, 1)",
+                    pointBorderColor: "#fff",
+                    pointHoverBackgroundColor: "#fff",
+                    pointHoverBorderColor: "rgba(0, 51, 102, 1)"
                 }]
             },
             options: {
@@ -132,7 +158,7 @@
                 plugins: {
                     title: {
                         display: true,
-                        text: 'Relevance of Gaudium et Spes to Contemporary Issues',
+                        text: "Relevance of Gaudium et Spes to Contemporary Issues",
                         font: {
                             size: 16
                         }
@@ -141,16 +167,16 @@
                         callbacks: {
                             label: function(context) {
                                 const tooltips = {
-                                    'Digital Ethics': 'Human dignity in virtual spaces; digital divide; AI ethics',
-                                    'Environmental Crisis': 'Stewardship of creation; integral ecology; climate justice',
-                                    'Global Inequality': 'Economic justice; development; solidarity with the poor',
-                                    'Religious Pluralism': 'Interreligious dialogue; religious freedom; common values',
-                                    'Bioethical Questions': 'Human dignity; beginning and end of life; genetic technologies',
-                                    'Political Polarization': 'Common good; dialogue across differences; truth in love',
-                                    'Cultural Fragmentation': 'Unity in diversity; inculturation; shared humanity'
+                                    "Digital Ethics": "Human dignity in virtual spaces; digital divide; AI ethics",
+                                    "Environmental Crisis": "Stewardship of creation; integral ecology; climate justice",
+                                    "Global Inequality": "Economic justice; development; solidarity with the poor",
+                                    "Religious Pluralism": "Interreligious dialogue; religious freedom; common values",
+                                    "Bioethical Questions": "Human dignity; beginning and end of life; genetic technologies",
+                                    "Political Polarization": "Common good; dialogue across differences; truth in love",
+                                    "Cultural Fragmentation": "Unity in diversity; inculturation; shared humanity"
                                 };
                                 
-                                return tooltips[context.label] + ': ' + context.raw + '%';
+                                return tooltips[context.label] + ": " + context.raw + "%";
                             }
                         }
                     }

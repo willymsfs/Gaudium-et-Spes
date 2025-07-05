@@ -57,6 +57,26 @@
             height: 400px;
             width: 100%;
         }
+        .navigation {
+            position: absolute;
+            bottom: 20px;
+            left: 40px;
+            right: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 16px;
+        }
+        .navigation a {
+            color: #007bff;
+            text-decoration: none;
+            padding: 5px 10px;
+            border: 1px solid #007bff;
+            border-radius: 5px;
+        }
+        .navigation a:hover {
+            background-color: #e6f0ff;
+        }
     </style>
 </head>
 <body>
@@ -67,13 +87,13 @@
             <div class="text-content">
                 <div class="bullet-point">• <strong>Timeline:</strong> Second Vatican Council (1962-1965)</div>
                 
-                <div class="bullet-point">• <strong>Pope John XXIII's Vision:</strong> "Aggiornamento" - updating the Church to address modern world</div>
+                <div class="bullet-point">• <strong>Pope John XXIII\"s Vision:</strong> \"Aggiornamento\" - updating the Church to address modern world</div>
                 
                 <div class="bullet-point">• <strong>Gaudium et Spes:</strong> Final document of the Council, promulgated by Pope Paul VI on December 7, 1965</div>
                 
                 <div class="bullet-point">• <strong>Significance:</strong> First time Church addressed all humanity, not just Catholics</div>
                 
-                <div class="bullet-point">• <strong>Example:</strong> Previous encyclicals addressed "Venerable Brethren" while Gaudium et Spes addresses "the whole human family"</div>
+                <div class="bullet-point">• <strong>Example:</strong> Previous encyclicals addressed \"Venerable Brethren\" while Gaudium et Spes addresses \"the whole human family\"</div>
             </div>
             
             <div class="chart-content">
@@ -84,41 +104,46 @@
         </div>
         
         <div class="footer">Slide 2 of 55</div>
+
+        <div class="navigation">
+            <a href="./slide01.html">&lt; Previous Slide</a>
+            <a href="./slide03.html">Next Slide &gt;</a>
+        </div>
     </div>
     
     <script>
         // Timeline chart for Vatican II
-        const ctx = document.getElementById('timelineChart').getContext('2d');
+        const ctx = document.getElementById("timelineChart").getContext("2d");
         const timelineChart = new Chart(ctx, {
-            type: 'bar',
+            type: "bar",
             data: {
-                labels: ['Announcement (1959)', 'Preparation (1960-62)', 'Session 1 (1962)', 'Session 2 (1963)', 'Session 3 (1964)', 'Session 4 (1965)', 'Gaudium et Spes (Dec 7, 1965)'],
+                labels: ["Announcement (1959)", "Preparation (1960-62)", "Session 1 (1962)", "Session 2 (1963)", "Session 3 (1964)", "Session 4 (1965)", "Gaudium et Spes (Dec 7, 1965)"],
                 datasets: [{
-                    label: 'Vatican II Timeline',
+                    label: "Vatican II Timeline",
                     data: [1, 2, 1, 1, 1, 1, 1.5],
                     backgroundColor: [
-                        '#8da9c4',
-                        '#8da9c4',
-                        '#8da9c4',
-                        '#8da9c4',
-                        '#8da9c4',
-                        '#8da9c4',
-                        '#134074'
+                        "#8da9c4",
+                        "#8da9c4",
+                        "#8da9c4",
+                        "#8da9c4",
+                        "#8da9c4",
+                        "#8da9c4",
+                        "#134074"
                     ],
                     borderColor: [
-                        '#134074',
-                        '#134074',
-                        '#134074',
-                        '#134074',
-                        '#134074',
-                        '#134074',
-                        '#134074'
+                        "#134074",
+                        "#134074",
+                        "#134074",
+                        "#134074",
+                        "#134074",
+                        "#134074",
+                        "#134074"
                     ],
                     borderWidth: 1
                 }]
             },
             options: {
-                indexAxis: 'y',
+                indexAxis: "y",
                 scales: {
                     x: {
                         beginAtZero: true,
@@ -131,7 +156,7 @@
                     },
                     title: {
                         display: true,
-                        text: 'Vatican II Timeline',
+                        text: "Vatican II Timeline",
                         font: {
                             size: 18
                         }

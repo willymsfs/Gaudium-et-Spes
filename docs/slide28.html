@@ -10,6 +10,7 @@
             background-color: #f5f5f5;
             margin: 0;
             padding: 0;
+            font-size: 18px; /* Increased base font size */
         }
         .slide {
             width: 900px;
@@ -24,7 +25,7 @@
             color: #003366;
             text-align: center;
             margin-bottom: 30px;
-            font-size: 32px;
+            font-size: 36px; /* Increased title font size */
         }
         .content {
             display: flex;
@@ -37,23 +38,23 @@
             width: 50%;
         }
         .bullet-point {
-            margin-bottom: 15px;
-            font-size: 18px;
+            margin-bottom: 18px; /* Adjusted spacing */
+            font-size: 20px; /* Increased bullet point font size */
         }
         .footer {
             position: absolute;
             bottom: 20px;
             right: 20px;
-            font-size: 14px;
+            font-size: 16px; /* Increased footer font size */
             color: #666666;
         }
         .quote {
             background-color: #f0f7ff;
             border-left: 4px solid #003366;
-            padding: 15px;
-            margin: 20px 0;
+            padding: 18px; /* Adjusted padding */
+            margin: 25px 0; /* Adjusted margin */
             font-style: italic;
-            font-size: 16px;
+            font-size: 18px; /* Increased quote font size */
         }
         .diagram {
             border: 2px solid #003366;
@@ -66,7 +67,7 @@
             font-weight: bold;
             color: #003366;
             margin-bottom: 20px;
-            font-size: 18px;
+            font-size: 22px; /* Increased diagram title font size */
         }
         .hope-diagram {
             display: flex;
@@ -86,6 +87,7 @@
             font-weight: bold;
             margin-bottom: 30px;
             padding: 10px;
+            font-size: 20px; /* Increased circle font size */
         }
         .hope-arrows {
             display: flex;
@@ -100,14 +102,35 @@
             font-weight: bold;
             color: #003366;
             margin-bottom: 10px;
+            font-size: 18px; /* Increased arrow title font size */
         }
         .arrow-content {
-            font-size: 14px;
+            font-size: 16px; /* Increased arrow content font size */
             margin-bottom: 10px;
         }
         .arrow-symbol {
-            font-size: 24px;
+            font-size: 28px; /* Increased arrow symbol font size */
             color: #003366;
+        }
+        .navigation {
+            position: absolute;
+            bottom: 20px;
+            left: 40px;
+            right: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 18px; /* Increased navigation font size */
+        }
+        .navigation a {
+            color: #007bff;
+            text-decoration: none;
+            padding: 8px 15px; /* Adjusted padding */
+            border: 1px solid #007bff;
+            border-radius: 5px;
+        }
+        .navigation a:hover {
+            background-color: #e6f0ff;
         }
     </style>
 </head>
@@ -117,7 +140,7 @@
         
         <div class="content">
             <div class="text-content">
-                <div class="bullet-point">• <strong>Witness of Hope:</strong> "The Church is called to be a sign of hope to the world, and to bear witness to the love of God"</div>
+                <div class="bullet-point">• <strong>Witness of Hope:</strong> "The Church is called to be a sign of hope to the world, and to bear witness to the love of God" (Gaudium et Spes, 4)</div>
                 
                 <div class="bullet-point">• <strong>Eschatological Vision:</strong> Points to the ultimate fulfillment of God's promises</div>
                 
@@ -127,7 +150,7 @@
                 
                 <div class="bullet-point">• <strong>Practical Hope:</strong> Demonstrated through concrete actions for justice and peace</div>
                 
-                <div class="quote">"The Church firmly believes that Christ, who died and was raised up for all, can through His Spirit offer man the light and the strength to measure up to his supreme destiny... She likewise holds that in her most benign Lord and Master can be found the key, the focal point and the goal of man, as well as of all human history."</div>
+                <div class="quote">"The Church firmly believes that Christ, who died and was raised up for all, can through His Spirit offer man the light and the strength to measure up to his supreme destiny... She likewise holds that in her most benign Lord and Master can be found the key, the focal point and the goal of man, as well as of all human history." (Gaudium et Spes, 10)</div>
             </div>
             
             <div class="diagram-content">
@@ -160,20 +183,20 @@
                         <div style="margin-top: 30px; width: 100%;">
                             <table style="width: 100%; border-collapse: collapse;">
                                 <tr>
-                                    <th style="border: 1px solid #003366; padding: 8px; background-color: #e6f0ff; color: #003366;">Without Hope</th>
-                                    <th style="border: 1px solid #003366; padding: 8px; background-color: #e6f0ff; color: #003366;">With Christian Hope</th>
+                                    <th style="border: 1px solid #003366; padding: 8px; background-color: #e6f0ff; color: #003366; font-size: 18px;">Without Hope</th>
+                                    <th style="border: 1px solid #003366; padding: 8px; background-color: #e6f0ff; color: #003366; font-size: 18px;">With Christian Hope</th>
                                 </tr>
                                 <tr>
-                                    <td style="border: 1px solid #003366; padding: 8px;">Despair in suffering</td>
-                                    <td style="border: 1px solid #003366; padding: 8px;">Finding meaning in suffering</td>
+                                    <td style="border: 1px solid #003366; padding: 8px; font-size: 16px;">Despair in suffering</td>
+                                    <td style="border: 1px solid #003366; padding: 8px; font-size: 16px;">Finding meaning in suffering</td>
                                 </tr>
                                 <tr>
-                                    <td style="border: 1px solid #003366; padding: 8px;">Cynicism about change</td>
-                                    <td style="border: 1px solid #003366; padding: 8px;">Persistent work for justice</td>
+                                    <td style="border: 1px solid #003366; padding: 8px; font-size: 16px;">Cynicism about change</td>
+                                    <td style="border: 1px solid #003366; padding: 8px; font-size: 16px;">Persistent work for justice</td>
                                 </tr>
                                 <tr>
-                                    <td style="border: 1px solid #003366; padding: 8px;">Materialism as ultimate goal</td>
-                                    <td style="border: 1px solid #003366; padding: 8px;">Transcendent purpose</td>
+                                    <td style="border: 1px solid #003366; padding: 8px; font-size: 16px;">Materialism as ultimate goal</td>
+                                    <td style="border: 1px solid #003366; padding: 8px; font-size: 16px;">Transcendent purpose</td>
                                 </tr>
                             </table>
                         </div>
@@ -183,6 +206,11 @@
         </div>
         
         <div class="footer">Slide 28 of 55</div>
+
+        <div class="navigation">
+            <a href="./slide27.html">&lt; Previous Slide</a>
+            <a href="./slide29.html">Next Slide &gt;</a>
+        </div>
     </div>
 </body>
 </html>

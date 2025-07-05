@@ -11,6 +11,7 @@
             background-color: #f5f5f5;
             margin: 0;
             padding: 0;
+            font-size: 18px; /* Increased base font size */
         }
         .slide {
             width: 900px;
@@ -25,7 +26,7 @@
             color: #003366;
             text-align: center;
             margin-bottom: 30px;
-            font-size: 32px;
+            font-size: 36px; /* Increased title font size */
         }
         .content {
             display: flex;
@@ -38,27 +39,47 @@
             width: 50%;
         }
         .bullet-point {
-            margin-bottom: 15px;
-            font-size: 18px;
+            margin-bottom: 18px; /* Adjusted spacing */
+            font-size: 20px; /* Increased bullet point font size */
         }
         .footer {
             position: absolute;
             bottom: 20px;
             right: 20px;
-            font-size: 14px;
+            font-size: 16px; /* Increased footer font size */
             color: #666666;
         }
         .quote {
             background-color: #f0f7ff;
             border-left: 4px solid #003366;
-            padding: 15px;
-            margin: 20px 0;
+            padding: 18px; /* Adjusted padding */
+            margin: 25px 0; /* Adjusted margin */
             font-style: italic;
-            font-size: 16px;
+            font-size: 18px; /* Increased quote font size */
         }
         .chart-container {
             height: 400px;
             width: 100%;
+        }
+        .navigation {
+            position: absolute;
+            bottom: 20px;
+            left: 40px;
+            right: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 18px; /* Increased navigation font size */
+        }
+        .navigation a {
+            color: #007bff;
+            text-decoration: none;
+            padding: 8px 15px; /* Adjusted padding */
+            border: 1px solid #007bff;
+            border-radius: 5px;
+        }
+        .navigation a:hover {
+            background-color: #e6f0ff;
         }
     </style>
 </head>
@@ -68,7 +89,7 @@
         
         <div class="content">
             <div class="text-content">
-                <div class="bullet-point">• <strong>Common Good:</strong> "The political community exists for the common good, and not for the benefit of any individual or group"</div>
+                <div class="bullet-point">• <strong>Common Good:</strong> "The political community exists for the common good, and not for the benefit of any individual or group" (Gaudium et Spes, 74)</div>
                 
                 <div class="bullet-point">• <strong>Human Rights:</strong> Political authority must respect and protect fundamental human rights</div>
                 
@@ -78,7 +99,7 @@
                 
                 <div class="bullet-point">• <strong>Moral Order:</strong> Political authority is bound by the moral order established by God</div>
                 
-                <div class="quote">"The political community exists for the common good: this is its full justification and meaning and the source of its specific and basic right to exist. The common good embraces the sum of those conditions of social life by which individuals, families, and groups can achieve their own fulfillment in a relatively thorough and ready way."</div>
+                <div class="quote">"The political community exists for the common good: this is its full justification and meaning and the source of its specific and basic right to exist. The common good embraces the sum of those conditions of social life by which individuals, families, and groups can achieve their own fulfillment in a relatively thorough and ready way." (Gaudium et Spes, 74)</div>
             </div>
             
             <div class="chart-content">
@@ -89,71 +110,76 @@
         </div>
         
         <div class="footer">Slide 38 of 55</div>
+
+        <div class="navigation">
+            <a href="./slide37.html">&lt; Previous Slide</a>
+            <a href="./slide39.html">Next Slide &gt;</a>
+        </div>
     </div>
     
     <script>
         // Chart showing Catholic principles for political life
-        const ctx = document.getElementById('politicalPrinciplesChart').getContext('2d');
+        const ctx = document.getElementById("politicalPrinciplesChart").getContext("2d");
         
         // Create a horizontal bar chart
         const politicalPrinciplesChart = new Chart(ctx, {
-            type: 'bar',
+            type: "bar",
             data: {
                 labels: [
-                    'Human Dignity',
-                    'Common Good',
-                    'Subsidiarity',
-                    'Participation',
-                    'Solidarity',
-                    'Religious Freedom',
-                    'Rule of Law'
+                    "Human Dignity",
+                    "Common Good",
+                    "Subsidiarity",
+                    "Participation",
+                    "Solidarity",
+                    "Religious Freedom",
+                    "Rule of Law"
                 ],
                 datasets: [{
-                    label: 'Catholic Principles for Political Life',
+                    label: "Catholic Principles for Political Life",
                     data: [100, 95, 85, 80, 75, 90, 70],
                     backgroundColor: [
-                        'rgba(0, 51, 102, 0.8)',
-                        'rgba(0, 71, 122, 0.8)',
-                        'rgba(0, 91, 142, 0.8)',
-                        'rgba(0, 111, 162, 0.8)',
-                        'rgba(0, 131, 182, 0.8)',
-                        'rgba(0, 151, 202, 0.8)',
-                        'rgba(0, 171, 222, 0.8)'
+                        "rgba(0, 51, 102, 0.8)",
+                        "rgba(0, 71, 122, 0.8)",
+                        "rgba(0, 91, 142, 0.8)",
+                        "rgba(0, 111, 162, 0.8)",
+                        "rgba(0, 131, 182, 0.8)",
+                        "rgba(0, 151, 202, 0.8)",
+                        "rgba(0, 171, 222, 0.8)"
                     ],
                     borderColor: [
-                        'rgba(0, 51, 102, 1)',
-                        'rgba(0, 71, 122, 1)',
-                        'rgba(0, 91, 142, 1)',
-                        'rgba(0, 111, 162, 1)',
-                        'rgba(0, 131, 182, 1)',
-                        'rgba(0, 151, 202, 1)',
-                        'rgba(0, 171, 222, 1)'
+                        "rgba(0, 51, 102, 1)",
+                        "rgba(0, 71, 122, 1)",
+                        "rgba(0, 91, 142, 1)",
+                        "rgba(0, 111, 162, 1)",
+                        "rgba(0, 131, 182, 1)",
+                        "rgba(0, 151, 202, 1)",
+                        "rgba(0, 171, 222, 1)"
                     ],
                     borderWidth: 1
                 }]
             },
             options: {
-                indexAxis: 'y',
+                indexAxis: "y",
                 scales: {
                     x: {
                         beginAtZero: true,
                         max: 100,
                         title: {
                             display: true,
-                            text: 'Emphasis in Gaudium et Spes'
+                            text: "Emphasis in Gaudium et Spes"
                         }
                     },
                     y: {
                         title: {
                             display: true,
-                            text: 'Political Principles'
+                            text: "Political Principles"
                         }
                     }
                 },
                 plugins: {
                     title: {
                         display: true,
-                        text: 'Catholic Principles for Political Life',
+                        text: "Catholic Principles for Political Life",
                         font: {
                             size: 16
                         }
@@ -162,16 +188,16 @@
                         callbacks: {
                             label: function(context) {
                                 const tooltips = {
-                                    'Human Dignity': 'Respect for the inherent worth of every person',
-                                    'Common Good': 'Social conditions that allow people to reach fulfillment',
-                                    'Subsidiarity': 'Issues handled by smallest, lowest competent authority',
-                                    'Participation': 'Right and duty to seek common good through political involvement',
-                                    'Solidarity': 'Commitment to the good of all, especially the vulnerable',
-                                    'Religious Freedom': 'Right to religious belief and practice without coercion',
-                                    'Rule of Law': 'Governance through just laws rather than arbitrary power'
+                                    "Human Dignity": "Respect for the inherent worth of every person",
+                                    "Common Good": "Social conditions that allow people to reach fulfillment",
+                                    "Subsidiarity": "Issues handled by smallest, lowest competent authority",
+                                    "Participation": "Right and duty to seek common good through political involvement",
+                                    "Solidarity": "Commitment to the good of all, especially the vulnerable",
+                                    "Religious Freedom": "Right to religious belief and practice without coercion",
+                                    "Rule of Law": "Governance through just laws rather than arbitrary power"
                                 };
                                 
-                                return tooltips[context.label] + ': ' + context.raw + '%';
+                                return tooltips[context.label] + ": " + context.raw + "%";
                             }
                         }
                     }
