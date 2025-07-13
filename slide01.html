@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaudium et Spes: Seminar Overview</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', 'Roboto', Arial, sans-serif; background-color: #f0f2f5; min-height: 100vh; display: flex; justify-content: center; align-items: center; }
+        .slide { aspect-ratio: 16 / 9; width: 90vw; max-width: 1280px; margin: 5vw 5vh; background-color: white; box-shadow: 0 4px 12px rgba(0,0,0,0.15); border-radius: 8px; padding: 40px 60px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+        .slide h1 { color: #003366; font-size: clamp(28px, 3vw, 35px); margin-bottom: 10px; }
+        .slide p, .slide li { color: #333; font-size: clamp(18px, 2.0vw, 27px); max-width: 90%; line-height: 1.5; }
+        .sub-heading { font-weight: bold; margin-top: 30px; margin-bottom: 15px; }
+        .slide ul { list-style-position: inside; text-align: left; width: 100%; max-width: 85%; }
+        .slide li { margin-bottom: 15px; }
+        .slide .footer { position: absolute; bottom: -100px; text-align: center; width: 100%; }
+        .icon-re { position: fixed; top: 50%; width: 100%; transform: translateY(-50%); display: flex; justify-content: space-between; pointer-events: none; z-index: 10; }
+        .icon-re a { pointer-events: auto; padding: 20px; }
+        .icon-re img { width: 40px; opacity: 0.6; transition: opacity 0.2s; }
+        .icon-re a:hover img { opacity: 1; }
+            .navigation-top {
+            position: fixed;
+            top: 20px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            pointer-events: none;
+            z-index: 1000;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+        .navigation-top a {
+            pointer-events: auto;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+        .navigation-top a:hover {
+            background-color: white;
+            transform: scale(1.1);
+        }
+        .navigation-top img {
+            width: 30px;
+            height: 30px;
+            opacity: 0.8;
+            transition: opacity 0.2s;
+        }
+        .navigation-top a:hover img {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="navigation-top">
+        <div class="nav-left"><a href="index.html"><img src="img/left.png" alt="Previous Slide"></a></div>
+        <div class="nav-right"><a href="slide02.html"><img src="img/right.png" alt="Next Slide"></a></div>
+    </div>
+    
+        <div class="right"><a href="slide02.html"><img src="img/right.png" alt="Next Slide"></a></div>
+    </div>
+    <div class="slide">
+        <h1>Gaudium et Spes: The Church in the Modern World</h1>
+        <p>A Pastoral Constitution of the Second Vatican Council</p>
+        <p class="sub-heading">Session's Overview</p>
+        <ul>
+            <li><strong>Document Structure:</strong> Preface, Introduction, Two Main Parts, Conclusion</li>
+            <li><strong>Key Themes:</strong> Human Dignity & Community (emphasizing the inherent worth of every person and the social nature of humanity.), Church's Role (moving beyond an inward-looking focus to an outward-looking engagement with the world.), Contemporary Issues</li>
+            <li><strong>Learning Objectives:</strong> Understand historical context, grasp theological principles, apply to contemporary ministry</li>
+            <li><strong>Approach:</strong> Analysis of each section with applications</li>
+        </ul>
+        <div class="footer"><strong>Slide 1 of 55 </strong></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call for a New Humanism</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', 'Roboto', Arial, sans-serif; background-color: #f0f2f5; min-height: 100vh; display: flex; justify-content: center; align-items: center; }
+        .slide { aspect-ratio: 16 / 9; width: 90vw; max-width: 1280px; margin: 5vw 5vh; background-color: white; box-shadow: 0 4px 12px rgba(0,0,0,0.15); border-radius: 8px; padding: 40px 60px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; position: relative; }
+        .slide h1 { color: #003366; font-size: clamp(28px, 3vw, 35px); margin-bottom: 10px; }
+        .slide p, .slide li, .slide .footer { color: #333; font-size: clamp(18px, 2.0vw, 27px); max-width: 90%; line-height: 1.5; }
+        .sub-heading { font-weight: bold; margin-top: 20px; margin-bottom: 15px; }
+        .slide ul { list-style-position: inside; text-align: left; width: 100%; max-width: 85%; margin: 20px 0; }
+        .slide li { margin-bottom: 15px; }
+        .slide .quote-box { background-color: #f0f7ff; border-left: 4px solid #003366; padding: 20px; margin: 20px 0; font-size: clamp(18px, 2.0vw, 27px); font-style: italic; width: 100%; max-width: 85%; }
+        .slide .example-box { background-color: #f0fff4; border: 1px solid #00b4d8; border-radius: 5px; padding: 15px; margin: 20px 0; width: 100%; max-width: 85%; }
+        .slide .comparison { width: 100%; max-width: 85%; min-height: 400px; display: flex; justify-content: space-between; margin: 20px 0; }
+        .slide .comparison-column { width: 48%; border: 1px solid #003366; border-radius: 5px; padding: 15px; background-color: #e6f0ff; }
+        .slide .comparison-item { font-size: 18px; margin-bottom: 10px; line-height: 1.4; }
+        .slide .footer { position: absolute; bottom: 20px; text-align: center; width: 100%; }
+        .icon-re { position: fixed; top: 50%; width: 100%; transform: translateY(-50%); display: flex; justify-content: space-between; pointer-events: none; z-index: 10; }
+        .icon-re a { pointer-events: auto; padding: 20px; }
+        .icon-re img { width: 40px; opacity: 0.6; transition: opacity 0.2s; }
+        .icon-re a:hover img { opacity: 1; }
+            .navigation-top {
+            position: fixed;
+            top: 20px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            pointer-events: none;
+            z-index: 1000;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+        .navigation-top a {
+            pointer-events: auto;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+        .navigation-top a:hover {
+            background-color: white;
+            transform: scale(1.1);
+        }
+        .navigation-top img {
+            width: 30px;
+            height: 30px;
+            opacity: 0.8;
+            transition: opacity 0.2s;
+        }
+        .navigation-top a:hover img {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="navigation-top">
+        <div class="nav-left"><a href="slide11.html"><img src="img/left.png" alt="Previous Slide"></a></div>
+        <div class="nav-right"><a href="slide13.html"><img src="img/right.png" alt="Next Slide"></a></div>
+    </div>
+    
+        <div class="right"><a href="slide13.html"><img src="img/right.png" alt="Next Slide"></a></div>
+    </div>
+    <div class="slide">
+        <h1>Call for a New Humanism</h1>
+        <div class="quote-box">
+            "A new series of problems arises, calling for a new humanism, where man is defined by his responsibility to his brothers and to history."
+        </div>
+        <ul>
+            <li><strong>Responsibility-Centered:</strong> Human identity defined by responsibility rather than autonomy alone.</li>
+            <li><strong>Relational Focus:</strong> Emphasizes relationships with others ("brothers") and with history.</li>
+            <li><strong>Attitudinal Change:</strong> "This calls for a profound change of attitudes."</li>
+            <li><strong>Renewed Responsibility:</strong> Need for "a renewed sense of responsibility on the part of all."</li>
+        </ul>
+        <div class="example-box">
+            <p class="sub-heading">Contemporary Expression</p>
+            <p>Pope Francis's concept of "integral ecology" in <em>Laudato Si'</em> (2015) exemplifies this new humanism by emphasizing interconnectedness between environmental, social, economic, and cultural systems, and calling for responsibility toward future generations.</p>
+        </div>
+        <div class="comparison">
+            <div class="comparison-column">
+                <p class="sub-heading">Traditional Humanism</p>
+                <div class="comparison-item">Focus on individual autonomy</div>
+                <div class="comparison-item">Emphasis on rights and freedoms</div>
+                <div class="comparison-item">Often secular in orientation</div>
+                <div class="comparison-item">Progress through technological mastery</div>
+                <div class="comparison-item">Human-centered worldview</div>
+            </div>
+            <div class="comparison-column">
+                <p class="sub-heading">New Humanism of Gaudium et Spes</p>
+                <div class="comparison-item">Focus on responsibility and solidarity</div>
+                <div class="comparison-item">Balance of rights and duties</div>
+                <div class="comparison-item">Open to transcendent dimension</div>
+                <div class="comparison-item">Progress through ethical development</div>
+                <div class="comparison-item">God-centered yet fully human worldview</div>
+            </div>
+        </div>
+        <div class="footer">Slide 12 of 55</div>
+    </div>
+</body>
+</html>

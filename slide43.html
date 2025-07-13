@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Population Growth</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .slide {
+            width: 900px;
+            height: 600px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 40px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start; /* Ensure content starts at the top */
+            min-height: 100%; /* Ensure full height is used */
+        }
+        .title {
+            color: #003366;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 35px;
+        }
+        .content {
+            display: flex;
+            justify-content: space-between;
+            flex-grow: 1; /* Allow content to expand and fill space */
+        }
+        .text-content {
+            width: 45%;
+        }
+        .chart-content {
+            width: 50%;
+        }
+        .bullet-point {
+            margin-bottom: 15px;
+            font-size: 27px;
+        }
+        .footer {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            font-size: 27px;
+            color: #666666;
+        }
+        .quote {
+            background-color: #f0f7ff;
+            border-left: 4px solid #003366;
+            padding: 15px;
+            margin: 20px 0;
+            font-style: italic;
+            font-size: 27px;
+        }
+        .chart-container {
+            height: 400px;
+            width: 100%;
+        }
+        .icon-re {
+            position: absolute;
+            top: 20px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 20px;
+            box-sizing: border-box;
+            z-index: 1000; /* Ensure it stays above other content */
+        }
+        .icon-re img {
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+        }
+            .navigation-top {
+            position: fixed;
+            top: 20px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            pointer-events: none;
+            z-index: 1000;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+        .navigation-top a {
+            pointer-events: auto;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+        .navigation-top a:hover {
+            background-color: white;
+            transform: scale(1.1);
+        }
+        .navigation-top img {
+            width: 30px;
+            height: 30px;
+            opacity: 0.8;
+            transition: opacity 0.2s;
+        }
+        .navigation-top a:hover img {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="navigation-top">
+        <div class="nav-left"><a href="slide42.html"><img src="img/left.png" alt="Previous Slide"></a></div>
+        <div class="nav-right"><a href="slide44.html"><img src="img/right.png" alt="Next Slide"></a></div>
+    </div>
+    
+        <div class="right"><a href="slide44.html"><img src="img/right.png"></a></div>
+    </div>
+    <div class="slide">
+        <h1 class="title">Population Growth</h1>
+        
+        <div class="content">
+            <div class="text-content">
+                <div class="bullet-point">• <strong>Demographic Challenge:</strong> "Many nations face challenges related to population growth."</div>
+                
+                <div class="bullet-point">• <strong>Balanced Approach:</strong> Need for economic development alongside demographic policies.</div>
+                
+                <div class="bullet-point">• <strong>Human Dignity:</strong> Population policies must respect human rights and dignity.</div>
+                
+                <div class="bullet-point">• <strong>Moral Methods:</strong> Rejection of methods contrary to moral law.</div>
+                
+                <div class="bullet-point">• <strong>Education:</strong> Importance of education about responsible parenthood.</div>
+                
+                <div class="quote">"Many are deeply worried by the problem of population growth, whether on a world scale or in the poorer nations. They fear that overpopulation will cause a decrease in world resources and a lowering of the standard of living. Hence, in many countries the public authorities have initiated programs to promote a proper regulation of births. The Council realizes that this involves serious difficulties and problems."</div>
+            </div>
+            
+            <div class="chart-content">
+                <div class="chart-container">
+                    <canvas id="populationApproachesChart"></canvas>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">Slide 43 of 55</div>
+    </div>
+    
+    <script>
+        // Chart comparing approaches to population issues
+        const ctx = document.getElementById("populationApproachesChart").getContext("2d");
+        
+        // Create a horizontal bar chart
+        const populationApproachesChart = new Chart(ctx, {
+            type: "bar",
+            data: {
+                labels: [
+                    "Coercive Population Control",
+                    "Contraceptive-Only Approach",
+                    "Development-Only Approach",
+                    "Catholic Integral Approach"
+                ],
+                datasets: [
+                    {
+                        label: "Human Dignity",
+                        data: [10, 50, 70, 95],
+                        backgroundColor: "rgba(0, 51, 102, 0.8)",
+                    },
+                    {
+                        label: "Effectiveness",
+                        data: [60, 65, 75, 85],
+                        backgroundColor: "rgba(0, 131, 182, 0.8)",
+                    },
+                    {
+                        label: "Moral Acceptability",
+                        data: [5, 30, 80, 95],
+                        backgroundColor: "rgba(0, 180, 216, 0.8)",
+                    }
+                ]
+            },
+            options: {
+                indexAxis: "y",
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        max: 100,
+                        title: {
+                            display: true,
+                            text: "Rating (0-100)"
+                        },
+                        stacked: false
+                    },
+                    y: {
+                        title: {
+                            display: true,
+                            text: "Approaches"
+                        },
+                        stacked: false
+                    }
+                },
+                plugins: {
+                    title: {
+                        display: true,
+                        text: "Comparing Approaches to Population Issues",
+                        font: {
+                            size: 16
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                const label = context.dataset.label || "";
+                                const value = context.raw || 0;
+                                return label + ": " + value + "/100";
+                            }
+                        }
+                    },
+                    legend: {
+                        position: "bottom"
+                    }
+                },
+                maintainAspectRatio: false
+            }
+        });
+    </script>
+</body>
+</html>

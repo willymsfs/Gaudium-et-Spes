@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peace and War</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+        .slide {
+            width: 900px;
+            height: 600px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 40px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        .title {
+            color: #003366;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 35px;
+        }
+        .content {
+            display: flex;
+            flex-direction: column;
+        }
+        .section-title {
+            color: #003366;
+            font-size: 18px;
+            margin-bottom: 15px;
+            margin-top: 20px;
+        }
+        .bullet-point {
+            margin-bottom: 15px;
+            font-size: 27px;
+        }
+        .footer {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            font-size: 27px;
+            color: #666666;
+        }
+        .quote {
+            background-color: #f0f7ff;
+            border-left: 4px solid #003366;
+            padding: 15px;
+            margin: 20px 0;
+            font-style: italic;
+            font-size: 27px;
+        }
+        .example-box {
+            background-color: #f0fff4;
+            border: 1px solid #00b4d8;
+            border-radius: 5px;
+            padding: 15px;
+            margin-top: 20px;
+        }
+        .example-title {
+            font-weight: bold;
+            color: #003366;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+        .just-war-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        .just-war-table th, .just-war-table td {
+            border: 1px solid #003366;
+            padding: 10px;
+            text-align: left;
+            font-size: 18px;
+        }
+        .just-war-table th {
+            background-color: #e6f0ff;
+            color: #003366;
+            font-weight: bold;
+        }
+        .just-war-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .icon-re {
+            position: absolute;
+            top: 20px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 20px;
+            box-sizing: border-box;
+            z-index: 1000;
+        }
+        .icon-re img {
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+        }
+            .navigation-top {
+            position: fixed;
+            top: 20px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            pointer-events: none;
+            z-index: 1000;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+        .navigation-top a {
+            pointer-events: auto;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+        .navigation-top a:hover {
+            background-color: white;
+            transform: scale(1.1);
+        }
+        .navigation-top img {
+            width: 30px;
+            height: 30px;
+            opacity: 0.8;
+            transition: opacity 0.2s;
+        }
+        .navigation-top a:hover img {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="navigation-top">
+        <div class="nav-left"><a href="slide39.html"><img src="img/left.png" alt="Previous Slide"></a></div>
+        <div class="nav-right"><a href="slide41.html"><img src="img/right.png" alt="Next Slide"></a></div>
+    </div>
+    
+        <div class="right"><a href="slide41.html"><img src="img/right.png"></a></div>
+    </div>
+    <div class="slide">
+        <h1 class="title">Peace and War</h1>
+        
+        <div class="content">
+            <div class="bullet-point">• <strong>Peace as Goal:</strong> "Peace is not merely the absence of war, but the establishment of a just order."</div>
+            
+            <div class="bullet-point">• <strong>Causes of War:</strong> Injustice, inequality, and lack of respect for human rights.</div>
+            
+            <div class="bullet-point">• <strong>Nuclear Concern:</strong> Special concern about weapons of mass destruction.</div>
+            
+            <div class="bullet-point">• <strong>Just War Tradition:</strong> Strict conditions for legitimate defense.</div>
+            
+            <div class="bullet-point">• <strong>Peacebuilding:</strong> Active work for justice, development, and human rights.</div>
+            
+            <div class="quote">"Peace is not merely the absence of war; nor can it be reduced solely to the maintenance of a balance of power between enemies; nor is it brought about by dictatorship. Instead, it is rightly and appropriately called an enterprise of justice. Peace results from that order structured into human society by its divine Founder, and actualized by men as they thirst after ever greater justice."</div>
+            
+            <h3 class="section-title">Just War Criteria</h3>
+            
+            <table class="just-war-table">
+                <tr>
+                    <th>Category</th>
+                    <th>Criteria</th>
+                    <th>Explanation</th>
+                </tr>
+                <tr>
+                    <td rowspan="4">Jus ad Bellum<br>(Right to War)</td>
+                    <td>Just Cause</td>
+                    <td>Defense against unjust aggression.</td>
+                </tr>
+                <tr>
+                    <td>Legitimate Authority</td>
+                    <td>Decision by proper public authority.</td>
+                </tr>
+                <tr>
+                    <td>Last Resort</td>
+                    <td>All peaceful alternatives exhausted.</td>
+                </tr>
+                <tr>
+                    <td>Probability of Success</td>
+                    <td>Reasonable hope of achieving just peace.</td>
+                </tr>
+                <tr>
+                    <td rowspan="3">Jus in Bello<br>(Conduct in War)</td>
+                    <td>Discrimination</td>
+                    <td>Protection of non-combatants.</td>
+                </tr>
+                <tr>
+                    <td>Proportionality</td>
+                    <td>Force used proportionate to good achieved.</td>
+                </tr>
+                <tr>
+                    <td>Right Intention</td>
+                    <td>Aim for just peace, not revenge or conquest.</td>
+                </tr>
+            </table>
+            
+            <div class="example-box">
+                <div class="example-title">Contemporary Development:</div>
+                <div>Since Gaudium et Spes, Catholic teaching on war and peace has evolved significantly. Pope John Paul II and subsequent popes have emphasized the difficulty of meeting just war criteria in modern warfare, especially with weapons of mass destruction. Pope Francis has further developed this teaching, stating in Fratelli Tutti that "it is very difficult nowadays to invoke the rational criteria elaborated in earlier centuries to speak of the possibility of a \'just war\'." This represents a development of the principles articulated in Gaudium et Spes.</div>
+            </div>
+        </div>
+        
+        <div class="footer">Slide 40 of 55</div>
+    </div>
+</body>
+</html>

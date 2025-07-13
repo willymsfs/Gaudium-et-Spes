@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Holy Spirit in the World</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .slide {
+            width: 900px;
+            height: 600px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 40px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start; /* Ensure content starts at the top */
+            min-height: 100%; /* Ensure full height is used */
+        }
+        .title {
+            color: #003366;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 35px;
+        }
+        .content {
+            display: flex;
+            justify-content: space-between;
+            flex-grow: 1; /* Allow content to expand and fill space */
+        }
+        .text-content {
+            width: 45%;
+        }
+        .chart-content {
+            width: 50%;
+        }
+        .bullet-point {
+            margin-bottom: 15px;
+            font-size: 27px;
+        }
+        .footer {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            font-size: 27px;
+            color: #666666;
+        }
+        .quote {
+            background-color: #f0f7ff;
+            border-left: 4px solid #003366;
+            padding: 15px;
+            margin: 20px 0;
+            font-style: italic;
+            font-size: 27px;
+        }
+        .chart-container {
+            height: 500px;
+            width: 100%;
+            position: relative; /* Ensure chart fits within container */
+        }
+        .icon-re {
+            position: absolute;
+            top: 20px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 20px;
+            box-sizing: border-box;
+            z-index: 1000; /* Ensure it stays above other content */
+        }
+        .icon-re img {
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+        }
+            .navigation-top {
+            position: fixed;
+            top: 20px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            pointer-events: none;
+            z-index: 1000;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+        .navigation-top a {
+            pointer-events: auto;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+        .navigation-top a:hover {
+            background-color: white;
+            transform: scale(1.1);
+        }
+        .navigation-top img {
+            width: 30px;
+            height: 30px;
+            opacity: 0.8;
+            transition: opacity 0.2s;
+        }
+        .navigation-top a:hover img {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="navigation-top">
+        <div class="nav-left"><a href="slide46.html"><img src="img/left.png" alt="Previous Slide"></a></div>
+        <div class="nav-right"><a href="slide48.html"><img src="img/right.png" alt="Next Slide"></a></div>
+    </div>
+    
+        <div class="right"><a href="slide48.html"><img src="img/right.png"></a></div>
+    </div>
+    <div class="slide">
+        <h1 class="title">The Holy Spirit in the World</h1>
+        
+        <div class="content">
+            <div class="text-content">
+                <div class="bullet-point">• <strong>Active Presence:</strong> "The Holy Spirit is active in the world, guiding human history toward its fulfillment."</div>
+                
+                <div class="bullet-point">• <strong>Universal Work:</strong> The Spirit works not only in the Church but throughout creation.</div>
+                
+                <div class="bullet-point">• <strong>Inspiration:</strong> Source of all that is good, true, and beautiful in human culture.</div>
+                
+                <div class="bullet-point">• <strong>Discernment:</strong> Helps believers recognize the signs of the times.</div>
+                
+                <div class="bullet-point">• <strong>Transformation:</strong> Renews the face of the earth and human hearts.</div>
+                
+                <div class="quote">"The Spirit of the Lord fills the earth and he who sustains all things has knowledge of every voice. Hence, he guides the people of God, recalling the mystery of Christ and, for believers, penetrates all things and leads them to grasp the inner truth of the world."</div>
+            </div>
+            
+            <div class="chart-content">
+                <div class="chart-container">
+                    <canvas id="spiritActivityChart"></canvas>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">Slide 47 of 55</div>
+    </div>
+    
+    <script>
+        // Chart showing the activity of the Holy Spirit in the world
+        const ctx = document.getElementById("spiritActivityChart").getContext("2d");
+        
+        // Create a radar chart
+        const spiritActivityChart = new Chart(ctx, {
+            type: "radar",
+            data: {
+                labels: [
+                    "In the Church",
+                    "In Individual Hearts",
+                    "In Human Culture",
+                    "In Social Movements",
+                    "In Scientific Discovery",
+                    "In Artistic Creation",
+                    "In Interreligious Dialogue"
+                ],
+                datasets: [{
+                    label: "Activity of the Holy Spirit",
+                    data: [95, 90, 80, 75, 70, 85, 65],
+                    backgroundColor: "rgba(255, 99, 132, 0.2)",
+                    borderColor: "rgba(255, 99, 132, 1)",
+                    pointBackgroundColor: "rgba(255, 99, 132, 1)",
+                    pointBorderColor: "#fff",
+                    pointHoverBackgroundColor: "#fff",
+                    pointHoverBorderColor: "rgba(255, 99, 132, 1)"
+                }]
+            },
+            options: {
+                scales: {
+                    r: {
+                        angleLines: {
+                            display: true
+                        },
+                        suggestedMin: 0,
+                        suggestedMax: 100,
+                        title: {
+                            display: true,
+                            text: "Activity Level (%)",
+                            font: {
+                                size: 18
+                            }
+                        }
+                    }
+                },
+                plugins: {
+                    title: {
+                        display: true,
+                        text: "The Holy Spirit's Activity in Different Spheres",
+                        font: {
+                            size: 18
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                const tooltips = {
+                                    "In the Church": "Guiding the Church through teaching, sacraments, and ministry",
+                                    "In Individual Hearts": "Personal conversion, sanctification, and spiritual gifts",
+                                    "In Human Culture": "Inspiring truth, goodness, and beauty in cultural expressions",
+                                    "In Social Movements": "Movements for justice, peace, and human dignity",
+                                    "In Scientific Discovery": "Illuminating the human mind to discover truth about creation",
+                                    "In Artistic Creation": "Inspiring creative works that elevate the human spirit",
+                                    "In Interreligious Dialogue": "Building bridges of understanding between faith traditions"
+                                };
+                                
+                                return tooltips[context.label] + ": " + context.raw + "%";
+                            }
+                        },
+                        bodyFont: {
+                            size: 18
+                        }
+                    },
+                    legend: {
+                        position: "bottom",
+                        labels: {
+                            font: {
+                                size: 18
+                            }
+                        }
+                    }
+                },
+                maintainAspectRatio: false
+            }
+        });
+    </script>
+</body>
+</html>

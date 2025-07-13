@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Key Themes from Gaudium et Spes</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .slide {
+            width: 900px;
+            height: 600px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 40px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start; /* Ensure content starts at the top */
+            min-height: 100%; /* Ensure full height is used */
+        }
+        .title {
+            color: #003366;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 35px;
+        }
+        .content {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1; /* Allow content to expand and fill space */
+        }
+        .section-title {
+            color: #003366;
+            font-size: 18px;
+            margin-bottom: 15px;
+            margin-top: 20px;
+        }
+        .bullet-point {
+            margin-bottom: 15px;
+            font-size: 20px; /* Adjusted to 20px as requested */
+        }
+        .footer {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            font-size: 20px; /* Adjusted to 20px as requested */
+            color: #666666;
+        }
+        .quote {
+            background-color: #f0f7ff;
+            border-left: 4px solid #003366;
+            padding: 15px;
+            margin: 20px 0;
+            font-style: italic;
+            font-size: 20px; /* Adjusted to 20px as requested */
+        }
+        .diagram {
+            border: 2px solid #003366;
+            border-radius: 10px;
+            padding: 20px;
+            height: 500px;
+        }
+        .models-container {
+            display: flex;
+            flex-direction: column;
+            height: 450px;
+            justify-content: space-around;
+        }
+        .theme-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        .theme-table th, .theme-table td {
+            border: 1px solid #003366;
+            padding: 10px;
+            text-align: left;
+            font-size: 20px; /* Adjusted to 20px as requested */
+        }
+        .theme-table th {
+            background-color: #e6f0ff;
+            color: #003366;
+            font-weight: bold;
+            font-size: 18px; /* Kept at 18px for graph-related headers */
+        }
+        .theme-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .icon-re {
+            position: absolute;
+            top: 20px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 20px;
+            box-sizing: border-box;
+            z-index: 1000; /* Ensure it stays above other content */
+        }
+        .icon-re img {
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+        }
+            .navigation-top {
+            position: fixed;
+            top: 20px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            pointer-events: none;
+            z-index: 1000;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+        .navigation-top a {
+            pointer-events: auto;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+        .navigation-top a:hover {
+            background-color: white;
+            transform: scale(1.1);
+        }
+        .navigation-top img {
+            width: 30px;
+            height: 30px;
+            opacity: 0.8;
+            transition: opacity 0.2s;
+        }
+        .navigation-top a:hover img {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="navigation-top">
+        <div class="nav-left"><a href="slide55.html"><img src="img/left.png" alt="Previous Slide"></a></div>
+        <div class="nav-right"><a href="index.html"><img src="img/right.png" alt="Next Slide"></a></div>
+    </div>
+    
+        <div class="right"><a href="index.html"><img src="img/right.png"></a></div>
+    </div>
+    <div class="slide">
+        <h1 class="title">Key Themes from Gaudium et Spes</h1>
+        
+        <div class="content">
+            <div class="section-title">Core Themes Addressed in Gaudium et Spes</div>
+            
+            <div class="diagram">
+                <div class="models-container">
+                    <table class="theme-table">
+                        <tr>
+                            <th>Theme</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr><td>Social Justice</td><td>Promoting fairness and equity in society</td></tr>
+                        <tr><td>Dalits</td><td>Addressing the needs of marginalized Dalit communities</td></tr>
+                        <tr><td>Tribals</td><td>Supporting indigenous tribal populations</td></tr>
+                        <tr><td>Socially Excluded People</td><td>Including those marginalized by society</td></tr>
+                        <tr><td>Women</td><td>Advocating for gender equality and women's rights</td></tr>
+                        <tr><td>Gender Justice</td><td>Ensuring equitable treatment across genders</td></tr>
+                        <tr><td>Poverty</td><td>Addressing economic deprivation and inequality</td></tr>
+                        <tr><td>Equitable Economy</td><td>Promoting fair economic systems</td></tr>
+                        <tr><td>Environmental Stewardship</td><td>Caring for the environment responsibly</td></tr>
+                        <tr><td>Digital Technology</td><td>Navigating the impact of technology on society</td></tr>
+                        <tr><td>Social Media</td><td>Engaging with digital communication platforms</td></tr>
+                        <tr><td>Ecology</td><td>Supporting ecological balance and sustainability</td></tr>
+                        <tr><td>Climate Stewardship</td><td>Addressing climate change and its effects</td></tr>
+                        <tr><td>Faith Formation</td><td>Strengthening spiritual growth and education</td></tr>
+                        <tr><td>Word of God</td><td>Centering on Scripture in daily life</td></tr>
+                        <tr><td>Children</td><td>Protecting and nurturing young generations</td></tr>
+                        <tr><td>Youth</td><td>Engaging and empowering the youth</td></tr>
+                        <tr><td>Laity</td><td>Involving laypeople in Church mission</td></tr>
+                        <tr><td>Community Engagement</td><td>Fostering active community participation</td></tr>
+                        <tr><td>Family</td><td>Supporting family life and values</td></tr>
+                        <tr><td>BEC</td><td>Basic Ecclesial Communities for local Church life</td></tr>
+                        <tr><td>Migrants</td><td>Addressing the needs of migrant populations</td></tr>
+                        <tr><td>Refugees</td><td>Providing support for displaced persons</td></tr>
+                        <tr><td>Interfaith Dialogue</td><td>Promoting understanding between faiths</td></tr>
+                        <tr><td>Ecumenism</td><td>Fostering unity among Christian denominations</td></tr>
+                        <tr><td>Peace Building</td><td>Working toward peace and conflict resolution</td></tr>
+                        <tr><td>Church India Focus</td><td>Contextualizing Church mission in India</td></tr>
+                    </table>
+                </div>
+            </div>
+            <p> <p> <p> <p> <p> <p> <p> <p> <p> <p> <p> <p> <p> <p> <p> <p> <p> <p> <p> <p> <p> <p> <p> 
+                <div class="quote">"The Church has always had the duty of scrutinizing the signs of the times and of interpreting them in the light of the Gospel. Thus, in language intelligible to each generation, she can respond to the perennial questions which men ask about this present life and the life to come, and about the relationship of the one to the other." (Gaudium et Spes)</div>
+        </div>
+            </p> </p> </p> </p> </p> </p> </p> </p> </p> </p> </p> </p> </p> </p> </p> </p> </p> </p>
+        
+        <div class="footer">Slide 55 of 55</div>
+    </div>
+</body>
+</html>

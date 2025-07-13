@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contemporary Relevance</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .slide {
+            width: 900px;
+            height: 600px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 40px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start; /* Ensure content starts at the top */
+            min-height: 100%; /* Ensure full height is used */
+        }
+        .title {
+            color: #003366;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 35px;
+        }
+        .content {
+            display: flex;
+            justify-content: space-between;
+            flex-grow: 1; /* Allow content to expand and fill space */
+        }
+        .text-content {
+            width: 45%;
+        }
+        .chart-content {
+            width: 50%;
+        }
+        .bullet-point {
+            margin-bottom: 15px;
+            font-size: 27px;
+        }
+        .footer {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            font-size: 27px;
+            color: #666666;
+        }
+        .quote {
+            background-color: #f0f7ff;
+            border-left: 4px solid #003366;
+            padding: 15px;
+            margin: 20px 0;
+            font-style: italic;
+            font-size: 27px;
+        }
+        .chart-container {
+            height: 500px; /* Bigger as requested */
+            width: 100%;
+            position: relative; /* Ensure chart fits within container */
+        }
+        .icon-re {
+            position: absolute;
+            top: 20px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 20px;
+            box-sizing: border-box;
+            z-index: 1000; /* Ensure it stays above other content */
+        }
+        .icon-re img {
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+        }
+            .navigation-top {
+            position: fixed;
+            top: 20px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            pointer-events: none;
+            z-index: 1000;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+        .navigation-top a {
+            pointer-events: auto;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+        .navigation-top a:hover {
+            background-color: white;
+            transform: scale(1.1);
+        }
+        .navigation-top img {
+            width: 30px;
+            height: 30px;
+            opacity: 0.8;
+            transition: opacity 0.2s;
+        }
+        .navigation-top a:hover img {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="navigation-top">
+        <div class="nav-left"><a href="slide51.html"><img src="img/left.png" alt="Previous Slide"></a></div>
+        <div class="nav-right"><a href="slide53.html"><img src="img/right.png" alt="Next Slide"></a></div>
+    </div>
+    
+        <div class="right"><a href="slide53.html"><img src="img/right.png"></a></div>
+    </div>
+    <div class="slide">
+        <h1 class="title">Contemporary Relevance</h1>
+        
+        <div class="content">
+            <div class="text-content">
+                <div class="bullet-point">• <strong>Enduring Method:</strong> "The approach of reading the signs of the times remains essential for the Church today."</div>
+                
+                <div class="bullet-point">• <strong>Digital Age:</strong> Principles apply to new technologies and digital culture."</div>
+                
+                <div class="bullet-point">• <strong>Globalization:</strong> Vision of global solidarity increasingly important."</div>
+                
+                <div class="bullet-point">• <strong>Ecological Crisis:</strong> Framework for addressing environmental challenges."</div>
+                
+                <div class="bullet-point">• <strong>Polarization:</strong> Model for dialogue in a divided world."</div>
+                
+                <div class="quote">"The Church has always had the duty of scrutinizing the signs of the times and of interpreting them in the light of the Gospel. Thus, in language intelligible to each generation, she can respond to the perennial questions which men ask about this present life and the life to come, and about the relationship of the one to the other."</div>
+            </div>
+            
+            <div class="chart-content">
+                <div class="chart-container">
+                    <canvas id="relevanceChart"></canvas>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">Slide 52 of 55</div>
+    </div>
+    
+    <script>
+        // Chart showing contemporary relevance of Gaudium et Spes
+        const ctx = document.getElementById("relevanceChart").getContext("2d");
+        
+        // Create a radar chart
+        const relevanceChart = new Chart(ctx, {
+            type: "radar",
+            data: {
+                labels: [
+                    "Digital Ethics",
+                    "Environmental Crisis",
+                    "Global Inequality",
+                    "Religious Pluralism",
+                    "Bioethical Questions",
+                    "Political Polarization",
+                    "Cultural Fragmentation"
+                ],
+                datasets: [{
+                    label: "Relevance of Gaudium et Spes Principles",
+                    data: [85, 90, 95, 80, 85, 90, 85],
+                    backgroundColor: "rgba(0, 51, 102, 0.2)",
+                    borderColor: "rgba(0, 51, 102, 0.8)",
+                    pointBackgroundColor: "rgba(0, 51, 102, 1)",
+                    pointBorderColor: "#fff",
+                    pointHoverBackgroundColor: "#fff",
+                    pointHoverBorderColor: "rgba(0, 51, 102, 1)"
+                }]
+            },
+            options: {
+                scales: {
+                    r: {
+                        angleLines: {
+                            display: true
+                        },
+                        suggestedMin: 0,
+                        suggestedMax: 100,
+                        title: {
+                            display: true,
+                            text: "Relevance (%)",
+                            font: {
+                                size: 18
+                            }
+                        }
+                    }
+                },
+                plugins: {
+                    title: {
+                        display: true,
+                        text: "Relevance of Gaudium et Spes to Contemporary Issues",
+                        font: {
+                            size: 18
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                const tooltips = {
+                                    "Digital Ethics": "Human dignity in virtual spaces; digital divide; AI ethics",
+                                    "Environmental Crisis": "Stewardship of creation; integral ecology; climate justice",
+                                    "Global Inequality": "Economic justice; development; solidarity with the poor",
+                                    "Religious Pluralism": "Interreligious dialogue; religious freedom; common values",
+                                    "Bioethical Questions": "Human dignity; beginning and end of life; genetic technologies",
+                                    "Political Polarization": "Common good; dialogue across differences; truth in love",
+                                    "Cultural Fragmentation": "Unity in diversity; inculturation; shared humanity"
+                                };
+                                
+                                return tooltips[context.label] + ": " + context.raw + "%";
+                            }
+                        },
+                        bodyFont: {
+                            size: 18
+                        }
+                    }
+                },
+                maintainAspectRatio: false
+            }
+        });
+    </script>
+</body>
+</html>

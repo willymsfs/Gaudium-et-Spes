@@ -1,0 +1,23 @@
+.icon-re
+ {
+    float: left;
+    width: 100%;
+    position: relative;
+    top: 250px;
+ 
+}
+.left {
+    width: 50%;
+    float: left;
+}
+.right {
+    width: 50%;
+    float: left;
+    text-align: right;
+}
+.icon-re img {
+    width: 50px;
+    background: #1c2c68;
+    padding: 10px;
+    border-radius: 50%;
+}

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Purpose of the Council</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', 'Roboto', Arial, sans-serif; background-color: #f0f2f5; min-height: 100vh; display: flex; justify-content: center; align-items: center; }
+        .slide { aspect-ratio: 16 / 9; width: 90vw; max-width: 1280px; margin: 5vw 5vh; background-color: white; box-shadow: 0 4px 12px rgba(0,0,0,0.15); border-radius: 8px; padding: 40px 60px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; position: relative; }
+        .slide h1 { color: #003366; font-size: clamp(28px, 3vw, 35px); margin-bottom: 10px; }
+        .slide p, .slide li, .slide .footer { color: #333; font-size: clamp(18px, 2.0vw, 27px); max-width: 90%; line-height: 1.5; }
+        .slide ul { list-style-position: inside; text-align: left; width: 100%; max-width: 85%; margin: 20px 0; }
+        .slide li { margin-bottom: 15px; }
+        .slide .quote-box { background-color: #f0f7ff; border-left: 4px solid #003366; padding: 20px; margin: 20px 0; font-size: clamp(18px, 2.0vw, 27px); font-style: italic; width: 100%; max-width: 85%; }
+        .slide .chart-container { width: 100%; max-width: 85%; height: 400px; margin: 20px 0; }
+        .slide .footer { position: absolute; bottom: 20px; text-align: center; width: 100%; }
+        .icon-re { position: fixed; top: 50%; width: 100%; transform: translateY(-50%); display: flex; justify-content: space-between; pointer-events: none; z-index: 10; }
+        .icon-re a { pointer-events: auto; padding: 20px; }
+        .icon-re img { width: 40px; opacity: 0.6; transition: opacity 0.2s; }
+        .icon-re a:hover img { opacity: 1; }
+            .navigation-top {
+            position: fixed;
+            top: 20px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            pointer-events: none;
+            z-index: 1000;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+        .navigation-top a {
+            pointer-events: auto;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+        .navigation-top a:hover {
+            background-color: white;
+            transform: scale(1.1);
+        }
+        .navigation-top img {
+            width: 30px;
+            height: 30px;
+            opacity: 0.8;
+            transition: opacity 0.2s;
+        }
+        .navigation-top a:hover img {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="navigation-top">
+        <div class="nav-left"><a href="slide05.html"><img src="img/left.png" alt="Previous Slide"></a></div>
+        <div class="nav-right"><a href="slide07.html"><img src="img/right.png" alt="Next Slide"></a></div>
+    </div>
+    
+        <div class="right"><a href="slide07.html"><img src="img/right.png" alt="Next Slide"></a></div>
+    </div>
+    <div class="slide">
+        <h1>The Purpose of the Council</h1>
+        <ul>
+            
+            <li><strong>Universal Audience:</strong> Addresses "not only to the sons of the Church and to all who invoke the name of Christ, but to the whole of humanity."</li>
+            <li><strong>Explanatory Purpose:</strong> "To explain to everyone how it conceives of the presence and activity of the Church in the world of today."</li>
+            <li><strong>World as Theater:</strong> The world seen as "the theater of man's history, and the heir of his energies, his tragedies and his triumphs." Transforming the “theater of man’s history” into a stage for God’s grace.</li>
+            <li><strong>Theological Vision:</strong> The world as "created and sustained by its Maker's love, fallen indeed into the bondage of sin, yet emancipated now by Christ."</li>
+        </ul>
+        <div class="quote-box">
+            "The council focuses its attention on the world of men, the whole human family along with the sum of those realities in the midst of which it lives..."
+        </div>
+        <div class="chart-container">
+            <canvas id="approachChart"></canvas>
+        </div>
+        <div class="footer">Slide 6 of 55</div>
+    </div>
+    <script>
+        const ctx = document.getElementById("approachChart").getContext("2d");
+        const approachChart = new Chart(ctx, {
+            type: "radar",
+            data: {
+                labels: ["Dialogue with World", "Engagement with Culture", "Addressing Non-Catholics", "Positive View of Progress", "Pastoral Approach"],
+                datasets: [
+                    {
+                        label: "Pre-Vatican II",
+                        data: [30, 40, 20, 35, 45],
+                        backgroundColor: "rgba(179, 205, 227, 0.2)",
+                        borderColor: "rgba(19, 64, 116, 0.8)",
+                        pointBackgroundColor: "rgba(19, 64, 116, 1)",
+                        pointBorderColor: "#fff",
+                        pointHoverBackgroundColor: "#fff",
+                        pointHoverBorderColor: "rgba(19, 64, 116, 1)"
+                    },
+                    {
+                        label: "Gaudium et Spes",
+                        data: [85, 90, 80, 75, 95],
+                        backgroundColor: "rgba(255, 180, 130, 0.2)",
+                        borderColor: "rgba(230, 81, 0, 0.8)",
+                        pointBackgroundColor: "rgba(230, 81, 0, 1)",
+                        pointBorderColor: "#fff",
+                        pointHoverBackgroundColor: "#fff",
+                        pointHoverBorderColor: "rgba(230, 81, 0, 1)"
+                    }
+                ]
+            },
+            options: {
+                scales: {
+                    r: {
+                        angleLines: { display: true },
+                        suggestedMin: 0,
+                        suggestedMax: 100,
+                        ticks: { 
+                            backdropColor: 'rgba(255, 255, 255, 0.75)',
+                            font: { size: 20 }
+                        },
+                        pointLabels: { 
+                            font: { size: 20 }
+                        }
+                    }
+                },
+                plugins: {
+                    title: {
+                        display: true,
+                        text: "Comparing Church Approaches Before and After Vatican II",
+                        font: { size: 20 }
+                    },
+                    legend: {
+                        position: 'bottom',
+                        labels: { 
+                            font: { size: 20 }
+                        }
+                    }
+                },
+                maintainAspectRatio: false
+            }
+        });
+    </script>
+</body>
+</html>

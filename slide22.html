@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Value of Human Work</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .slide {
+            width: 1000px;
+            height: 700px;
+            background-color: white;
+            padding: 40px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        .title {
+            color: #003366;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 35px;
+        }
+        .content {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .text-content {
+            width: 45%;
+            font-size: 27px;
+        }
+        .chart-content {
+            width: 50%;
+        }
+        .bullet-point {
+            margin-bottom: 15px;
+            font-size: 27px;
+        }
+        .footer {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            font-size: 18px;
+            color: #666666;
+        }
+        .quote {
+            background-color: #f0f7ff;
+            border-left: 4px solid #003366;
+            padding: 15px;
+            margin: 20px 0;
+            font-style: italic;
+            font-size: 27px;
+        }
+        .chart-container {
+            height: 450px;
+            width: 100%;
+            margin-top: 20px;
+        }
+        .icon-re {
+            position: absolute;
+            top: 20px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 20px;
+            box-sizing: border-box;
+            z-index: 10;
+        }
+        .icon-re img {
+            width: 40px;
+            height: 40px;
+        }
+            .navigation-top {
+            position: fixed;
+            top: 20px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            pointer-events: none;
+            z-index: 1000;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+        .navigation-top a {
+            pointer-events: auto;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+        .navigation-top a:hover {
+            background-color: white;
+            transform: scale(1.1);
+        }
+        .navigation-top img {
+            width: 30px;
+            height: 30px;
+            opacity: 0.8;
+            transition: opacity 0.2s;
+        }
+        .navigation-top a:hover img {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="navigation-top">
+        <div class="nav-left"><a href="slide21.html"><img src="img/left.png" alt="Previous Slide"></a></div>
+        <div class="nav-right"><a href="slide23.html"><img src="img/right.png" alt="Next Slide"></a></div>
+    </div>
+    
+        <div class="right"><a href="slide23.html"><img src="img/right.png"></a></div>
+    </div>
+    <div class="slide">
+        <h1 class="title">The Value of Human Work</h1>
+        
+        <div class="content">
+            <div class="text-content">
+                <div class="bullet-point">• <strong>Divine Participation:</strong> "Man is called to work, and to transform the world through his labor."</div>
+                
+                <div class="bullet-point">• <strong>Co-Creation:</strong> Through work, humans participate in God's ongoing creative activity."</div>
+                
+                <div class="bullet-point">• <strong>Personal Development:</strong> Work contributes to human fulfillment and self-realization."</div>
+                
+                <div class="bullet-point">• <strong>Social Dimension:</strong> Work builds community and serves the common good."</div>
+                
+                <div class="bullet-point">• <strong>Universal Dignity:</strong> All forms of honest work have dignity, not just intellectual or prestigious occupations."</div>
+                
+                <div class="quote">"Human activity, to be sure, takes its significance from its relationship to man. Just as it proceeds from man, so it is ordered toward man. For when a man works he not only alters things and society, he develops himself as well. He learns much, he cultivates his resources, he goes outside of himself and beyond himself."</div>
+            </div>
+            
+            <div class="chart-content">
+                <div class="chart-container">
+                    <canvas id="workTheologyChart"></canvas>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">Slide 22 of 55</div>
+    </div>
+    
+    <script>
+        // Chart showing theological understanding of work through history
+        const ctx = document.getElementById("workTheologyChart").getContext("2d");
+        
+        // Create a timeline chart
+        const workTheologyChart = new Chart(ctx, {
+            type: "line",
+            data: {
+                labels: [
+                    "Creation",
+                    "Fall",
+                    "Israel",
+                    "Jesus",
+                    "Early Church",
+                    "Middle Ages",
+                    "Industrial Era",
+                    "Vatican II",
+                    "Present"
+                ],
+                datasets: [
+                    {
+                        label: "Positive View of Work",
+                        data: [90, 40, 65, 75, 60, 50, 30, 85, 80],
+                        borderColor: "rgba(0, 51, 102, 1)",
+                        backgroundColor: "rgba(0, 51, 102, 0.1)",
+                        tension: 0.4,
+                        fill: true
+                    },
+                    {
+                        label: "Work as Burden/Punishment",
+                        data: [10, 80, 50, 30, 50, 60, 80, 20, 25],
+                        borderColor: "rgba(230, 81, 0, 1)",
+                        backgroundColor: "rgba(230, 81, 0, 0.1)",
+                        tension: 0.4,
+                        fill: true
+                    }
+                ]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 100,
+                        title: {
+                            display: true,
+                            text: "Emphasis in Theological Understanding",
+                            font: {
+                                size: 18
+                            }
+                        },
+                        ticks: {
+                            font: {
+                                size: 18
+                            }
+                        }
+                    },
+                    x: {
+                        title: {
+                            display: true,
+                            text: "Historical Periods",
+                            font: {
+                                size: 18
+                            }
+                        },
+                        ticks: {
+                            font: {
+                                size: 18
+                            }
+                        }
+                    }
+                },
+                plugins: {
+                    title: {
+                        display: true,
+                        text: "Theological Understanding of Work Through History",
+                        font: {
+                            size: 18
+                        }
+                    },
+                    tooltip: {
+                        bodyFont: {
+                            size: 18
+                        },
+                        titleFont: {
+                            size: 18
+                        },
+                        callbacks: {
+                            label: function(context) {
+                                const label = context.dataset.label || "";
+                                const value = context.raw || 0;
+                                return label + ": " + value + "% emphasis";
+                            }
+                        }
+                    }
+                },
+                maintainAspectRatio: false,
+                interaction: {
+                    intersect: false,
+                    mode: "index"
+                }
+            }
+        });
+    </script>
+</body>
+</html>

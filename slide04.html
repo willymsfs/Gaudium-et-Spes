@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Structure of Gaudium et Spes</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', 'Roboto', Arial, sans-serif; background-color: #f0f2f5; min-height: 100vh; display: flex; justify-content: center; align-items: center; }
+        .slide { aspect-ratio: 16 / 9; width: 90vw; max-width: 1280px; margin: 5vw 5vh; background-color: white; box-shadow: 0 4px 12px rgba(0,0,0,0.15); border-radius: 8px; padding: 40px 60px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; position: relative; }
+        .slide h1 { color: #003366; font-size: clamp(28px, 3vw, 35px); margin-bottom: 10px; }
+        .slide p, .slide li, .slide .footer { color: #333; font-size: clamp(18px, 2.0vw, 27px); max-width: 90%; line-height: 1.5; }
+        .slide ul { list-style-position: inside; text-align: left; width: 100%; max-width: 85%; margin: 20px 0; }
+        .slide li { margin-bottom: 15px; }
+        .slide .structure-diagram { width: 100%; max-width: 85%; height: 400px; border: 2px solid #003366; border-radius: 5px; padding: 15px; margin: 20px 0; overflow-y: auto; }
+        .slide .document-section { margin-bottom: 15px; padding: 10px; border-radius: 5px; }
+        .slide .preface { background-color: #e6f0ff; border-left: 4px solid #003366; }
+        .slide .introduction { background-color: #e6f7ff; border-left: 4px solid #0077b6; }
+        .slide .part1 { background-color: #e6fffa; border-left: 4px solid #0096c7; }
+        .slide .part2 { background-color: #f0fff4; border-left: 4px solid #00b4d8; }
+        .slide .conclusion { background-color: #fff0f3; border-left: 4px solid #48cae4; }
+        .slide .section-title { font-weight: bold; font-size: clamp(18px, 2.0vw, 27px); margin-bottom: 5px; }
+        .slide .section-content { font-size: clamp(16px, 1.8vw, 24px); line-height: 1.4; }
+        .slide .footer { position: absolute; bottom: 20px; text-align: center; width: 100%; }
+        .icon-re { position: fixed; top: 50%; width: 100%; transform: translateY(-50%); display: flex; justify-content: space-between; pointer-events: none; z-index: 10; }
+        .icon-re a { pointer-events: auto; padding: 20px; }
+        .icon-re img { width: 40px; opacity: 0.6; transition: opacity 0.2s; }
+        .icon-re a:hover img { opacity: 1; }
+            .navigation-top {
+            position: fixed;
+            top: 20px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            pointer-events: none;
+            z-index: 1000;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+        .navigation-top a {
+            pointer-events: auto;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+        .navigation-top a:hover {
+            background-color: white;
+            transform: scale(1.1);
+        }
+        .navigation-top img {
+            width: 30px;
+            height: 30px;
+            opacity: 0.8;
+            transition: opacity 0.2s;
+        }
+        .navigation-top a:hover img {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="navigation-top">
+        <div class="nav-left"><a href="slide03.html"><img src="img/left.png" alt="Previous Slide"></a></div>
+        <div class="nav-right"><a href="slide05.html"><img src="img/right.png" alt="Next Slide"></a></div>
+    </div>
+    
+        <div class="right"><a href="slide05.html"><img src="img/right.png" alt="Next Slide"></a></div>
+    </div>
+    <div class="slide">
+        <h1>Structure of Gaudium et Spes</h1>
+        <h2>See-Judge-Act Methodology</h2> 
+        <ul>
+            <li><strong>Preface:</strong> Establishes solidarity with humanity (paragraphs 1-3).</li>
+            <li><strong>Introduction:</strong> Analyzes the situation of humanity in the modern world (paragraphs 4-10) represents the “See” phase.</li>
+            <li><strong>Part I:</strong> The Church and Man's Calling - doctrinal principles (paragraphs 11-45) represents the “Judge” phase.</li>
+            <li><strong>Part II:</strong> Some Problems of Special Urgency - practical applications (paragraphs 46-93) represents the “Act” phase. It recognizes that human flourishing is not just spiritual but also encompasses social, economic, cultural, and political dimensions</li>
+            <li><strong>Conclusion:</strong> Final exhortation and summary (paragraphs 91-93).</li>
+            <li><strong></strong> This methodology emphasizes that faith is not detached from reality but actively engages with it. This structure demonstrates the document's method of seeing (analysis), judging (principles), and acting (applications).
+            From a theological perspective, this structure reflects the incarnational nature of Christianity. Just as God became incarnate in Jesus Christ, entering fully into human history, so too the Church is called to enter fully into the realities of the modern world. </li>
+        </ul>
+        <div class="structure-diagram">
+            <div class="document-section preface">
+                <div class="section-title">PREFACE (paragraphs 1-3)</div>
+                <div class="section-content">Establishes the Church's solidarity with all humanity and sets the tone for the document.</div>
+            </div>
+            <div class="document-section introduction">
+                <div class="section-title">INTRODUCTION (paragraphs 4-10)</div>
+                <div class="section-content">The Situation of Men in the Modern World - analyzes contemporary conditions, challenges, and opportunities.</div>
+            </div>
+            <div class="document-section part1">
+                <div class="section-title">PART I: THE CHURCH AND MAN'S CALLING (paragraphs 11-45)</div>
+                <div class="section-content">
+                    Chapter 1: The Dignity of the Human Person<br>
+                    Chapter 2: The Community of Mankind<br>
+                    Chapter 3: Man's Activity Throughout the World<br>
+                    Chapter 4: The Role of the Church in the Modern World
+                </div>
+            </div>
+            <div class="document-section part2">
+                <div class="section-title">PART II: SOME PROBLEMS OF SPECIAL URGENCY (paragraphs 46-93)</div>
+                <div class="section-content">
+                    Chapter 1: Fostering the Nobility of Marriage and Family<br>
+                    Chapter 2: The Proper Development of Culture<br>
+                    Chapter 3: Economic and Social Life<br>
+                    Chapter 4: The Life of the Political Community<br>
+                    Chapter 5: The Fostering of Peace and the Promotion of a Community of Nations
+                </div>
+            </div>
+            <div class="document-section conclusion">
+                <div class="section-title">CONCLUSION (paragraphs 91-93)</div>
+                <div class="section-content">Final exhortation and summary of the document's message.</div>
+            </div>
+        </div>
+        <div class="footer">Slide 4 of 55</div>
+    </div>
+</body>
+</html>

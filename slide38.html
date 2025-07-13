@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Political Community</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .slide {
+            width: 900px;
+            height: 600px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 40px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start; /* Ensure content starts at the top */
+            min-height: 100%; /* Ensure full height is used */
+        }
+        .title {
+            color: #003366;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 35px;
+        }
+        .content {
+            display: flex;
+            justify-content: space-between;
+            flex-grow: 1; /* Allow content to expand and fill space */
+        }
+        .text-content {
+            width: 45%;
+        }
+        .chart-content {
+            width: 50%;
+        }
+        .bullet-point {
+            margin-bottom: 15px;
+            font-size: 27px;
+        }
+        .footer {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            font-size: 27px;
+            color: #666666;
+        }
+        .quote {
+            background-color: #f0f7ff;
+            border-left: 4px solid #003366;
+            padding: 15px;
+            margin: 20px 0;
+            font-style: italic;
+            font-size: 27px;
+        }
+        .chart-container {
+            height: 500px;
+            width: 100%;
+            position: relative; /* Ensure chart fits within container */
+        }
+        .icon-re {
+            position: absolute;
+            top: 20px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 20px;
+            box-sizing: border-box;
+            z-index: 1000; /* Ensure it stays above other content */
+        }
+        .icon-re img {
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+        }
+            .navigation-top {
+            position: fixed;
+            top: 20px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            pointer-events: none;
+            z-index: 1000;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+        .navigation-top a {
+            pointer-events: auto;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+        .navigation-top a:hover {
+            background-color: white;
+            transform: scale(1.1);
+        }
+        .navigation-top img {
+            width: 30px;
+            height: 30px;
+            opacity: 0.8;
+            transition: opacity 0.2s;
+        }
+        .navigation-top a:hover img {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="navigation-top">
+        <div class="nav-left"><a href="slide37.html"><img src="img/left.png" alt="Previous Slide"></a></div>
+        <div class="nav-right"><a href="slide39.html"><img src="img/right.png" alt="Next Slide"></a></div>
+    </div>
+    
+        <div class="right"><a href="slide39.html"><img src="img/right.png"></a></div>
+    </div>
+    <div class="slide">
+        <h1 class="title">Political Community</h1>
+        
+        <div class="content">
+            <div class="text-content">
+                <div class="bullet-point">• <strong>Common Good:</strong> "The political community exists for the common good, and not for the benefit of any individual or group."</div>
+                
+                <div class="bullet-point">• <strong>Human Rights:</strong> Political authority must respect and protect fundamental human rights.</div>
+                
+                <div class="bullet-point">• <strong>Participation:</strong> Citizens have both the right and duty to participate in public life.</div>
+                
+                <div class="bullet-point">• <strong>Subsidiarity:</strong> Higher authorities should not take over what lower bodies can accomplish.</div>
+                
+                <div class="bullet-point">• <strong>Moral Order:</strong> Political authority is bound by the moral order established by God.</div>
+                
+                <div class="quote">"The political community exists for the common good: this is its full justification and meaning and the source of its specific and basic right to exist. The common good embraces the sum of those conditions of social life by which individuals, families, and groups can achieve their own fulfillment in a relatively thorough and ready way."</div>
+            </div>
+            
+            <div class="chart-content">
+                <div class="chart-container">
+                    <canvas id="politicalPrinciplesChart"></canvas>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">Slide 38 of 55</div>
+    </div>
+    
+    <script>
+        // Chart showing Catholic principles for political life
+        const ctx = document.getElementById("politicalPrinciplesChart").getContext("2d");
+        
+        // Create a horizontal bar chart
+        const politicalPrinciplesChart = new Chart(ctx, {
+            type: "bar",
+            data: {
+                labels: [
+                    "Human Dignity",
+                    "Common Good",
+                    "Subsidiarity",
+                    "Participation",
+                    "Solidarity",
+                    "Religious Freedom",
+                    "Rule of Law"
+                ],
+                datasets: [{
+                    label: "Catholic Principles for Political Life",
+                    data: [100, 95, 85, 80, 75, 90, 70],
+                    backgroundColor: [
+                        "rgba(0, 51, 102, 0.8)",
+                        "rgba(0, 71, 122, 0.8)",
+                        "rgba(0, 91, 142, 0.8)",
+                        "rgba(0, 111, 162, 0.8)",
+                        "rgba(0, 131, 182, 0.8)",
+                        "rgba(0, 151, 202, 0.8)",
+                        "rgba(0, 171, 222, 0.8)"
+                    ],
+                    borderColor: [
+                        "rgba(0, 51, 102, 1)",
+                        "rgba(0, 71, 122, 1)",
+                        "rgba(0, 91, 142, 1)",
+                        "rgba(0, 111, 162, 1)",
+                        "rgba(0, 131, 182, 1)",
+                        "rgba(0, 151, 202, 1)",
+                        "rgba(0, 171, 222, 1)"
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                indexAxis: "y",
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        max: 100,
+                        title: {
+                            display: true,
+                            text: "Emphasis in Gaudium et Spes",
+                            font: {
+                                size: 18
+                            }
+                        }
+                    },
+                    y: {
+                        title: {
+                            display: true,
+                            text: "Political Principles",
+                            font: {
+                                size: 18
+                            }
+                        }
+                    }
+                },
+                plugins: {
+                    title: {
+                        display: true,
+                        text: "Catholic Principles for Political Life",
+                        font: {
+                            size: 18
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                const tooltips = {
+                                    "Human Dignity": "Respect for the inherent worth of every person",
+                                    "Common Good": "Social conditions that allow people to reach fulfillment",
+                                    "Subsidiarity": "Issues handled by smallest, lowest competent authority",
+                                    "Participation": "Right and duty to seek common good through political involvement",
+                                    "Solidarity": "Commitment to the good of all, especially the vulnerable",
+                                    "Religious Freedom": "Right to religious belief and practice without coercion",
+                                    "Rule of Law": "Governance through just laws rather than arbitrary power"
+                                };
+                                return tooltips[context.label] + ": " + context.raw + "%";
+                            },
+                            bodyFont: {
+                                size: 18
+                            }
+                        }
+                    }
+                },
+                maintainAspectRatio: false
+            }
+        });
+    </script>
+</body>
+</html>

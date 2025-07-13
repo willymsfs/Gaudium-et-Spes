@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Modern World in Transition</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', 'Roboto', Arial, sans-serif; background-color: #f0f2f5; min-height: 100vh; display: flex; justify-content: center; align-items: center; }
+        .slide { aspect-ratio: 16 / 9; width: 90vw; max-width: 1280px; margin: 5vw 5vh; background-color: white; box-shadow: 0 4px 12px rgba(0,0,0,0.15); border-radius: 8px; padding: 40px 60px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; position: relative; }
+        .slide h1 { color: #003366; font-size: clamp(28px, 3vw, 35px); margin-bottom: 10px; }
+        .slide p, .slide li, .slide .footer { color: #333; font-size: clamp(18px, 2.0vw, 27px); max-width: 90%; line-height: 1.5; }
+        .slide ul { list-style-position: inside; text-align: left; width: 100%; max-width: 85%; margin: 20px 0; }
+        .slide li { margin-bottom: 15px; }
+        .slide .quote-box { background-color: #f0f7ff; border-left: 4px solid #003366; padding: 20px; margin: 20px 0; font-size: clamp(18px, 2.0vw, 27px); font-style: italic; width: 100%; max-width: 85%; }
+        .slide .chart-container { width: 100%; max-width: 85%; height: 500px; margin: 20px 0; }
+        .slide .footer { position: absolute; bottom: 20px; text-align: center; width: 100%; }
+        .icon-re { position: fixed; top: 50%; width: 100%; transform: translateY(-50%); display: flex; justify-content: space-between; pointer-events: none; z-index: 10; }
+        .icon-re a { pointer-events: auto; padding: 20px; }
+        .icon-re img { width: 40px; opacity: 0.6; transition: opacity 0.2s; }
+        .icon-re a:hover img { opacity: 1; }
+            .navigation-top {
+            position: fixed;
+            top: 20px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            pointer-events: none;
+            z-index: 1000;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+        .navigation-top a {
+            pointer-events: auto;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+        .navigation-top a:hover {
+            background-color: white;
+            transform: scale(1.1);
+        }
+        .navigation-top img {
+            width: 30px;
+            height: 30px;
+            opacity: 0.8;
+            transition: opacity 0.2s;
+        }
+        .navigation-top a:hover img {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="navigation-top">
+        <div class="nav-left"><a href="slide08.html"><img src="img/left.png" alt="Previous Slide"></a></div>
+        <div class="nav-right"><a href="slide10.html"><img src="img/right.png" alt="Next Slide"></a></div>
+    </div>
+    
+        <div class="right"><a href="slide10.html"><img src="img/right.png" alt="Next Slide"></a></div>
+    </div>
+    <div class="slide">
+        <h1>The Modern World in Transition</h1>
+        <ul>
+            <li><strong>New Historical Stage:</strong> "The human race is involved in a new stage of history." Dynamic View of History--> human society is constantly evolving, and this evolution presents both opportunities and challenges.</li>
+            <li><strong>Rapid Change:</strong> "Profound and rapid changes are spreading by degrees around the whole world."</li>
+            <li><strong>Human Agency:</strong> Changes "triggered by the intelligence and creative energies of man."</li>
+            <li><strong>Reflexive Impact:</strong> These changes "recoil upon him, upon his decisions and desires, both individual and collective." This is a theological caution against an uncritical embrace of technological or social progress.</li>
+            <li><strong>Religious Implications:</strong> "A true cultural and social transformation, one which has repercussions on man's religious life as well." acknowledges the interconnectedness of all dimensions of human existence. Changes in society inevitably affect how people understand and practice their faith, posing new questions and challenges for religious belief and institutions.</li>
+        </ul>
+        <div class="quote-box">
+            "As happens in any crisis of growth, this transformation has brought serious difficulties in its wake. Thus while man extends his power in every direction, he does not always succeed in subjecting it to his own welfare."
+        </div>
+        <div class="chart-container">
+            <canvas id="flowChart"></canvas>
+        </div>
+        <div class="footer">Slide 9 of 55</div>
+    </div>
+    <script>
+        const ctx = document.getElementById("flowChart").getContext("2d");
+        const flowChart = new Chart(ctx, {
+            type: "radar",
+            data: {
+                labels: ["Technology", "Society", "Culture", "Religion", "Human Agency"],
+                datasets: [{
+                    label: "Impact of Modern Transition",
+                    data: [85, 80, 75, 70, 90],
+                    backgroundColor: "rgba(179, 205, 227, 0.2)",
+                    borderColor: "rgba(19, 64, 116, 0.8)",
+                    pointBackgroundColor: "rgba(19, 64, 116, 1)",
+                    pointBorderColor: "#fff",
+                    pointHoverBackgroundColor: "#fff",
+                    pointHoverBorderColor: "rgba(19, 64, 116, 1)"
+                }]
+            },
+            options: {
+                scales: {
+                    r: {
+                        angleLines: { display: true },
+                        suggestedMin: 0,
+                        suggestedMax: 100,
+                        ticks: { 
+                            backdropColor: 'rgba(255, 255, 255, 0.75)',
+                            font: { size: 20 }
+                        },
+                        pointLabels: { 
+                            font: { size: 20 }
+                        }
+                    }
+                },
+                plugins: {
+                    title: {
+                        display: true,
+                        text: "Impact of Changes in the Modern World",
+                        font: { size: 20 }
+                    },
+                    legend: {
+                        position: 'bottom',
+                        labels: { 
+                            font: { size: 20 }
+                        }
+                    }
+                },
+                maintainAspectRatio: false
+            }
+        });
+    </script>
+</body>
+</html>

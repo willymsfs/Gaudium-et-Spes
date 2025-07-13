@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Opening Statement</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', 'Roboto', Arial, sans-serif; background-color: #f0f2f5; min-height: 100vh; display: flex; justify-content: center; align-items: center; }
+        .slide { aspect-ratio: 16 / 9; width: 90vw; max-width: 1280px; margin: 5vw 5vh; background-color: white; box-shadow: 0 4px 12px rgba(0,0,0,0.15); border-radius: 8px; padding: 40px 60px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; position: relative; }
+        .slide h1 { color: #003366; font-size: clamp(28px, 3vw, 35px); margin-bottom: 10px; }
+        .slide p, .slide li, .slide .footer { color: #333; font-size: clamp(18px, 2.0vw, 27px); max-width: 90%; line-height: 1.5; }
+        .sub-heading { font-weight: bold; margin-top: 20px; margin-bottom: 15px; }
+        .slide ul { list-style-position: inside; text-align: left; width: 100%; max-width: 85%; margin: 20px 0; }
+        .slide li { margin-bottom: 15px; }
+        .slide .quote-box { background-color: #f0f7ff; border-left: 4px solid #003366; padding: 20px; margin: 20px 0; font-size: clamp(18px, 2.0vw, 27px); font-style: italic; width: 100%; max-width: 85%; }
+        .slide .example-box { background-color: #f0fff4; border: 1px solid #00b4d8; border-radius: 5px; padding: 15px; margin: 20px 0; width: 100%; max-width: 85%; }
+        .slide .footer { position: absolute; bottom: 20px; text-align: center; width: 100%; }
+        .icon-re { position: fixed; top: 50%; width: 100%; transform: translateY(-50%); display: flex; justify-content: space-between; pointer-events: none; z-index: 10; }
+        .icon-re a { pointer-events: auto; padding: 20px; }
+        .icon-re img { width: 40px; opacity: 0.6; transition: opacity 0.2s; }
+        .icon-re a:hover img { opacity: 1; }
+            .navigation-top {
+            position: fixed;
+            top: 20px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            pointer-events: none;
+            z-index: 1000;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+        .navigation-top a {
+            pointer-events: auto;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+        .navigation-top a:hover {
+            background-color: white;
+            transform: scale(1.1);
+        }
+        .navigation-top img {
+            width: 30px;
+            height: 30px;
+            opacity: 0.8;
+            transition: opacity 0.2s;
+        }
+        .navigation-top a:hover img {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="navigation-top">
+        <div class="nav-left"><a href="slide04.html"><img src="img/left.png" alt="Previous Slide"></a></div>
+        <div class="nav-right"><a href="slide06.html"><img src="img/right.png" alt="Next Slide"></a></div>
+    </div>
+    
+        <div class="right"><a href="slide06.html"><img src="img/right.png" alt="Next Slide"></a></div>
+    </div>
+    <div class="slide">
+        <h1>The Opening Statement</h1>
+        <div class="quote-box">
+            "The joys and the hopes, the griefs and the anxieties of the men of this age, especially those who are poor or in any way afflicted, these are the joys and hopes, the griefs and anxieties of the followers of Christ."
+        </div>
+        <p class="sub-heading">Analysis of this Pivotal Statement</p>
+        <ul>
+            <li><strong>Solidarity:</strong> Establishes a profound connection between the Church and all humanity.</li>
+            <li><strong>Preferential Option:</strong> Special concern for "those who are poor or in any way afflicted."</li>
+            <li><strong>Empathy:</strong> "Nothing genuinely human fails to raise an echo in their hearts." Christians, as members of the human family, are deeply affected by and concerned with all aspects of human life. Their faith does not separate them from humanity but rather deepens their connection to it, making them attentive and responsive to every "genuinely human" reality.</li>
+            <li><strong>Community:</strong> Christians are "united in Christ" and "led by the Holy Spirit."</li>
+        </ul>
+        <div class="example-box">
+            <p class="sub-heading">Pastoral Application</p>
+            <p>This principle guides ministry by calling Christians to be present in all human situations, sharing in both suffering and joy. For instance, a parish might develop ministries not only for its members but also for the wider community, addressing local needs like homelessness, isolation of the elderly, or support for immigrants, regardless of their religious affiliation.</p>
+        </div>
+        <div class="footer">Slide 5 of 55</div>
+    </div>
+</body>
+</html>

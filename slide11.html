@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scientific and Technological Revolution</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', 'Roboto', Arial, sans-serif; background-color: #f0f2f5; min-height: 100vh; display: flex; justify-content: center; align-items: center; }
+        .slide { aspect-ratio: 16 / 9; width: 90vw; max-width: 1280px; margin: 5vw 5vh; background-color: white; box-shadow: 0 4px 12px rgba(0,0,0,0.15); border-radius: 8px; padding: 40px 60px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; position: relative; }
+        .slide h1 { color: #003366; font-size: clamp(28px, 3vw, 35px); margin-bottom: 10px; }
+        .slide p, .slide li, .slide .footer { color: #333; font-size: clamp(18px, 2.0vw, 27px); max-width: 90%; line-height: 1.5; }
+        .sub-heading { font-weight: bold; margin-top: 20px; margin-bottom: 15px; }
+        .slide ul { list-style-position: inside; text-align: left; width: 100%; max-width: 85%; margin: 20px 0; }
+        .slide li { margin-bottom: 15px; }
+        .slide .quote-box { background-color: #f0f7ff; border-left: 4px solid #003366; padding: 20px; margin: 20px 0; font-size: clamp(18px, 2.0vw, 27px); font-style: italic; width: 100%; max-width: 85%; }
+        .slide .impact-diagram { width: 100%; max-width: 85%; height: 500px; border: 2px solid #003366; border-radius: 10px; padding: 20px; margin: 20px 0; }
+        .slide .center-circle { width: 180px; height: 180px; background-color: #003366; border-radius: 50%; color: white; display: flex; justify-content: center; align-items: center; text-align: center; font-size: 18px; font-weight: bold; margin: 0 auto 30px auto; padding: 10px; }
+        .slide .impacts { display: flex; flex-wrap: wrap; justify-content: space-around; }
+        .slide .impact { width: 48%; background-color: #e6f0ff; border: 1px solid #003366; border-radius: 5px; padding: 15px; margin-bottom: 15px; }
+        .slide .impact-description { font-size: 18px; line-height: 1.4; }
+        .slide .footer { position: absolute; bottom: 20px; text-align: center; width: 100%; }
+        .icon-re { position: fixed; top: 50%; width: 100%; transform: translateY(-50%); display: flex; justify-content: space-between; pointer-events: none; z-index: 10; }
+        .icon-re a { pointer-events: auto; padding: 20px; }
+        .icon-re img { width: 40px; opacity: 0.6; transition: opacity 0.2s; }
+        .icon-re a:hover img { opacity: 1; }
+            .navigation-top {
+            position: fixed;
+            top: 20px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            pointer-events: none;
+            z-index: 1000;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+        .navigation-top a {
+            pointer-events: auto;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+        .navigation-top a:hover {
+            background-color: white;
+            transform: scale(1.1);
+        }
+        .navigation-top img {
+            width: 30px;
+            height: 30px;
+            opacity: 0.8;
+            transition: opacity 0.2s;
+        }
+        .navigation-top a:hover img {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="navigation-top">
+        <div class="nav-left"><a href="slide10.html"><img src="img/left.png" alt="Previous Slide"></a></div>
+        <div class="nav-right"><a href="slide12.html"><img src="img/right.png" alt="Next Slide"></a></div>
+    </div>
+    
+        <div class="right"><a href="slide12.html"><img src="img/right.png" alt="Next Slide"></a></div>
+    </div>
+    <div class="slide">
+        <h1>Scientific and Technological Revolution</h1>
+        <ul>
+            <li><strong>Broader Revolution:</strong> "Today's spiritual agitation and the changing conditions of life are part of a broader and deeper revolution."</li>
+            <li><strong>Scientific Formation:</strong> "Intellectual formation is ever increasingly based on the mathematical and natural sciences."</li>
+            <li><strong>Cultural Impact:</strong> "This scientific spirit has a new kind of impact on the cultural sphere and on modes of thought."</li>
+            <li><strong>Technological Transformation:</strong> "Technology is now transforming the face of the earth, and is already trying to master outer space."</li>
+            <li><strong>Mastery of Time:</strong> "The human intellect is also broadening its dominion over time: over the past by means of historical knowledge; over the future, by the art of projecting and by planning."</li>
+        </ul>
+        <div class="quote-box">
+            "The human race has passed from a rather static concept of reality to a more dynamic, evolutionary one."
+        </div>
+        <div class="impact-diagram">
+            <div class="center-circle">Scientific & Technological Revolution</div>
+            <div class="impacts">
+                <div class="impact">
+                    <p class="sub-heading">Physical World</p>
+                    <div class="impact-description">Transformation of earth's surface, exploration of space, manipulation of matter at atomic level, new energy sources.</div>
+                </div>
+                <div class="impact">
+                    <p class="sub-heading">Social Structures</p>
+                    <div class="impact-description">Urbanization, industrialization, mass communication, global transportation networks, changing work patterns.</div>
+                </div>
+                <div class="impact">
+                    <p class="sub-heading">Human Self-Understanding</p>
+                    <div class="impact-description">Advances in biology, psychology, and social sciences changing how humans understand themselves and their relationships.</div>
+                </div>
+                <div class="impact">
+                    <p class="sub-heading">Philosophical Outlook</p>
+                    <div class="impact-description">Shift from static to dynamic worldview, evolutionary thinking, new questions about meaning and purpose.</div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">Slide 11 of 55</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divine Origin of Marriage</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .slide {
+            width: 1000px;
+            height: 700px;
+            background-color: white;
+            padding: 40px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        .title {
+            color: #003366;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 35px;
+        }
+        .content {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .text-content {
+            width: 45%;
+            font-size: 27px;
+        }
+        .chart-content {
+            width: 50%;
+        }
+        .bullet-point {
+            margin-bottom: 15px;
+            font-size: 27px;
+        }
+        .footer {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            font-size: 18px;
+            color: #666666;
+        }
+        .quote {
+            background-color: #f0f7ff;
+            border-left: 4px solid #003366;
+            padding: 15px;
+            margin: 20px 0;
+            font-style: italic;
+            font-size: 27px;
+        }
+        .chart-container {
+            height: 450px;
+            width: 100%;
+            margin-top: 20px;
+        }
+        .icon-re {
+            position: absolute;
+            top: 20px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 20px;
+            box-sizing: border-box;
+            z-index: 10;
+        }
+        .icon-re img {
+            width: 40px;
+            height: 40px;
+        }
+            .navigation-top {
+            position: fixed;
+            top: 20px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            pointer-events: none;
+            z-index: 1000;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+        .navigation-top a {
+            pointer-events: auto;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+        .navigation-top a:hover {
+            background-color: white;
+            transform: scale(1.1);
+        }
+        .navigation-top img {
+            width: 30px;
+            height: 30px;
+            opacity: 0.8;
+            transition: opacity 0.2s;
+        }
+        .navigation-top a:hover img {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="navigation-top">
+        <div class="nav-left"><a href="slide29.html"><img src="img/left.png" alt="Previous Slide"></a></div>
+        <div class="nav-right"><a href="slide31.html"><img src="img/right.png" alt="Next Slide"></a></div>
+    </div>
+    
+        <div class="right"><a href="slide31.html"><img src="img/right.png"></a></div>
+    </div>
+    <div class="slide">
+        <h1 class="title">Divine Origin of Marriage</h1>
+        
+        <div class="content">
+            <div class="text-content">
+                <div class="bullet-point">• <strong>Sacred Institution:</strong> "Marriage and the family are institutions of divine origin, and are therefore sacred."</div>
+                
+                <div class="bullet-point">• <strong>Created by God:</strong> Established by God from the beginning of creation."</div>
+                
+                <div class="bullet-point">• <strong>Elevated by Christ:</strong> Raised to the dignity of a sacrament by Christ."</div>
+                
+                <div class="bullet-point">• <strong>Natural Institution:</strong> Corresponds to human nature and the Creator\"s design."</div>
+                
+                <div class="bullet-point">• <strong>Universal Value:</strong> Not merely a social convention but a reality with universal significance."</div>
+                
+                <div class="quote">"God Himself is the author of matrimony, endowed as it is with various benefits and purposes. All of these have a very decisive bearing on the continuation of the human race, on the personal development and eternal destiny of the individual members of a family, and on the dignity, stability, peace and prosperity of the family itself and of human society as a whole."</div>
+            </div>
+            
+            <div class="chart-content">
+                <div class="chart-container">
+                    <canvas id="biblicalFoundationsChart"></canvas>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">Slide 30 of 55</div>
+    </div>
+    
+    <script>
+        // Chart showing biblical foundations of Christian marriage
+        const ctx = document.getElementById("biblicalFoundationsChart").getContext("2d");
+        
+        // Create a vertical bar chart (swapped axes)
+        const biblicalFoundationsChart = new Chart(ctx, {
+            type: "bar",
+            data: {
+                labels: [
+                    "Creation (Gen 1:27-28)",
+                    "One Flesh Union (Gen 2:24)",
+                    "Covenant Fidelity (Hosea)",
+                    "Christ\"s Teaching (Matt 19:4-6)",
+                    "Christ-Church Model (Eph 5:21-33)",
+                    "Wedding at Cana (John 2:1-11)",
+                    "Love Command (1 Cor 13)"
+                ],
+                datasets: [{
+                    label: "Biblical Foundations of Christian Marriage",
+                    data: [95, 90, 75, 85, 80, 65, 70],
+                    backgroundColor: [
+                        "rgba(0, 51, 102, 0.8)",
+                        "rgba(0, 71, 122, 0.8)",
+                        "rgba(0, 91, 142, 0.8)",
+                        "rgba(0, 111, 162, 0.8)",
+                        "rgba(0, 131, 182, 0.8)",
+                        "rgba(0, 151, 202, 0.8)",
+                        "rgba(0, 171, 222, 0.8)"
+                    ],
+                    borderColor: [
+                        "rgba(0, 51, 102, 1)",
+                        "rgba(0, 71, 122, 1)",
+                        "rgba(0, 91, 142, 1)",
+                        "rgba(0, 111, 162, 1)",
+                        "rgba(0, 131, 182, 1)",
+                        "rgba(0, 151, 202, 1)",
+                        "rgba(0, 171, 222, 1)"
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                indexAxis: "x", // Swapped to vertical bars
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: "Biblical Foundations",
+                            font: {
+                                size: 15
+                            }
+                        },
+                        ticks: {
+                            font: {
+                                size: 15
+                            }
+                        }
+                    },
+                    y: {
+                        beginAtZero: true,
+                        max: 100,
+                        title: {
+                            display: true,
+                            text: "Emphasis in Gaudium et Spes",
+                            font: {
+                                size: 15
+                            }
+                        },
+                        ticks: {
+                            font: {
+                                size: 15
+                            }
+                        }
+                    }
+                },
+                plugins: {
+                    title: {
+                        display: true,
+                        text: "Biblical Foundations of Christian Marriage",
+                        font: {
+                            size: 15
+                        }
+                    },
+                    tooltip: {
+                        bodyFont: {
+                            size: 15
+                        },
+                        titleFont: {
+                            size: 15
+                        },
+                        callbacks: {
+                            label: function(context) {
+                                const tooltips = {
+                                    "Creation (Gen 1:27-28)": "Male and female created in God\"s image, called to be fruitful",
+                                    "One Flesh Union (Gen 2:24)": "Man leaves parents and is united with wife as one flesh",
+                                    "Covenant Fidelity (Hosea)": "Marriage as metaphor for God\"s faithful love for Israel",
+                                    "Christ\"s Teaching (Matt 19:4-6)": "Jesus affirms creation design and indissolubility",
+                                    "Christ-Church Model (Eph 5:21-33)": "Marriage reflects Christ\"s relationship with Church",
+                                    "Wedding at Cana (John 2:1-11)": "Christ\"s first miracle at a wedding, blessing marriage",
+                                    "Love Command (1 Cor 13)": "Selfless love as foundation of Christian marriage"
+                                };
+                                
+                                return tooltips[context.label] + ": " + context.raw + "%";
+                            }
+                        }
+                    }
+                },
+                maintainAspectRatio: false
+            }
+        });
+    </script>
+</body>
+</html>
