@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Gaudium et Spes — The Church in the Modern World</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#1a2744;--navy2:#243356;--navy3:#2e4070;
+  --gold:#c9a84c;--gold2:#e8c87a;--gold3:#f5e4b0;
+  --red:#8b1a1a;--red2:#a83030;
+  --olive:#4a6741;--olive2:#5c8153;
+  --slate:#4a5568;--slate2:#64748b;
+  --parch:#f9f6ef;--parch2:#f0ead8;--parch3:#e6ddc8;
+  --white:#ffffff;--ink:#1c1c1c;--ink2:#3a3a3a;--ink3:#555;
+  --ft:'EB Garamond',Georgia,serif;
+  --fu:'Lato',sans-serif;
+  --sh:0 4px 20px rgba(26,39,68,.12);
+  --sh2:0 8px 40px rgba(26,39,68,.18);
+  --r:12px;--tr:all .28s cubic-bezier(.4,0,.2,1);
+  --fs:12pt; /* base 12pt */
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--ft);font-size:var(--fs);background:var(--parch);color:var(--ink);line-height:1.75;-webkit-font-smoothing:antialiased}
+
+/* ── SCREENS ── */
+.screen{display:none;animation:fadeUp .36s ease both}
+.screen.active{display:block}
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+
+/* ── NAV ── */
+#nav{position:sticky;top:0;z-index:200;background:rgba(26,39,68,.97);backdrop-filter:blur(14px);border-bottom:1px solid rgba(201,168,76,.25);padding:.65rem 2rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem}
+.brand{font-family:var(--ft);font-size:1rem;font-weight:700;color:var(--gold);cursor:pointer;letter-spacing:.04em;line-height:1.3}
+.brand small{display:block;font-size:.7rem;font-weight:400;color:rgba(201,168,76,.65);letter-spacing:.06em}
+.nav-btns{display:flex;gap:.4rem;flex-wrap:wrap}
+.btn{font-family:var(--fu);font-size:.7rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:.35rem .85rem;border-radius:5px;cursor:pointer;transition:var(--tr);border:none;white-space:nowrap}
+.bo{background:transparent;border:1px solid rgba(201,168,76,.5);color:var(--gold2)}.bo:hover{background:var(--gold);color:var(--navy);border-color:var(--gold)}
+.bs{background:var(--gold);color:var(--navy)}.bs:hover{background:var(--gold2)}
+.b-active{background:var(--gold2)!important;color:var(--navy)!important}
+
+/* ── HERO ── */
+.hero{background:linear-gradient(160deg,var(--navy) 0%,var(--navy2) 55%,var(--navy3) 100%);color:#fff;padding:5rem 4rem 4rem;min-height:88vh;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c9a84c' fill-opacity='0.04'%3E%3Cpath d='M50 50c0-5.5 4.5-10 10-10s10 4.5 10 10-4.5 10-10 10S50 55.5 50 50zm-40 0c0-5.5 4.5-10 10-10s10 4.5 10 10-4.5 10-10 10S10 55.5 10 50zm20-30c0-5.5 4.5-10 10-10s10 4.5 10 10-4.5 10-10 10S30 25.5 30 20z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");pointer-events:none}
+.hero-eyebrow{font-family:var(--fu);font-size:.68rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold2);border:1px solid rgba(201,168,76,.4);background:rgba(201,168,76,.1);display:inline-block;padding:.28rem 1rem;border-radius:3px;margin-bottom:2rem}
+.hero-title{font-family:var(--ft);font-size:clamp(2.2rem,5vw,4rem);font-weight:700;line-height:1.1;margin-bottom:.5rem}
+.hero-title em{font-style:italic;color:var(--gold2)}
+.hero-sub{font-style:italic;font-size:1.25rem;color:rgba(255,255,255,.75);margin-bottom:.8rem}
+.hero-rule{width:60px;height:2px;background:linear-gradient(90deg,var(--gold),var(--gold2));margin:1.4rem 0}
+.hero-meta{font-family:var(--fu);font-size:.82rem;color:rgba(255,255,255,.6);margin-bottom:2rem;line-height:1.9}
+.hero-meta strong{color:var(--gold2);font-weight:700}
+.hero-quote{font-style:italic;font-size:1.1rem;color:rgba(255,255,255,.88);border-left:3px solid var(--gold);padding-left:1.2rem;max-width:700px;margin-bottom:3rem;line-height:1.75}
+.hero-quote cite{display:block;font-size:.8rem;font-style:normal;color:var(--gold2);margin-top:.5rem;font-family:var(--fu)}
+.hero-cta{display:flex;gap:.8rem;flex-wrap:wrap}
+.cta-p{font-family:var(--fu);font-weight:700;font-size:.9rem;letter-spacing:.05em;text-transform:uppercase;padding:.75rem 2rem;border-radius:6px;background:var(--gold);color:var(--navy);border:none;cursor:pointer;transition:var(--tr);box-shadow:0 4px 16px rgba(201,168,76,.35)}
+.cta-p:hover{background:var(--gold2);transform:translateY(-2px)}
+.cta-s{font-family:var(--fu);font-weight:700;font-size:.88rem;letter-spacing:.05em;text-transform:uppercase;padding:.75rem 1.8rem;border-radius:6px;background:transparent;color:rgba(255,255,255,.85);border:1px solid rgba(255,255,255,.3);cursor:pointer;transition:var(--tr)}
+.cta-s:hover{border-color:var(--gold);color:var(--gold2)}
+.hero-scroll{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.4rem;color:rgba(255,255,255,.35);font-family:var(--fu);font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:var(--tr)}
+.hero-scroll:hover{color:var(--gold)}
+.scroll-arrow{width:20px;height:20px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg);animation:arrowBounce 1.8s ease-in-out infinite}
+@keyframes arrowBounce{0%,100%{transform:rotate(45deg) translateY(0)}50%{transform:rotate(45deg) translateY(4px)}}
+
+/* ── SECTION OVERVIEW ── */
+#sec-overview{padding:3.5rem 2rem 5rem}
+.ov-header{max-width:1100px;margin:0 auto 2.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;border-bottom:1px solid var(--parch3);padding-bottom:1.2rem}
+.ov-title{font-family:var(--ft);font-size:clamp(1.4rem,3vw,2rem);font-weight:700;color:var(--navy)}
+.sections-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:1.4rem}
+.sec-card{background:var(--white);border-radius:var(--r);overflow:hidden;box-shadow:var(--sh);cursor:pointer;transition:var(--tr);border:1px solid var(--parch3)}
+.sec-card:hover{transform:translateY(-4px);box-shadow:var(--sh2)}
+.sec-card-top{padding:1.2rem 1.4rem .9rem;background:linear-gradient(135deg,var(--cc,var(--navy)),var(--ccd,var(--navy2)));color:#fff;position:relative;overflow:hidden}
+.sec-card-top::after{content:attr(data-num);position:absolute;right:-8px;top:-8px;font-family:var(--ft);font-size:5rem;font-weight:700;opacity:.08;line-height:1}
+.sec-tag{font-family:var(--fu);font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;background:rgba(255,255,255,.18);padding:.2rem .6rem;border-radius:3px;margin-bottom:.6rem;display:inline-block}
+.sec-num{font-family:var(--ft);font-size:1.2rem;font-weight:700;opacity:.7}
+.sec-name{font-family:var(--ft);font-size:1.25rem;font-weight:700;margin-top:.2rem;line-height:1.2}
+.sec-sub-label{font-style:italic;font-size:.88rem;opacity:.82;margin-top:.2rem}
+.sec-body{padding:1.1rem 1.4rem 1.3rem}
+.sec-preview{font-size:.9rem;color:var(--ink3);line-height:1.6}
+.sec-footer{padding:.75rem 1.4rem;background:var(--cc,var(--navy));color:#fff;display:flex;align-items:center;justify-content:space-between;font-family:var(--fu);font-size:.72rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+
+/* ── DETAIL SCREEN ── */
+#sec-detail{padding:0}
+.det-hero{color:#fff;padding:3rem 3rem 2.5rem;position:relative;overflow:hidden;background:linear-gradient(135deg,var(--cc,var(--navy)),var(--ccd,var(--navy2)))}
+.det-hero::before{content:attr(data-num);position:absolute;right:-10px;bottom:-20px;font-family:var(--ft);font-size:13rem;font-weight:900;opacity:.07;line-height:1;pointer-events:none}
+.det-hero-top{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;max-width:1000px}
+.det-num{font-family:var(--ft);font-size:1.2rem;opacity:.7;font-weight:700}
+.det-icon{font-size:3rem}
+.det-name{font-family:var(--ft);font-size:clamp(1.7rem,4vw,2.8rem);font-weight:700;line-height:1.1;margin:.3rem 0}
+.det-sub{font-style:italic;font-size:1.05rem;opacity:.85;margin-bottom:1.3rem}
+.det-badges{display:flex;flex-wrap:wrap;gap:.4rem}
+.badge{font-family:var(--fu);font-size:.7rem;font-weight:700;background:rgba(255,255,255,.18);padding:.25rem .75rem;border-radius:20px;backdrop-filter:blur(4px)}
+.det-body{max-width:1000px;margin:0 auto;padding:2.5rem 2rem 5rem}
+.det-section{margin-bottom:2.5rem}
+.det-label{font-family:var(--fu);font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--cc,var(--navy));margin-bottom:.9rem;padding-bottom:.45rem;border-bottom:2px solid var(--ccp,#e0e8f0)}
+.prose-box{background:var(--white);border-radius:var(--r);padding:1.8rem 2rem;box-shadow:var(--sh);border-left:5px solid var(--cc,var(--navy));font-size:1rem;color:var(--ink2);line-height:1.8}
+.gq{font-style:italic;font-size:1.05rem;color:var(--ink2);background:var(--parch2);border-left:4px solid var(--gold);padding:1rem 1.4rem;border-radius:0 8px 8px 0;margin:1.2rem 0;line-height:1.7}
+.gq cite{display:block;font-size:.78rem;font-style:normal;color:var(--slate2);margin-top:.5rem;font-family:var(--fu)}
+.theme-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.1rem;margin-top:.5rem}
+.theme-card{background:var(--white);border-radius:10px;padding:1.2rem 1.4rem;box-shadow:var(--sh);border-top:3px solid var(--cc,var(--navy))}
+.th-icon{font-size:1.6rem;margin-bottom:.5rem}
+.th-title{font-family:var(--ft);font-size:1rem;font-weight:700;color:var(--cc,var(--navy));margin-bottom:.55rem}
+.th-body{font-size:.9rem;color:var(--ink2);line-height:1.6}
+.th-body strong{color:var(--ink);font-weight:600}
+.critique-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem;margin-top:.5rem}
+.crit-card{border-radius:10px;padding:1.2rem 1.4rem;box-shadow:var(--sh)}
+.crit-for{background:#f0f7ef;border-top:3px solid var(--olive)}
+.crit-against{background:#fdf0f0;border-top:3px solid var(--red)}
+.crit-label{font-family:var(--fu);font-size:.65rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:.6rem}
+.crit-for .crit-label{color:var(--olive)}
+.crit-against .crit-label{color:var(--red)}
+.crit-list{list-style:none}
+.crit-list li{font-size:.9rem;color:var(--ink2);padding-left:.9rem;position:relative;margin-bottom:.45rem;line-height:1.55}
+.crit-list li::before{content:'›';position:absolute;left:0;font-weight:700}
+.crit-for .crit-list li::before{color:var(--olive)}
+.crit-against .crit-list li::before{color:var(--red)}
+.india-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1.1rem;margin-top:.5rem}
+.india-card{background:var(--white);border-radius:10px;padding:1.2rem 1.4rem;box-shadow:var(--sh);border-left:4px solid var(--cc,var(--gold))}
+.in-cat{font-family:var(--fu);font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--cc,var(--gold));margin-bottom:.5rem}
+.in-title{font-family:var(--ft);font-size:.98rem;font-weight:700;color:var(--ink);margin-bottom:.45rem}
+.in-body{font-size:.88rem;color:var(--ink3);line-height:1.6}
+.timeline{margin-top:.5rem;position:relative;padding-left:2rem}
+.timeline::before{content:'';position:absolute;left:.5rem;top:.5rem;bottom:.5rem;width:2px;background:linear-gradient(to bottom,var(--cc,var(--navy)),transparent)}
+.tl-item{position:relative;margin-bottom:1.4rem}
+.tl-dot{position:absolute;left:-2rem;top:.3rem;width:12px;height:12px;border-radius:50%;background:var(--cc,var(--navy));border:2px solid var(--white);box-shadow:var(--sh)}
+.tl-date{font-family:var(--fu);font-size:.7rem;font-weight:700;letter-spacing:.08em;color:var(--cc,var(--navy));text-transform:uppercase;margin-bottom:.25rem}
+.tl-text{font-size:.9rem;color:var(--ink2);line-height:1.6;background:var(--white);border-radius:8px;padding:.8rem 1rem;box-shadow:0 2px 8px rgba(0,0,0,.07)}
+.summary-box{background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;border-radius:var(--r);padding:1.8rem 2rem}
+.summary-box p{font-style:italic;font-size:1.05rem;line-height:1.75;color:rgba(255,255,255,.9)}
+.det-nav-row{margin-top:2.5rem;display:flex;gap:.7rem;flex-wrap:wrap}
+
+/* ── STRUCTURE SCREEN ── */
+#sec-structure{padding:3.5rem 2rem 5rem}
+.str-max{max-width:1000px;margin:0 auto}
+.str-header{margin-bottom:2.5rem;border-bottom:1px solid var(--parch3);padding-bottom:1.2rem}
+.str-title{font-family:var(--ft);font-size:clamp(1.4rem,3vw,2rem);font-weight:700;color:var(--navy);margin-bottom:.4rem}
+.str-intro{font-size:1rem;color:var(--ink3);max-width:700px;line-height:1.7}
+.part-block{background:var(--white);border-radius:var(--r);box-shadow:var(--sh);margin-bottom:1.4rem;overflow:hidden}
+.part-head{padding:1.2rem 1.6rem;display:flex;align-items:center;gap:1rem;cursor:pointer;transition:var(--tr);background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff}
+.part-head:hover{opacity:.92}
+.part-num{font-family:var(--ft);font-size:1.4rem;font-weight:700;color:var(--gold2);min-width:2rem}
+.part-title{font-family:var(--ft);font-size:1.15rem;font-weight:700}
+.part-sub{font-size:.85rem;opacity:.75;font-style:italic}
+.part-arrow{margin-left:auto;transition:transform .25s;font-size:1.1rem}
+.part-block.open .part-arrow{transform:rotate(180deg)}
+.part-body{max-height:0;overflow:hidden;transition:max-height .4s ease}
+.part-block.open .part-body{max-height:3000px}
+.part-content{padding:1.4rem 1.6rem}
+.chapter-list{list-style:none;display:flex;flex-direction:column;gap:.7rem}
+.chapter-list li{font-size:.9rem;color:var(--ink2);padding:.7rem 1rem;background:var(--parch);border-radius:7px;border-left:3px solid var(--navy3);line-height:1.55}
+.chapter-list li strong{color:var(--navy);display:block;font-size:.92rem}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  .hero{padding:4rem 2rem 3rem;min-height:auto}
+  .critique-grid{grid-template-columns:1fr}
+  .det-hero{padding:2rem 1.5rem}
+  .det-body{padding:1.5rem 1rem 4rem}
+}
+@media(max-width:600px){
+  #nav{padding:.55rem 1rem}
+  #sec-overview,#sec-structure,#sec-detail{padding:2rem .9rem 4rem}
+  .theme-grid,.india-grid{grid-template-columns:1fr}
+  .det-hero-top{flex-wrap:wrap}
+  .sections-grid{grid-template-columns:1fr}
+}
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .45s ease,transform .45s ease}
+.reveal.vis{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="brand" onclick="go('hero')">
+    Gaudium et Spes
+    <small>Pastoral Constitution · Vatican II · 1965</small>
+  </div>
+  <div class="nav-btns" id="navbtns">
+    <button class="btn bo" onclick="go('overview')">Themes</button>
+    <button class="btn bo" onclick="go('structure')">Document Structure</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div id="screen-hero" class="screen active">
+  <div class="hero">
+    <div class="hero-eyebrow">Second Vatican Council · December 7, 1965</div>
+    <h1 class="hero-title"><em>Gaudium et Spes</em></h1>
+    <p class="hero-sub">The Pastoral Constitution on the Church in the Modern World</p>
+    <div class="hero-rule"></div>
+    <div class="hero-meta">
+      <strong>Promulgated by:</strong> Pope Paul VI &nbsp;·&nbsp;
+      <strong>Vote:</strong> 2,307 in favour, 75 against &nbsp;·&nbsp;
+      <strong>Length:</strong> Longest document of Vatican II &nbsp;·&nbsp;
+      <strong>Addressed to:</strong> The whole of humanity
+    </div>
+    <blockquote class="hero-quote">
+      "The joys and the hopes, the griefs and the anxieties of the people of this age, especially those who are poor or in any way afflicted — these are the joys and hopes, the griefs and anxieties of the followers of Christ."
+      <cite>— Gaudium et Spes, §1 (Opening Lines)</cite>
+    </blockquote>
+    <div class="hero-cta">
+      <button class="cta-p" onclick="go('overview')">Explore All Themes →</button>
+      <button class="cta-s" onclick="go('structure')">Document Structure</button>
+    </div>
+    <div class="hero-scroll" onclick="go('overview')">
+      <div class="scroll-arrow"></div>
+      <span>Explore</span>
+    </div>
+  </div>
+</div>
+
+<!-- THEMES OVERVIEW -->
+<div id="screen-overview" class="screen">
+  <div class="ov-header">
+    <h2 class="ov-title">Major Themes of Gaudium et Spes</h2>
+    <button class="btn bs" onclick="go('structure')">Document Structure</button>
+  </div>
+  <div class="sections-grid" id="sec-grid"></div>
+</div>
+
+<!-- THEME DETAIL -->
+<div id="screen-detail" class="screen">
+  <div id="det-content"></div>
+</div>
+
+<!-- DOCUMENT STRUCTURE -->
+<div id="screen-structure" class="screen">
+  <div class="str-max">
+    <div class="str-header">
+      <h2 class="str-title">The Structure of Gaudium et Spes</h2>
+      <p class="str-intro">Gaudium et Spes is organised into a Preface, an Introduction, two main Parts, and a Conclusion — the longest document produced by the Second Vatican Council and the first conciliar text addressed to all humanity, not merely Catholics.</p>
+    </div>
+    <div id="structure-content"></div>
+  </div>
+</div>
+
+<script>
+/* ============================================================
+   DATA
+   ============================================================ */
+const SECTIONS = [
+{id:'hist', num:'01', icon:'🏛️', name:'Historical Context',
+ sub:'The World Vatican II Addressed',
+ color:'#1a2744', dark:'#0d1a36', pale:'#e8edf5',
+ tags:['1962–1965','John XXIII','Cold War','Aggiornamento'],
+ preview:'Why the Church needed to speak differently to the modern world — from the Cold War to decolonisation to the crisis of modernity.',
+ summary:'Gaudium et Spes emerged from a world in profound upheaval: the Cold War, decolonisation, the aftermath of two World Wars, rapid technological change, and the rise of atheistic humanism. Pope John XXIII convened Vatican II not to issue new condemnations but to renew the Church from within and open it to genuine dialogue with the world. The Council was the Church\'s response to its own fear of irrelevance.',
+ content:[
+  {type:'prose', label:'The World of the Early 1960s', text:'When Pope John XXIII announced the Second Vatican Council on 25 January 1959, the world was living in the shadow of nuclear annihilation. The Cold War between the United States and the Soviet Union divided humanity into hostile blocs. Post-colonial nations across Asia and Africa were seeking independence and development. Scientific and technological progress was advancing at breathtaking speed — a dog had been launched into space, television was reshaping culture, and the Green Revolution promised to end famine. Yet simultaneously, unemployment and poverty persisted, atheism was spreading as an intellectual force, and the Church appeared to many observers as an institution more oriented toward the past than the present. It was in this atmosphere that Pope John XXIII used a word that would define the Council: <em>aggiornamento</em> — a bringing up to date, an opening of the Church\'s windows to let in fresh air. Not a betrayal of tradition, but a new way of proclaiming it.'},
+  {type:'timeline', label:'Timeline of Vatican II and Gaudium et Spes', items:[
+    {date:'25 January 1959', text:'Pope John XXIII announces the Second Vatican Council, describing its purpose as <em>aggiornamento</em> — updating the Church to address the modern world.'},
+    {date:'1960–1962', text:'Preparatory commissions draft 67 schema documents. Most are later rejected as inadequate: mere repetitions of condemnations of Modernism.'},
+    {date:'11 October 1962', text:'Opening Session (First Period). Pope John XXIII celebrates the opening Mass. The schema on Divine Revelation is rejected and sent back for revision — a signal that the Council would chart a new course.'},
+    {date:'3 June 1963', text:'Pope John XXIII dies. His successor, Giovanni Battista Montini, takes the name Paul VI and pledges to continue the Council.'},
+    {date:'29 September 1963', text:'Second Period opens. Cardinal Suenens of Belgium proposes a new document on the Church in the modern world. Schema 13 begins to take shape from the floor of the Council itself — unique in conciliar history.'},
+    {date:'1964', text:'Third Period. Schema 13 debated extensively. Theologians Yves Congar, Marie-Dominique Chenu, and Pierre Haubtmann shape the text. Joseph Ratzinger and Henri de Lubac push for a more Christocentric theological foundation.'},
+    {date:'7 December 1965', text:'Gaudium et Spes is promulgated by Pope Paul VI on the final day of the Council. Vote: 2,307 in favour, 75 against. It is the last and longest document of Vatican II, addressed for the first time to the whole of humanity.'},
+  ]},
+  {type:'prose', label:'The Genesis of Gaudium et Spes', text:'Unlike other conciliar documents, Gaudium et Spes was not prepared beforehand but arose from the floor of the Council itself — which is why it has sometimes been called the most ecumenical and most original document of Vatican II. Cardinal Leo Jozef Suenens of Belgium played a pivotal role in its genesis. He argued passionately that the Council needed not only to look inward (ecclesia ad intra) but also outward (ecclesia ad extra) — addressing the Church\'s engagement with the world. Three main theological factions shaped the document: the ressourcement theologians (Congar, Chenu, de Lubac, Ratzinger, Daniélou), who insisted on explicitly Christian and scriptural foundations; the progressive "social justice" wing (led by Cardinal Suenens and Archbishop Helder Camara of Brazil), who wanted strong engagement with political and economic realities; and the neo-scholastics, who were suspicious of too close an accommodation with modernity. The final text reflects all three voices, which is part of why it has been interpreted so diversely since 1965.'},
+  {type:'prose', label:'The Significance of "Pastoral Constitution"', text:'The term "Pastoral Constitution" — unique in the history of ecumenical councils — signals the document\'s character. It is not a dogmatic definition. It does not define new doctrines or condemn new heresies. Instead, it applies perennial theological principles to the concrete historical situation of humanity in the 1960s. This means the document is both time-bound (addressing specific historical circumstances) and timeless (rooted in unchanging anthropological and theological foundations). Cardinal Ratzinger described it in 1975 as "a kind of counter-Syllabus" — where Pius IX\'s 1864 Syllabus of Errors had listed what the Church condemned in modernity, Gaudium et Spes articulates what the Church can embrace, affirm, and engage in genuine dialogue with in the modern world.'},
+ ]
+},
+{id:'theo', num:'02', icon:'✝️', name:'Theological Significance',
+ sub:'What Made GS Historically Revolutionary',
+ color:'#3d1a5c', dark:'#2a1040', pale:'#f0e8f8',
+ tags:['Human Dignity','Christocentrism','Signs of the Times','Natural Law'],
+ preview:'The theological breakthrough of GS: its new anthropology, its Christocentric heart, and its method of reading the "signs of the times."',
+ summary:'Gaudium et Spes achieved three major theological breakthroughs: (1) a comprehensive theological anthropology grounded in human dignity as imago Dei; (2) a Christocentric key to understanding all of human reality (GS §22); and (3) a new pastoral methodology of reading the "signs of the times." Together these constituted a decisive shift away from the defensive, neo-scholastic posture of the Church since the First Vatican Council.',
+ content:[
+  {type:'themes', label:'The Four Theological Pillars of GS', items:[
+    {icon:'👤', title:'Theological Anthropology', body:'GS places the dignity of the human person — created in the image of God (<em>imago Dei</em>) — at the centre of all its reflection. Human dignity is not a philosophical abstraction but a theological datum: every person is created by God, redeemed by Christ, and called to eternal life. This dignity is violated by poverty, discrimination, torture, racism, and every form of dehumanisation. No purely sociological or Marxist analysis of human suffering can be adequate without this anthropological foundation.'},
+    {icon:'✝️', title:'The Christological Key (GS §22)', body:'The most theologically dense sentence in GS: "It is only in the mystery of the Word made flesh that the mystery of man truly becomes clear." Christ does not merely save us — he reveals to us what it means to be human. This "Christological Key" (GS 22) was championed by Bishop Karol Wojtyła (later John Paul II) and became the lens through which he read the entire document. Every human aspiration — for dignity, freedom, love, meaning, community — finds its answer and fulfilment in Christ.'},
+    {icon:'📖', title:'Reading the Signs of the Times', body:'GS §4 calls the Church to "read the signs of the times and interpret them in the light of the Gospel." This is not relativism — it does not mean the world sets the agenda for the Church. Rather, it means that historical events, social movements, and human experience are potential loci of theological reflection. God speaks not only through Scripture and Tradition but also through the unfolding of history. This method opened the door to contextual theologies — liberation theology, feminist theology, Dalit theology — which all claim GS as their charter.'},
+    {icon:'🤝', title:'Dialogue as Ecclesial Stance', body:'For the first time in modern Church history, GS adopted dialogue — not denunciation — as its primary posture toward the world. The Church is not the world\'s adversary but its companion, "travelling the same road." This includes dialogue with non-believers, with atheists, and even with those who hold positions the Church disagrees with. The document acknowledges that the Church can learn from the world even as it offers the Gospel to the world. This two-directional posture was profoundly new.'},
+    {icon:'⚖️', title:'The Autonomy of Earthly Affairs', body:'GS §36 affirms the "rightful autonomy of earthly affairs" — science, politics, economics, and culture have their own proper methods and norms that the Church does not simply override. This was a significant development from the mediaeval ideal of Christendom. The Church\'s role is not to control temporal affairs but to illuminate them with the light of the Gospel and human reason. Faith does not replace reason; it elevates and perfects it.'},
+    {icon:'🌍', title:'Universal Human Solidarity', body:'GS §1 declares that "nothing genuinely human fails to raise an echo in their hearts" — the hearts of the followers of Christ. The Church is in solidarity with all of humanity, not just its own members. This universalism flows from the Incarnation: the eternal Son of God assumed a specific human nature in order to be in solidarity with all humanity. The joys and griefs of every human being — regardless of religion, race, class, or culture — are the Church\'s own.'},
+  ]},
+  {type:'gq', text:'"Christ, the final Adam, by the revelation of the mystery of the Father and His love, fully reveals man to man himself and makes his supreme calling clear."', cite:'— Gaudium et Spes §22 (the most quoted sentence in the document)'},
+  {type:'prose', label:'Why GS §22 Is Called the Christological Bombshell', text:'Section 22 of Gaudium et Spes is arguably the most theologically significant sentence in all the documents of Vatican II. It states that Christ does not merely redeem us from sin — he <em>reveals us to ourselves</em>. In Christ the mystery of humanity is illumined. Bishop Karol Wojtyła, who would become Pope John Paul II, considered this the fulcrum of the entire document. In his pontificate, he returned to GS 22 repeatedly in his encyclicals (<em>Redemptor Hominis</em>, <em>Veritatis Splendor</em>, <em>Evangelium Vitae</em>) as the master key to Catholic social and moral teaching. The section also introduces the remarkable claim that the Holy Spirit offers every human being the possibility of being associated with the Paschal Mystery — an opening toward universal salvific possibility that would generate enormous theological discussion in subsequent decades.'},
+ ]
+},
+{id:'impact', num:'03', icon:'🌊', name:'Reception & Impact',
+ sub:'How the World Responded to GS',
+ color:'#1a5276', dark:'#0d3349', pale:'#e8f0f5',
+ tags:['Medellín 1968','Liberation Theology','John Paul II','Pope Francis'],
+ preview:'From Medellín to Pope Francis: how GS unleashed liberation theology, the preferential option for the poor, and contextual theologies worldwide.',
+ summary:'The immediate reception of Gaudium et Spes was enthusiastic, especially in Latin America and the developing world, where it provided the theological warrant for a new engagement with poverty and social justice. Its impact was felt in the emergence of liberation theology, the Medellín and Puebla conferences, and eventually in the pontificate of Pope Francis, who consistently invokes GS. Yet its reception was contested from the beginning — between those who read it as a warrant for adapting the Gospel to the world, and those who insisted it must be read in a Christocentric, transformative key.',
+ content:[
+  {type:'timeline', label:'Key Moments in the Reception of GS', items:[
+    {date:'1967', text:'<strong>Populorum Progressio</strong> (Paul VI): "The development of peoples" — directly inspired by GS §§63–72. Argues that integral human development, not merely economic growth, is the Church\'s concern. Coins the phrase: "Development is the new name for peace."'},
+    {date:'1968', text:'<strong>Medellín Conference</strong> (CELAM, Colombia): Latin American bishops apply GS to their context of poverty, oppression, and structural sin. The "preferential option for the poor" enters Catholic social teaching. Liberation theology — Gustavo Gutiérrez, Leonardo Boff, Jon Sobrino — claims GS as its founding charter.'},
+    {date:'1971', text:'<strong>Octogesima Adveniens</strong> (Paul VI) and <strong>Justitia in Mundo</strong> (Synod of Bishops): "Action on behalf of justice and participation in the transformation of the world fully appear to us as a constitutive dimension of the preaching of the Gospel."'},
+    {date:'1975', text:'Joseph Ratzinger, in <em>Principles of Catholic Theology</em>, calls GS "a kind of counter-Syllabus" — simultaneously affirming its importance and warning against naïve optimism about modernity. He expresses concern about "downright Pelagian" sections.'},
+    {date:'1979', text:'<strong>Puebla Conference</strong>: Confirms and deepens Medellín. The preferential option for the poor becomes foundational for Latin American Catholicism. Pope John Paul II opens the conference — he reads GS through the Christocentric lens of GS §22.'},
+    {date:'1981–2005', text:'<strong>John Paul II\'s pontificate</strong>: Returns repeatedly to GS §22 in <em>Redemptor Hominis</em>, <em>Laborem Exercens</em>, <em>Sollicitudo Rei Socialis</em>, <em>Centesimus Annus</em>. Develops the "theology of the body" from GS §24 ("gift of self"). Insists on a Christocentric reading against secularising interpretations.'},
+    {date:'2013–present', text:'<strong>Pope Francis</strong>: <em>Evangelii Gaudium</em>, <em>Laudato Si\'</em>, and <em>Laudato Deum</em> all draw directly on GS — especially its concern for the poor, its call for structural transformation, and its method of reading the signs of the times. Francis has been described as the first pope to truly implement GS at the level of ecclesial culture.'},
+    {date:'1980s–2000s', text:'<strong>Contextual Theologies</strong>: Feminist theology, African theology, Asian theology, Dalit theology — all invoke GS\'s method of reading the signs of the times in local contexts. GS becomes the theological warrant for theologies "from below."'},
+  ]},
+  {type:'prose', label:'GS and the Preferential Option for the Poor', text:'Perhaps the single most consequential practical impact of Gaudium et Spes has been the emergence and consolidation of the "preferential option for the poor" in Catholic social teaching. GS §§1, 63–72 insist that the Church\'s solidarity with humanity means, in the first instance, solidarity with those who suffer most — the poor, the afflicted, the marginalised. This was not a new invention but a retrieval and radicalisation of a strand present throughout Catholic social teaching since Leo XIII\'s <em>Rerum Novarum</em> (1891). The Latin American bishops at Medellín (1968) and Puebla (1979) developed this into a systematic option: the Church must not merely serve the poor as beneficiaries of charity, but stand with the poor as active subjects of their own history. Gustavo Gutiérrez, the founder of liberation theology, described this as a "preferential" — not exclusive — option: the Church is for all, but it stands first with those who have no one else to stand for them.'},
+  {type:'gq', text:'"It is not possible to serve God and mammon. The encounter with the living God, who liberates and saves, inevitably implies a commitment to one\'s brothers and sisters, especially to the most vulnerable and marginalised."', cite:'— Pope Francis, Evangelii Gaudium §57 (directly in the tradition of GS)'},
+ ]
+},
+{id:'critique', num:'04', icon:'⚖️', name:'Arguments Against GS',
+ sub:'Honest Theological Critiques',
+ color:'#8b1a1a', dark:'#5a0000', pale:'#fdf0f0',
+ tags:['Ratzinger','De Lubac','Naïve Optimism','Western Bias'],
+ preview:'The serious theological objections to GS: from Ratzinger\'s critique of "downright Pelagian" sections to concerns about Western bias and accommodation to modernity.',
+ summary:'Gaudium et Spes has attracted serious, sustained theological criticism — not only from traditionalists but from theologians who deeply valued Vatican II. The critiques range from philosophical (excessive optimism about human nature and historical progress) to theological (insufficient grounding in sin, grace, and eschatology) to cultural (unconscious Western bias) to methodological (the danger of the world setting the Church\'s agenda). These are not arguments to dismiss the document but to read it more carefully and honestly.',
+ content:[
+  {type:'critique', label:'In Favour & Against: The Theological Debate', for:{
+   label:'Strengths Acknowledged',
+   items:['First document to address all humanity — a radical act of solidarity and universalism','Restored dialogue as the Church\'s posture after centuries of condemnation','Provided the theological foundation for liberation theology and option for the poor','Christological centre (GS §22) is one of the most profound sentences in conciliar history','Opened space for contextual, pluralistic theologies — including Dalit, African, and Asian theologies','Paved the way for Pope Francis\'s "Church for the poor" ecclesiology']
+  }, against:{
+   label:'Serious Critiques',
+   items:['Ratzinger (1969): some sections are "downright Pelagian in tone" — insufficient acknowledgment of original sin and structural evil','Henri de Lubac: the theological balance of nature and grace was disturbed — GS risks collapsing grace into nature, the supernatural into the natural','Naïve optimism: written in the "Kennedy era" mood of progress, the document underestimates the persistence of evil and the darkness of history','Western bias: the "modern world" GS addresses is largely Western, secular, and liberal — insufficiently attentive to Asia, Africa, and India\'s contextual realities','Methodological risk: if the "signs of the times" set the agenda, who interprets them and with what criteria? The document lacks a rigorous hermeneutical principle','Ambiguity in "dialogue": does it mean bold kerygmatic proclamation or mutual learning? Ratzinger and Schillebeeckx read GS completely differently','Post-conciliar misuse: GS became, at its worst, a licence for "correlating" the Gospel with whatever was fashionable in secular culture — what Ratzinger called a Church constantly changing its shop windows to attract customers']
+  }},
+  {type:'prose', label:'Ratzinger\'s "Counter-Syllabus" and Its Limits', text:'Cardinal Ratzinger\'s 1975 description of GS as "a kind of counter-Syllabus" to Pius IX\'s 1864 Syllabus of Errors was both apt and double-edged. Where the Syllabus had condemned modernity wholesale, GS attempted a more nuanced engagement. But Ratzinger also warned against what he called "the Kennedy era mood" that infected parts of the document — an optimism about human reason, progress, and democratic institutions that events would soon challenge. By 1969 he was writing that some sections of GS were "naïvely optimistic" and even "downright Pelagian" in their insufficient acknowledgment of sin. Henri de Lubac shared these concerns from a different angle: he feared that GS\'s enthusiastic embrace of the world risked losing the sense of transcendence — of the radical otherness of grace over nature. The supernatural, de Lubac feared, was being absorbed into the natural order. These are serious theological concerns that a rigorous reading of GS must engage, not dismiss.'},
+  {type:'gq', text:'"At its worst, Gaudium et Spes became an excuse for correlating, and even accommodating, the faith to the culture of modernity — the licence for what we now call the spirit of the Council: identifying fashionable trends in secular culture and tying the faith to them in a pathetic marketing ploy."', cite:'— Tracey Rowland (paraphrasing Ratzinger), Catholic World Report, 2022'},
+  {type:'prose', label:'The Western Bias Problem', text:'One of the most enduring critiques of GS, especially from theologians in Asia and Africa, is that the "modern world" it engages is essentially a Western, post-Enlightenment, liberal world. The document addresses Cold War anxieties, nuclear weapons, capitalist economics, and democratic politics — all of which presuppose Western modernity as the norm. But for the majority of the world\'s Catholics — in India, sub-Saharan Africa, Southeast Asia — the "modern world" looks very different: colonialism\'s legacy, caste hierarchies, tribal communities, religious pluralism, and poverty that is structurally different from Western poverty. The Indian theologian Michael Amaladoss, SJ, argued that GS needs a second hermeneutical layer — an Indian or Asian reading of the "signs of the times" that takes seriously cultural and religious pluralism, the caste system, and the rich spiritual traditions of Hinduism, Buddhism, and Islam. Gaudium et Spes opened the door for such contextualisation, but the door was opened by a document that itself was still largely written in a Western theological idiom.'},
+ ]
+},
+{id:'india', num:'05', icon:'🪔', name:'GS and India',
+ sub:'Poverty, Caste, Dalits, Tribals, Pluralism',
+ color:'#7D4E0F', dark:'#4a2e08', pale:'#f5ede0',
+ tags:['Dalits','Caste','Tribals','Migrants','Pluralism'],
+ preview:'Why GS is urgently relevant to India\'s specific challenges: 280 million Dalits, adivasi displacement, caste within the Church itself, and the theology of religious pluralism.',
+ summary:'India presents the most complex and demanding test case for Gaudium et Spes. With the world\'s largest population of Dalits (formerly "untouchables"), rampant caste discrimination within Christian communities themselves, dispossessed Adivasi (tribal) peoples, vast internal migration, and a context of profound religious pluralism, India requires not merely the application of GS but its radical contextualisation — what theologians like Michael Amaladoss, Samuel Rayan, and Dalit theologians Arvind Nirmal and M.E. Prabhakar have attempted.',
+ content:[
+  {type:'india', label:'GS Themes and India\'s Specific Realities', items:[
+    {cat:'Caste & Dalits', icon:'⚖️', title:'Human Dignity Against the Caste System', body:'GS §12 declares that every human person is created in the image of God, possessing inherent dignity. Yet approximately 280 million Dalits — nearly a quarter of India\'s population — live under the shadow of a caste system that negates this dignity from birth. Caste is not merely social stratification; it is a religiously sanctioned hierarchy that assigns ritual purity and pollution, restricting access to temples, wells, education, and occupations. GS\'s insistence that "any kind of social or cultural discrimination in basic personal rights on the grounds of sex, race, colour, social conditions, language, or religion must be curbed and eradicated as incompatible with God\'s design" (§29) is a direct theological condemnation of caste.'},
+    {cat:'Dalits in the Church', icon:'✝️', title:'Caste Within Christianity — The Unfinished Agenda', body:'The scandal is that caste discrimination persists within the Indian Christian community itself. Separate seating, separate communion lines, separate burial grounds — these practices exist in parishes across India. Dalit theologians Arvind P. Nirmal (Church of North India) and M.E. Prabhakar argue that Indian Christian theology has been "Brahminicised" — dominated by upper-caste converts whose concern was relating Christianity to classical Hindu philosophy, not addressing the lived suffering of Dalit Christians who constitute approximately 70% of India\'s Christians. GS\'s call for the Church to be a "sacrament of unity" (LG §1) stands in sharp contradiction to a Church divided by caste.'},
+    {cat:'Adivasis / Tribals', icon:'🌲', title:'Tribal Peoples and the Rights of Culture', body:'India\'s approximately 104 million Adivasi (tribal or indigenous) peoples face displacement from forests, mines, and development projects at an alarming rate. GS §§26–29 affirm the rights of every people to their own culture and to adequate conditions for a fully human life. The displacement of Adivasi communities by dams, mining operations, and Special Economic Zones is a direct violation of what GS calls the "common good." The Chotanagpur region of Jharkhand, where Jesuit and Fransalian missionaries have long worked, is a dramatic instance: generations of Christian ministry among tribals now face the destruction of their land, forest, and cultural identity.'},
+    {cat:'Poverty & Development', icon:'📉', title:'Structural Poverty and the Right to Development', body:'India has the largest number of people living in extreme poverty of any country on earth. GS §§63–72 insist that economic development must be subordinated to the authentic development of the whole person. The document condemns "excessive economic and social differences between the members of the one human family" as a scandal and contrasts with social justice. The Indian Church\'s engagement with development — through hospitals, schools, and social work — has been immense, but GS challenges a deeper question: does the Church\'s development work challenge the structural causes of poverty, or merely minister to its symptoms?'},
+    {cat:'Internal Migration', icon:'🚶', title:'Migrants and the Right to Family Life', body:'India\'s internal migration — tens of millions moving from rural areas to cities in search of work — is among the largest population movements in human history. Migrant workers, especially Dalit and Adivasi workers, face exploitation, denial of labour rights, loss of cultural identity, and separation from families. GS §§26, 65–67 affirm the right of workers to just wages, the right of families to live together, and the duty of society to guarantee conditions for human dignity. The Indian Church, particularly through Caritas India and diocesan Migrant Desks, has attempted to respond — but the structural challenge remains enormous.'},
+    {cat:'Religious Pluralism', icon:'☮️', title:'Dialogue in a Multi-Religious Society', body:'No country on earth is more religiously plural than India: Hindu, Muslim, Christian, Sikh, Buddhist, Jain, Parsi, Adivasi traditions — all coexist within one political community. GS\'s call for dialogue with "the whole of humanity" and its affirmation that "all things of truth and grace to be found among the nations" (AG §9) provide the theological foundation for what Michael Amaladoss, SJ calls a "theology of pluralism" — not merely tolerance but genuine theological engagement across religious traditions. The Indian Church\'s unique contribution to world Catholicism may be precisely its experience of deep, sustained, respectful dialogue with non-Christian traditions without losing its Christian identity.'},
+    {cat:'Hindutva & Minority Rights', icon:'🛡️', title:'Religious Freedom Under Pressure', body:'GS §§26, 73–76 affirm human rights including religious freedom as essential to the common good. In contemporary India, the rise of Hindutva ideology has placed minority communities — Christians, Muslims, Dalits — under increasing social and political pressure. Anti-conversion laws in several states, violence against Christian missionaries and institutions, and the denial of Scheduled Caste reservations to Dalit Christians are direct violations of the religious freedom GS affirms. The Indian Church is called by GS not merely to defend its own institutional interests but to stand for the religious freedom of all minorities, including Muslims.'},
+    {cat:'Dalit Theology', icon:'✊', title:'The Emergence of an Indian Liberation Theology', body:'In the 1980s, Dalit theologians in India began developing a theology that does what GS called for — reading the signs of the times in the light of the Gospel — but from the perspective of the most marginalised. Arvind P. Nirmal argued that Jesus himself was a Dalit — the Suffering Servant of Isaiah 53, the one who "came not to be served but to serve," who "had nowhere to lay his head." The Nazareth Manifesto of Luke 4 ("Good news to the poor, freedom for the oppressed") is the Dalit theological charter. This is not the importation of Marxism into theology but the direct application of GS\'s own methodology to India\'s most severe social reality.'},
+  ]},
+  {type:'gq', text:'"The Indian Church\'s unique vocation is to be a Church of the poor and the marginalised — of the Dalits, the Adivasis, the migrants — who together constitute the majority of Indian Christians. To be otherwise is to be unfaithful to Gaudium et Spes."', cite:'— Felix Wilfred, Asian Horizons (paraphrasing the consensus of Indian liberation theology)'},
+  {type:'prose', label:'The Indian Church\'s Unfinished Business with GS', text:'India\'s Catholic Church faces a profound internal contradiction: it is one of the most institutionally active Churches in the world — running thousands of schools, hospitals, and social welfare programmes — yet it has often been slow to challenge caste discrimination within its own communities. Dalit theologians argue that Indian Christian theology has been captured by upper-caste perspectives that defined the project of "inculturation" in terms of relating Christianity to classical Sanskrit and Brahminic texts, while ignoring the lived spiritual and cultural traditions of Dalit and Adivasi peoples who constitute the Church\'s majority. Gaudium et Spes provides the theological tools for a correction: its insistence on human dignity as the theological foundation of all social teaching, its demand that the Church read the "signs of the times" from the perspective of those who suffer most, and its Christological key (GS §22) which reveals that in the poor, suffering Christ, every Dalit face is the face of God.'},
+  {type:'prose', label:'Michael Amaladoss and the Indian Reception of GS', text:'The Jesuit theologian Michael Amaladoss has argued most consistently for an Indian contextualisation of Gaudium et Spes. Where GS addressed Western modernity, India faces a different set of "signs of the times": religious pluralism rather than secularism; caste rather than class; communalism rather than individualism; and a spiritual richness in non-Christian traditions that requires not merely tolerance but genuine theological engagement. Amaladoss\'s concept of "living in dialogue" — the Indian Christian who is fully Christian and fully Indian, drawing on the spiritual resources of both the Gospel and the Indian spiritual heritage — is a creative development of the GS method of dialogue. It insists that inculturation cannot mean Brahminicisation — absorbing the classical Hindu tradition while ignoring the counter-tradition of the Dalits and the subaltern.'},
+ ]
+},
+{id:'themes', num:'06', icon:'📜', name:'Key Theological Themes',
+ sub:'The Major Doctrinal Contributions of GS',
+ color:'#4a5e2a', dark:'#2d3a18', pale:'#eef4e8',
+ tags:['Human Dignity','Marriage','Culture','Economics','Peace'],
+ preview:'From the theology of marriage to the ethics of war, GS\'s systematic treatment of the major issues of human life in society.',
+ summary:'Gaudium et Spes covers an extraordinary range of topics across its two parts and 93 sections. Part I articulates a theological anthropology — the dignity of the human person, the social nature of humanity, human activity in the world, and the Church\'s role. Part II applies these principles to five "urgent problems": marriage and family, culture, economics and social life, politics, and war and peace.',
+ content:[
+  {type:'themes', label:'The Theological Themes of GS Part I', items:[
+    {icon:'🙏', title:'Human Dignity as Imago Dei (GS §§12–22)', body:'Every human person is created in the image and likeness of God. This is not a philosophical claim but a theological one: human dignity is not earned or granted by states but received from God and expressed in Christ. GS §12 grounds the entire document in this anthropological foundation. The document is equally direct about the reality of sin: the human person is "divided against himself" (GS §10). Authentic humanism — the true flourishing of the human person — can only be Christocentric.'},
+    {icon:'🤲', title:'The Social Nature of Humanity (GS §§23–32)', body:'GS affirms that the human person is not an isolated individual but a being constituted by relationships. "By his innermost nature man is a social being" (GS §12). This social nature grounds the Church\'s rejection of both radical individualism and totalitarianism. The common good — "the sum of social conditions which allow people to reach their fulfilment" — is the proper goal of political and economic life. Subsidiarity (decisions at the lowest appropriate level) and solidarity (responsibility for one another) are the structural principles of a just society.'},
+    {icon:'🔨', title:'Human Activity and the World (GS §§33–39)', body:'GS §36 contains one of the most significant and contested statements of the document: the "rightful autonomy of earthly affairs." Science, politics, economics, and culture have their proper methods and norms. The Church does not micromanage these spheres. But this autonomy is not absolute: "created things and societies themselves enjoy their own laws and values which must be gradually deciphered, put to use, and regulated by men" — but never in isolation from the Creator. The famous question of GS §38: what will remain of this world\'s work and human effort in eternity? The answer is: whatever is built in love.'},
+    {icon:'⛪', title:'The Church\'s Relationship to the World (GS §§40–45)', body:'GS §44 contains a remarkable admission: the Church can learn from the world. "The Church has profited and continues to profit from the opposition of those who are hostile to it or those who persecute it." The Church is enriched by the history and development of humanity. This is not relativism — it is the theological conviction that truth is one and that wherever genuine truth is found, it belongs ultimately to God. The Church offers the world the Gospel; the world offers the Church concrete historical experience in which to understand the Gospel more deeply.'},
+  ]},
+  {type:'themes', label:'The Five Urgent Problems — GS Part II', items:[
+    {icon:'👨‍👩‍👧', title:'Marriage and Family (GS §§47–52)', body:'GS §48 describes marriage as "an intimate community of life and love" — a definition that shifts the primary purpose of marriage from procreation to conjugal love, while insisting both are inseparable. This was a significant development from previous canonical and theological formulations. Marriage is a covenant (not merely a contract) that images the union of Christ and the Church. GS is clear that it must be faithful, indissoluble, and open to new life — but the relational and sacramental dimensions are given far greater prominence than they had been previously.'},
+    {icon:'🎨', title:'Culture (GS §§53–62)', body:'GS §53 offers a definition of culture as the "style of man\'s historical experience" — how humans have cultivated their human nature through work, knowledge, art, and social institutions. The document affirms cultural diversity as a gift. The Gospel must be inculturated — it needs to be expressed in and through particular cultures, not simply translated from a Western form. This has immense implications for India, where the question of how the Gospel relates to Indian cultural traditions — including the counter-cultural traditions of the Dalits and Adivasis — remains theologically urgent.'},
+    {icon:'💼', title:'Economic and Social Life (GS §§63–72)', body:'GS §65 insists that "economic development must be kept under man\'s control and must not be left to the sole judgment of a few men or groups." Economic activity serves the authentic development of the whole person, not merely GDP growth. The document condemns the concentration of economic power in the hands of a few, affirms the rights of workers (including just wages and the right to organise), and argues that the goods of the earth are destined for all humanity — not only for those with capital. This provides a direct theological critique of neoliberal globalisation.'},
+    {icon:'⚖️', title:'Political Life (GS §§73–76)', body:'GS §73–74 affirm the importance of political institutions and the duty of citizens to participate in political life. The document neither endorses a specific political system nor condemns democracy in principle. It insists on human rights as the foundation of political life and the duty of the state to serve the common good. It also insists on the distinction between the Church and political community — the Church does not control politics, but it has the right and duty to speak on matters that concern human dignity and the common good.'},
+    {icon:'🕊️', title:'War and Peace (GS §§77–90)', body:'GS §§78–80 insist that peace is not merely the absence of war but "the enterprise of justice." The document\'s treatment of nuclear weapons was particularly significant: GS §80 states that nuclear weapons that indiscriminately destroy whole populations are "the most atrocious" acts of war, and that they "far exceed the bounds of legitimate defence." The Just War tradition is maintained but significantly tightened. The document calls for the gradual abolition of nuclear weapons and the creation of international institutions capable of resolving conflicts peacefully.'},
+  ]},
+ ]
+},
+{id:'legacy', num:'07', icon:'🌟', name:'Ongoing Legacy & Relevance',
+ sub:'From Vatican II to Pope Francis and Beyond',
+ color:'#B7770D', dark:'#7d5200', pale:'#fef9e7',
+ tags:['Pope Francis','Laudato Si','Synodality','60th Anniversary'],
+ preview:'GS at 60: still the most quoted Vatican II document by Pope Francis, and the foundation of the Church\'s response to ecological crisis, AI, migration, and polarisation.',
+ summary:'Gaudium et Spes turns sixty in 2025 and remains the most frequently invoked Vatican II document in the pontificate of Pope Francis. Its method — reading the signs of the times in the light of the Gospel — continues to animate the Church\'s engagement with climate change, mass migration, digital technology, and global inequality. Its greatest contribution may still lie ahead: in the contextual theologies of the Global South — Dalit, African, Asian — that are only beginning to claim their space in the universal Church.',
+ content:[
+  {type:'themes', label:'GS\'s Living Legacy', items:[
+    {icon:'🌿', title:'Laudato Si\' and the Ecological Crisis', body:'Pope Francis\'s 2015 encyclical <em>Laudato Si\'</em> is the most ambitious application of the GS method since Medellín. Where GS §67 insists on stewardship of natural resources, Francis extends this into a comprehensive "integral ecology" — the ecological crisis and the crisis of poverty are inseparable. The same logic of exploitation that treats the earth as a resource to be consumed also treats the poor as disposable. GS\'s preferential option for the poor becomes, in Francis\'s hands, a preferential option for the earth — and for the poor who suffer most from its degradation.'},
+    {icon:'📱', title:'The Digital Revolution', body:'GS could not have foreseen artificial intelligence, social media, or algorithmic governance. But its method — asking what the "signs of the times" mean for human dignity and the common good — provides the framework for the Church\'s engagement with digital ethics. The same questions GS asked about industrial capitalism and nuclear weapons must be asked about AI: Does it serve authentic human development? Does it concentrate power in the hands of a few? Does it diminish or enhance human dignity and freedom?'},
+    {icon:'🚢', title:'Migration and Refugees', body:'The global migration crisis — tens of millions of people displaced by war, climate change, poverty, and political violence — is the most acute contemporary test of GS\'s insistence on human solidarity. GS §§25–26 affirm the right of all persons to conditions that allow authentic human development, and the duty of the international community to ensure these conditions. Pope Francis\'s call to "welcome, protect, promote, and integrate" migrants is a direct application of GS to the twenty-first century.'},
+    {icon:'✊', title:'GS and Synodality', body:'The Synodal Process initiated by Pope Francis in 2021 is arguably the most significant ecclesial application of GS since the Medellín conference. GS §43 insists that lay Christians bear the primary responsibility for transforming the temporal order. The Synod on Synodality is attempting to restore this sense of co-responsibility — the whole People of God reading the signs of the times together, not waiting for hierarchical pronouncements. This is GS\'s ecclesiology made structural.'},
+    {icon:'🌏', title:'The Global South as the Future of GS', body:'The centre of gravity of world Catholicism has shifted decisively to the Global South — Latin America, sub-Saharan Africa, Southeast Asia, and India. The theologies being developed in these contexts — liberation theology, Dalit theology, African theology, Asian theology — are the most creative developments of the GS method. The next chapter of Gaudium et Spes will be written not in Rome or Paris but in Nairobi, Manila, Chennai, and São Paulo — by theologians who read the "signs of the times" from the margins.'},
+    {icon:'🪔', title:'India\'s Specific Contribution', body:'India\'s unique contribution to the global reception of GS lies in its experience of religious pluralism, its development of Dalit theology, and its centuries-old tradition of inculturation. The Indian theologians of the 20th century — Sebastian Kappen, Samuel Rayan, Michael Amaladoss, Felix Wilfred — have developed a reading of GS that takes seriously both the depth of Indian spiritual traditions and the concrete suffering of Dalits and tribals. This Indian reading insists that authentic inculturation cannot mean Brahminicisation — it must engage the counter-cultural traditions of the poor.'},
+  ]},
+  {type:'gq', text:'"Gaudium et Spes opens with solidarity — the Church stands with all who suffer. It should end there too: with the Church not above the world, dispensing truths from on high, but beside the world, walking with it, and above all beside the poorest, the most abandoned."', cite:'— Pope Francis, address to Jesuit General Congregation 36, 2016'},
+  {type:'prose', label:'The Unfinished Agenda', text:'Sixty years after its promulgation, Gaudium et Spes remains more promise than achievement. The Church has not fully implemented its vision of solidarity with the poor; caste discrimination persists in Indian parishes; the structures of global economic injustice that GS condemns have intensified under neoliberal globalisation; migrants and refugees are turned back at borders that Catholic governments maintain; and the ecological crisis has accelerated beyond what the Council Fathers could have imagined. Yet the document retains its power precisely because it planted a seed that has not yet fully grown. Its insistence that "nothing genuinely human fails to raise an echo in the hearts of the followers of Christ" is not a description of where the Church is, but a calling of where it must go.'},
+ ]
+},
+];
+
+const STRUCTURE = [
+{num:'Preface', title:'Preface', sub:'GS §1 — The Opening Statement of Solidarity', open:true,
+ chapters:[
+  {title:'GS §1: The Joys and Hopes', text:'The famous opening words. The Council declares its solidarity with all of humanity — especially those who suffer. This is not rhetoric but a programmatic commitment: the Church\'s agenda is set not merely by its own internal concerns but by the joys, griefs, hopes, and anxieties of every human person on earth.'},
+ ]},
+{num:'Intro', title:'Introduction', sub:'GS §§2–10 — The Situation of Humanity Today', open:false,
+ chapters:[
+  {title:'GS §§2–3: Address to the World', text:'The Council addresses itself "not only to the sons of the Church and to all who invoke the name of Christ, but to the whole of humanity." An unprecedented act of universalism in conciliar history.'},
+  {title:'GS §§4–10: Reading the Signs of the Times', text:'The Council surveys the "world scene" — technological change, urbanisation, the search for human rights, new forms of poverty and inequality, the crisis of culture. It introduces the method of reading the "signs of the times" — understanding historical events and movements in the light of the Gospel.'},
+ ]},
+{num:'Part I', title:'Part I: The Church and the Human Vocation', sub:'GS §§11–45 — Theological Anthropology', open:false,
+ chapters:[
+  {title:'Chapter 1 (§§12–22): The Dignity of the Human Person', text:'Human dignity as imago Dei; the human person as a unity of body and soul; conscience; freedom; the problem of atheism; and the Christological key of §22: Christ reveals the full meaning of humanity.'},
+  {title:'Chapter 2 (§§23–32): The Community of Mankind', text:'The social nature of the human person; the common good; subsidiarity; solidarity; respect for the human person as the foundation of social life.'},
+  {title:'Chapter 3 (§§33–39): Human Activity Throughout the World', text:'The value of human work and creativity; the autonomy of earthly affairs; work as participation in God\'s creative activity; the transformation of the world in hope.'},
+  {title:'Chapter 4 (§§40–45): The Role of the Church in the Modern World', text:'The Church\'s relationship to the political community; the contribution of the Church to individuals and society; the mutual enrichment of Church and world.'},
+ ]},
+{num:'Part II', title:'Part II: Some Problems of Special Urgency', sub:'GS §§46–93 — Applied Theology', open:false,
+ chapters:[
+  {title:'Chapter 1 (§§47–52): Fostering the Nobility of Marriage and the Family', text:'Marriage as covenant of love; conjugal love; responsible parenthood; the family as the basic cell of society.'},
+  {title:'Chapter 2 (§§53–62): The Proper Development of Culture', text:'The definition of culture; the relationship between the Gospel and culture; inculturation; the rights of all peoples to their own cultural life.'},
+  {title:'Chapter 3 (§§63–72): Economic and Social Life', text:'Economic justice; the rights of workers; the universal destination of goods; just wages; the critique of both capitalism and communism; development as a moral imperative.'},
+  {title:'Chapter 4 (§§73–76): The Life of the Political Community', text:'Political rights and duties; religious freedom; the distinction of Church and state; the duty to participate in political life.'},
+  {title:'Chapter 5 (§§77–90): The Fostering of Peace and the Promotion of a Community of Nations', text:'Peace as the enterprise of justice; Just War theory; the condemnation of nuclear weapons; international institutions; the duty of development aid.'},
+ ]},
+{num:'Concl.', title:'Conclusion', sub:'GS §§91–93 — An Appeal to All', open:false,
+ chapters:[
+  {title:'GS §§91–93: An Appeal to Dialogue', text:'The Council concludes with an appeal to all people of good will to collaborate in building a more just and humane world. It acknowledges the limitations of the document and the provisional character of all historical judgements. The final word is hope.'},
+ ]},
+];
+
+/* ============================================================ SCREEN ============================================================ */
+function go(id){
+  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+  const map={hero:'screen-hero',overview:'screen-overview',detail:'screen-detail',structure:'screen-structure'};
+  document.getElementById(map[id]||'screen-hero').classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+  if(id==='overview') buildGrid();
+  if(id==='structure') buildStructure();
+  document.querySelectorAll('#navbtns .btn').forEach(b=>b.classList.remove('b-active'));
+  if(id==='overview') document.querySelector('#navbtns .btn:nth-child(1)').classList.add('b-active');
+  if(id==='structure') document.querySelector('#navbtns .btn:nth-child(2)').classList.add('b-active');
+}
+
+/* ============================================================ GRID ============================================================ */
+function buildGrid(){
+  const g=document.getElementById('sec-grid');
+  if(g.dataset.done) return; g.dataset.done='1';
+  SECTIONS.forEach(s=>{
+    const d=document.createElement('div');
+    d.className='sec-card reveal';
+    d.onclick=()=>showDetail(s.id);
+    d.innerHTML=`
+      <div class="sec-card-top" data-num="${s.num}" style="background:linear-gradient(135deg,${s.color},${s.dark})">
+        <div class="sec-tag">${s.num}</div>
+        <div style="font-size:2rem;margin-bottom:.3rem">${s.icon}</div>
+        <div class="sec-num">${s.name}</div>
+        <div class="sec-sub-label">${s.sub}</div>
+      </div>
+      <div class="sec-body">
+        <div class="cmeta" style="display:flex;flex-wrap:wrap;gap:.35rem;margin-bottom:.7rem">
+          ${s.tags.map(t=>`<span style="font-family:var(--fu);font-size:.68rem;font-weight:700;padding:.2rem .55rem;border-radius:20px;background:${s.pale};color:${s.color}">${t}</span>`).join('')}
+        </div>
+        <p class="sec-preview">${s.preview}</p>
+      </div>
+      <div class="sec-footer" style="background:${s.color}"><span>${s.tags[0]}</span><span>Read →</span></div>`;
+    g.appendChild(d);
+  });
+  setTimeout(()=>{
+    const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('vis');obs.unobserve(x.target)}})},{threshold:.08});
+    document.querySelectorAll('#sec-grid .reveal').forEach(el=>obs.observe(el));
+  },100);
+}
+
+/* ============================================================ DETAIL ============================================================ */
+function showDetail(id){
+  const s=SECTIONS.find(x=>x.id===id);
+  if(!s) return;
+  let bodyHTML='';
+  s.content.forEach(block=>{
+    if(block.type==='prose'){
+      bodyHTML+=`<div class="det-section"><div class="det-label">${block.label}</div><div class="prose-box">${block.text}</div></div>`;
+    } else if(block.type==='gq'){
+      bodyHTML+=`<blockquote class="gq">${block.text}<cite>${block.cite}</cite></blockquote>`;
+    } else if(block.type==='timeline'){
+      bodyHTML+=`<div class="det-section"><div class="det-label">${block.label}</div><div class="timeline">`;
+      block.items.forEach(item=>{
+        bodyHTML+=`<div class="tl-item"><div class="tl-dot"></div><div class="tl-date">${item.date}</div><div class="tl-text">${item.text}</div></div>`;
+      });
+      bodyHTML+=`</div></div>`;
+    } else if(block.type==='themes'){
+      bodyHTML+=`<div class="det-section"><div class="det-label">${block.label}</div><div class="theme-grid">`;
+      block.items.forEach(item=>{
+        bodyHTML+=`<div class="theme-card reveal"><div class="th-icon">${item.icon}</div><div class="th-title">${item.title}</div><div class="th-body">${item.body}</div></div>`;
+      });
+      bodyHTML+=`</div></div>`;
+    } else if(block.type==='critique'){
+      bodyHTML+=`<div class="det-section"><div class="det-label">${block.label}</div><div class="critique-grid">
+        <div class="crit-card crit-for"><div class="crit-label">${block.for.label}</div><ul class="crit-list">${block.for.items.map(i=>`<li>${i}</li>`).join('')}</ul></div>
+        <div class="crit-card crit-against"><div class="crit-label">${block.against.label}</div><ul class="crit-list">${block.against.items.map(i=>`<li>${i}</li>`).join('')}</ul></div>
+      </div></div>`;
+    } else if(block.type==='india'){
+      bodyHTML+=`<div class="det-section"><div class="det-label">${block.label}</div><div class="india-grid">`;
+      block.items.forEach(item=>{
+        bodyHTML+=`<div class="india-card reveal" style="border-color:${s.color}"><div class="in-cat" style="color:${s.color}">${item.cat}</div><div class="in-title">${item.icon} ${item.title}</div><div class="in-body">${item.body}</div></div>`;
+      });
+      bodyHTML+=`</div></div>`;
+    }
+  });
+
+  const idx=SECTIONS.indexOf(s);
+  const next=idx<SECTIONS.length-1?SECTIONS[idx+1]:null;
+  const prev=idx>0?SECTIONS[idx-1]:null;
+
+  document.getElementById('det-content').innerHTML=`
+    <div class="det-hero" data-num="${s.num}" style="background:linear-gradient(135deg,${s.color},${s.dark})">
+      <div class="det-hero-top">
+        <div>
+          <div class="det-num">${s.num}</div>
+          <h1 class="det-name">${s.name}</h1>
+          <p class="det-sub">${s.sub}</p>
+          <div class="det-badges">${s.tags.map(t=>`<span class="badge">${t}</span>`).join('')}</div>
+        </div>
+        <div class="det-icon">${s.icon}</div>
+      </div>
+    </div>
+    <div class="det-body" style="--cc:${s.color};--ccd:${s.dark};--ccp:${s.pale}">
+      <div class="det-section"><div class="det-label">Overview</div><div class="prose-box">${s.summary}</div></div>
+      ${bodyHTML}
+      <div class="det-nav-row">
+        <button class="btn bo" style="border-color:${s.color};color:${s.color}" onclick="go('overview')">← All Themes</button>
+        ${prev?`<button class="btn" style="background:${prev.color};color:#fff;padding:.35rem .85rem;border-radius:5px;cursor:pointer;font-family:var(--fu);font-size:.7rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;border:none" onclick="showDetail('${prev.id}')">← ${prev.name}</button>`:''}
+        ${next?`<button class="btn" style="background:${next.color};color:#fff;padding:.35rem .85rem;border-radius:5px;cursor:pointer;font-family:var(--fu);font-size:.7rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;border:none" onclick="showDetail('${next.id}')">${next.name} →</button>`:''}
+      </div>
+    </div>`;
+  go('detail');
+  setTimeout(()=>{
+    const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('vis');obs.unobserve(x.target)}})},{threshold:.06});
+    document.querySelectorAll('#det-content .reveal').forEach(el=>obs.observe(el));
+  },120);
+}
+
+/* ============================================================ STRUCTURE ============================================================ */
+function buildStructure(){
+  const c=document.getElementById('structure-content');
+  if(c.dataset.done) return; c.dataset.done='1';
+  STRUCTURE.forEach(part=>{
+    const d=document.createElement('div');
+    d.className='part-block'+(part.open?' open':'');
+    d.innerHTML=`
+      <div class="part-head" onclick="togglePart(this)">
+        <div class="part-num">${part.num}</div>
+        <div><div class="part-title">${part.title}</div><div class="part-sub">${part.sub}</div></div>
+        <div class="part-arrow">▾</div>
+      </div>
+      <div class="part-body"><div class="part-content">
+        <ul class="chapter-list">${part.chapters.map(ch=>`<li><strong>${ch.title}</strong>${ch.text}</li>`).join('')}</ul>
+      </div></div>`;
+    c.appendChild(d);
+  });
+}
+function togglePart(head){
+  head.parentElement.classList.toggle('open');
+}
+
+/* ============================================================ INIT ============================================================ */
+document.addEventListener('DOMContentLoaded',()=>{
+  const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('vis');obs.unobserve(x.target)}})},{threshold:.08});
+  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+});
+</script>
+</body>
+</html>
